@@ -1,0 +1,20 @@
+parameter string;
+storage unit;
+code
+  {
+    # Trying to use a lambda in order to create a "ticket"
+    LAMBDA
+      string
+      (ticket string)
+      {
+        PUSH nat 1;
+        PUSH string "test";
+        DIG 2;
+        PAIR 3;
+      } ;
+    DROP; # DROP storage and input
+    DROP; # DROP lambda
+    UNIT;
+    NIL operation;
+    PAIR;
+  };

@@ -1,0 +1,17 @@
+parameter (option (ticket string));
+storage unit;
+code
+  {
+    CAR; # drop storage, but leave input on stack
+    IF_NONE { FAIL} {};
+    PUSH nat 4;
+    PUSH string "test";
+    TICKET;
+    PAIR;
+    JOIN_TICKETS;
+    IF_NONE { FAIL } {};
+    DROP;
+    UNIT;
+    NIL operation;
+    PAIR;
+  };

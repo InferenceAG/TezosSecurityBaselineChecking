@@ -1,0 +1,24 @@
+parameter string;
+storage unit;
+code
+  {
+    CAR; # parameter
+    PUSH nat 1;
+    PUSH string "test";
+    DIG 2;
+    PAIR 3;
+    SOME;
+    SENDER;
+    CONTRACT %setToken (option(pair string string nat));
+    IF_NONE { FAIL } {};
+    SWAP;
+    PUSH mutez 0;
+    DUG 1;
+    TRANSFER_TOKENS;
+    NIL operation;
+    SWAP;
+    CONS;
+    UNIT;
+    SWAP;
+    PAIR;
+  };

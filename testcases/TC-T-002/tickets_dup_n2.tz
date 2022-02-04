@@ -1,0 +1,17 @@
+parameter unit;
+storage unit;
+code
+  {
+    DROP; # drop storage and input
+    PUSH nat 1;
+    PUSH string "test";
+    TICKET;
+    PUSH nat 10;
+    DUP 2;
+    DROP;
+    DROP;
+    DROP;
+    UNIT;
+    NIL operation;
+    PAIR;
+  };

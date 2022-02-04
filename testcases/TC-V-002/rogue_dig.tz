@@ -1,0 +1,27 @@
+parameter unit;
+storage unit;
+code
+  {
+    DROP;
+    UNIT;
+    NIL operation;
+    PAIR;
+  };
+view
+  "rogue" unit nat
+  {
+    # We assume that the on-chain view stack is just on top of the caller stack.
+
+    # Try to access 2nd element of caller stack.
+    DIG 2;
+
+    # SWAP to restore correct stack order.
+    SWAP;
+
+    # DROP view input
+    DROP;
+    
+    # Return nat value
+    PUSH nat 1;
+  };
+

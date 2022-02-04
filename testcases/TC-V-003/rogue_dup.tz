@@ -1,0 +1,27 @@
+parameter unit;
+storage unit;
+code
+  {
+    DROP;
+    UNIT;
+    NIL operation;
+    PAIR;
+  };
+view
+  "rogue" unit nat
+  {
+    # We assume that the on-chain view stack is just on top of the caller stack.
+
+    # We try to access and duplicate 2nd element of caller stack:
+    DUP 2;
+
+    # DROP it
+    DROP;
+
+    # DROP view input
+    DROP;
+    
+    # Return nat value
+    PUSH nat 1;
+  };
+

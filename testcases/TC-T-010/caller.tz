@@ -1,0 +1,21 @@
+{ parameter
+    (or (pair %init (address %adrAdr) (string %strAdr)) (option %setToken (ticket string))) ;
+  storage unit ;
+  code { UNPAIR ;
+         IF_LEFT
+           { DUP ;
+             DUG 2 ;
+             CAR ;
+             CONTRACT string ;
+             IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+             PUSH mutez 0 ;
+             DIG 3 ;
+             CDR ;
+             TRANSFER_TOKENS ;
+             SWAP ;
+             NIL operation ;
+             DIG 2 ;
+             CONS ;
+             PAIR }
+           { DROP ; NIL operation ; PAIR } } }
+

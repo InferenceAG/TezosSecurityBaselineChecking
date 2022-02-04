@@ -1,0 +1,31 @@
+parameter address;
+storage (option (ticket string));
+code
+  {
+    UNPAIR; 
+    CONTRACT (ticket string);
+    IF_NONE
+      {
+         PUSH string "error 1";
+         FAILWITH;
+      }
+      {};
+    PUSH mutez 0;
+    DIG 2;
+    IF_NONE
+      {
+         PUSH string "error 2";
+         FAILWITH;
+      }
+      {};
+    TRANSFER_TOKENS; 
+    NIL operation;
+    SWAP;
+    CONS;
+    PUSH nat 1;
+    PUSH string "test";
+    TICKET; 
+    SOME;
+    SWAP;
+    PAIR;
+  };

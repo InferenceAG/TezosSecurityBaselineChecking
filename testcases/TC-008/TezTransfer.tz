@@ -1,0 +1,26 @@
+{ parameter (option address) ;
+  storage (pair (mutez %atEnd) (mutez %atStart)) ;
+  code { UNPAIR ;
+         SWAP ;
+         BALANCE ;
+         SWAP ;
+         CAR ;
+         PAIR ;
+         SWAP ;
+         IF_NONE
+           { NIL operation }
+           { CONTRACT (option address) ;
+             IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+             PUSH mutez 5 ;
+             NONE address ;
+             TRANSFER_TOKENS ;
+             NIL operation ;
+             SWAP ;
+             CONS } ;
+         SWAP ;
+         CDR ;
+         BALANCE ;
+         PAIR ;
+         SWAP ;
+         PAIR } }
+

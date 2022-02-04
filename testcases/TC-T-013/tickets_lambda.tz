@@ -1,0 +1,22 @@
+parameter unit;
+storage unit;
+code
+  {
+    # Trying to use a lambda in order to create a "ticket"
+    LAMBDA
+      unit
+      (option (ticket string))
+      {
+        DROP;
+        PUSH nat 1;
+        PUSH string "test";
+        SELF_ADDRESS;
+        PAIR 3;
+        SOME;
+      } ;
+    DROP; # DROP storage and input
+    DROP; # DROP lambda
+    UNIT;
+    NIL operation;
+    PAIR;
+  };

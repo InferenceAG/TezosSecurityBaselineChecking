@@ -1,0 +1,14 @@
+parameter unit;
+storage (option (ticket string));
+code
+  {
+    DROP; # drop storage and input
+    PUSH nat 1;
+    PUSH string "test";
+    TICKET;
+    SOME;
+    NIL operation;
+    PAIR;
+  };
+view "storage" unit (option (ticket string)) { CDR; };
+#view "storage" unit nat { DROP; PUSH nat 1; };

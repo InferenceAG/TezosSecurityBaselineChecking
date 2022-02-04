@@ -1,0 +1,24 @@
+parameter (unit %set);
+storage   (pair (bool %magic_one) (int %storedValue));
+code
+  {
+    CDR;        # @storage
+    # == set ==
+    # storedValue = sp.local("storedValue", self.data.storedValue)
+    # if self.data.magic_one: # @storage
+    DUP;        # @storage : @storage
+    CAR;        # bool : @storage
+    IF
+      {
+        # storedValue.value = 1 # @storage
+        PUSH int 1; # int : @storage
+      }
+      {
+        # storedValue.value = 0 # @storage
+        PUSH int 0; # int : @storage
+      }; # int : @storage
+    # self.data.storedValue = storedValue.value # int : @storage
+    UPDATE 2;   # @storage
+    NIL operation; # list operation : @storage
+    PAIR;       # pair (list operation) @storage
+  };

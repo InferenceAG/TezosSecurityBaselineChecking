@@ -1,0 +1,10 @@
+parameter unit ;
+storage mutez ;
+code {
+       DROP ;
+       PUSH mutez 2;
+       PUSH mutez 1;
+       SUB;
+       NIL operation ;
+       PAIR
+     }

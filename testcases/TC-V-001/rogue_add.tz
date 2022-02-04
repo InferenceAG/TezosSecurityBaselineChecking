@@ -1,0 +1,26 @@
+parameter unit;
+storage unit;
+code
+  {
+    DROP;
+    UNIT;
+    NIL operation;
+    PAIR;
+  };
+view
+  "rogue" unit nat
+  {
+    # We assume that the on-chain view stack is just on top of the caller stack.
+
+    # DROP view input
+    DROP;
+
+    # On the caller stack the top value is a "nat". So, we try to access this by using instruction "add".
+    PUSH nat 3;
+    ADD;
+    # we leave this addition result on stack.
+
+    # Since, add consumes two stack elements, we have to push another nat (the result of the view) to stack in order to restore a correct stack.
+    PUSH nat 1;
+  };
+

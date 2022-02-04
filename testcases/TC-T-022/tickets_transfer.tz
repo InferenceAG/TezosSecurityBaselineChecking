@@ -1,0 +1,21 @@
+parameter unit;
+storage unit;
+code
+  {
+    DROP ; # drop storage and input
+    PUSH address "tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC";
+    CONTRACT unit;
+    IF_NONE { FAIL } {};
+    PUSH mutez 1;
+    UNIT;
+    TRANSFER_TOKENS;
+    DUP;
+    NIL operation;
+    SWAP;
+    CONS;
+    SWAP;
+    CONS;
+    UNIT;
+    SWAP;
+    PAIR;
+  };

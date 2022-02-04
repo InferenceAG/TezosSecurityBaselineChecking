@@ -1,0 +1,40 @@
+{ parameter
+    (or (pair %payout (mutez %amount) (address %destination)) (timestamp %setTime)) ;
+  storage (pair (mutez %minLockedValue) (timestamp %nextPayout)) ;
+  code { UNPAIR ;
+         IF_LEFT
+           { SWAP ;
+             NOW ;
+             SWAP ;
+             DUP ;
+             DUG 2 ;
+             CDR ;
+             COMPARE ;
+             LT ;
+             IF { SWAP ; DUP ; DUG 2 ; CAR }
+                { DUP ;
+                  CAR ;
+                  AMOUNT ;
+                  BALANCE ;
+                  SUB ;
+                  COMPARE ;
+                  GE ;
+                  IF {} { PUSH string "failed assertion" ; FAILWITH } ;
+                  SWAP ;
+                  DUP ;
+                  DUG 2 ;
+                  CAR } ;
+             DIG 2 ;
+             CDR ;
+             CONTRACT unit ;
+             IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+             SWAP ;
+             UNIT ;
+             TRANSFER_TOKENS ;
+             SWAP ;
+             NIL operation ;
+             DIG 2 ;
+             CONS ;
+             PAIR }
+           { SWAP ; CAR ; PAIR ; NIL operation ; PAIR } } }
+

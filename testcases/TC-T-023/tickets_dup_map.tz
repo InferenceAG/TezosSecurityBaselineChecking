@@ -1,0 +1,19 @@
+parameter unit;
+storage unit;
+code
+  {
+    DROP ; # drop storage and input
+    EMPTY_MAP nat (ticket string); 
+    PUSH nat 1;
+    PUSH string "test";
+    TICKET;
+    SOME;
+    PUSH nat 0;
+    UPDATE;
+    DUP;
+    DROP;
+    DROP;
+    UNIT;
+    NIL operation;
+    PAIR;
+  };

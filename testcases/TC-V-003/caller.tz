@@ -1,0 +1,12 @@
+parameter address;
+storage nat;
+code
+  {
+    UNPAIR;
+    UNIT;
+    VIEW "rogue" nat;
+    IF_NONE { FAIL } {};
+    ADD;
+    NIL operation;
+    PAIR;
+  };

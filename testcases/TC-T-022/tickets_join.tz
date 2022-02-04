@@ -1,0 +1,16 @@
+parameter (ticket string);
+storage (option (ticket string));
+code
+  {
+    UNPAIR; 
+    SWAP;
+    IF_NONE {
+              SOME;
+            }
+            {
+              PAIR;
+              JOIN_TICKETS;
+            };
+    NIL operation;
+    PAIR;
+  };
