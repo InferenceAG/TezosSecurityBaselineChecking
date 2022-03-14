@@ -57,13 +57,14 @@ if "templates" not in __name__:
     
     @sp.add_test(name = "ordering") 
     def test():
-        checkContract = CheckContract()
-        orderingContract = OrderingContract(checkContract.address)
-        orderingContract.set_initial_balance(sp.mutez(6000000))
         scenario = sp.test_scenario()
-        scenario.h1("Ordering")
-        scenario += orderingContract
+        checkContract = CheckContract()
         scenario += checkContract
+        orderingContract = OrderingContract(checkContract.address)
+        scenario += orderingContract
+        orderingContract.set_initial_balance(sp.mutez(6000000))
+        
+        scenario.h1("Ordering")        
         scenario = orderingContract.execute().run()
 
 sp.add_compilation_target("order", OrderingContract(sp.address("tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC")))

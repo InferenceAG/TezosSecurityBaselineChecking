@@ -9,6 +9,8 @@
 - [TC-006: Duplicate operation](./testcases/TC-006/readme.md)
 - [TC-007: 0tez transaction to implicit account](./testcases/TC-007/readme.md)
 - [TC-008: BALANCE instruction](./testcases/TC-008/readme.md)
+- [TC-009: Wrong field annotations](./testcases/TC-009/readme.md)
+- [TC-010: Batch operation failing](./testcases/TC-010/readme.md)
 
 ## Overview of ticket testcases
 - [TC-T-001: Tickets - Duplicate ticket - dup](./testcases/TC-T-001/readme.md)

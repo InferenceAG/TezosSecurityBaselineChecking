@@ -1,0 +1,5 @@
+[ 
+    {"destination": "KT1K4ASk8hnFPfyDyBLzWRSv6XRHhsCDpe9o", "amount": "0", "arg": "2", "entrypoint": "add"},
+    {"destination": "KT1K4ASk8hnFPfyDyBLzWRSv6XRHhsCDpe9o", "amount": "0", "arg": "4", "entrypoint": "sub"}, 
+    {"destination": "KT1K4ASk8hnFPfyDyBLzWRSv6XRHhsCDpe9o", "amount": "0", "arg": "3", "entrypoint": "add"}
+]

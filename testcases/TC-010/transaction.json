@@ -1,0 +1,5 @@
+[ 
+    {"destination": "mydestination", "amount": "0", "arg": "2", "entrypoint": "add"},
+    {"destination": "mydestination", "amount": "0", "arg": "4", "entrypoint": "sub"}, 
+    {"destination": "mydestination", "amount": "0", "arg": "3", "entrypoint": "add"}
+]
