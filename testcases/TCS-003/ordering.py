@@ -4,19 +4,6 @@ import smartpy as sp
 class OrderingContract(sp.Contract):
     def __init__(self, address):
         self.init(
-            admin = address
-        )
-
-    @sp.entry_point
-    def execute(self):
-        sp.send(self.data.admin, sp.mutez(1))
-        sp.send(self.data.admin, sp.mutez(2))
-        sp.send(self.data.admin, sp.mutez(3))
-
-
-class OrderingContract(sp.Contract):
-    def __init__(self, address):
-        self.init(
             destination = address
         )
 
@@ -62,9 +49,9 @@ if "templates" not in __name__:
         checkContract = CheckContract()
         scenario += checkContract
         orderingContract = OrderingContract(checkContract.address)
-        scenario += orderingContract
         orderingContract.set_initial_balance(sp.mutez(6000000))
-        
+        scenario += orderingContract
+
         scenario.h1("Ordering")        
         scenario = orderingContract.execute().run()
 

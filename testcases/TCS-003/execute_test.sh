@@ -7,7 +7,7 @@ head -n 1 readme.md
 case $1 in
 	*)
 		echo "executing tests for $1"
-		$SMARTPY compile ordering.py compiled/
+		$SMARTPY compile ordering.py compiled/ --purge
 		storage=$(cat ./compiled/order/step_000_cont_0_storage.tz)
 		$TEZOSCLIENT originate contract ordering transferring 6 from deploy running ./compiled/order/step_000_cont_0_contract.tz --init $storage --burn-cap 0.187 --force  >out.tmp 2>&1
 		$TEZOSCLIENT transfer 0 from admin to ordering --entrypoint 'default' --arg 'Unit' >result.tmp 2>&1
@@ -47,5 +47,5 @@ case $1 in
 		;;
 esac
 rm *.tmp
-
+rm -rf compiled
 
