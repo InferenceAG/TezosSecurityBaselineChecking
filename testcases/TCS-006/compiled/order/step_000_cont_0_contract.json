@@ -1,0 +1,21 @@
+[
+  { "prim": "storage", "args": [ { "prim": "address" } ] },
+  { "prim": "parameter", "args": [ { "prim": "lambda", "args": [ { "prim": "unit" }, { "prim": "list", "args": [ { "prim": "operation" } ] } ], "annots": [ "%execute" ] } ] },
+  {
+    "prim": "code",
+    "args": [
+      [
+        { "prim": "UNPAIR" },
+        { "prim": "NIL", "args": [ { "prim": "operation" } ] },
+        { "prim": "SWAP" },
+        { "prim": "UNIT" },
+        { "prim": "EXEC" },
+        { "prim": "ITER", "args": [ [ { "prim": "CONS" } ] ] },
+        { "prim": "NIL", "args": [ { "prim": "operation" } ] },
+        { "prim": "SWAP" },
+        { "prim": "ITER", "args": [ [ { "prim": "CONS" } ] ] },
+        { "prim": "PAIR" }
+      ]
+    ]
+  }
+]

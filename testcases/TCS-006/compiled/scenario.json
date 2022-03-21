@@ -1,0 +1,32 @@
+[
+ {
+  "shortname": "ordering",
+  "longname": "ordering",
+  "scenario": [
+   {
+    "action": "newContract",
+    "accept_unknown_types": false,
+    "export": "(template_id (static_id 0 (\"ordering.py\" 46)) \nstorage (record (\"ordering.py\" 20) (counter (literal (intOrNat 0) (\"ordering.py\" 20))))\nstorage_type (())\nentry_points ((default True None None None False (\"ordering.py\" 23) ((ifBlock (eq (attr (data) \"counter\" (\"ordering.py\" 25)) (literal (intOrNat 0) (\"ordering.py\" 25)) (\"ordering.py\" 25)) ((verify (eq (amount) (literal (mutez 1000000) (\"ordering.py\" 26)) (\"ordering.py\" 26)) (\"ordering.py\" 26)) (set (attr (data) \"counter\" (\"ordering.py\" 25)) (add (attr (data) \"counter\" (\"ordering.py\" 25)) (literal (intOrNat 1) (\"ordering.py\" 27)) (\"ordering.py\" 27)) (\"ordering.py\" 27))) (\"ordering.py\" 25)) (elseBlock ((ifBlock (eq (attr (data) \"counter\" (\"ordering.py\" 25)) (literal (intOrNat 1) (\"ordering.py\" 29)) (\"ordering.py\" 29)) ((verify (eq (amount) (literal (mutez 2000000) (\"ordering.py\" 30)) (\"ordering.py\" 30)) (\"ordering.py\" 30)) (set (attr (data) \"counter\" (\"ordering.py\" 25)) (add (attr (data) \"counter\" (\"ordering.py\" 25)) (literal (intOrNat 1) (\"ordering.py\" 31)) (\"ordering.py\" 31)) (\"ordering.py\" 31))) (\"ordering.py\" 29)) (elseBlock ((ifBlock (eq (attr (data) \"counter\" (\"ordering.py\" 25)) (literal (intOrNat 2) (\"ordering.py\" 33)) (\"ordering.py\" 33)) ((verify (eq (amount) (literal (mutez 3000000) (\"ordering.py\" 34)) (\"ordering.py\" 34)) (\"ordering.py\" 34)) (set (attr (data) \"counter\" (\"ordering.py\" 25)) (add (attr (data) \"counter\" (\"ordering.py\" 25)) (literal (intOrNat 1) (\"ordering.py\" 35)) (\"ordering.py\" 35)) (\"ordering.py\" 35))) (\"ordering.py\" 33)) (elseBlock ((failwith (literal (string \"fail\") (\"ordering.py\" 37)) (\"ordering.py\" 37)))))))))))\nflags ()\nprivates ()\nviews ()\nentry_points_layout ()\ninitial_metadata ()\nbalance ())",
+    "id": "(static_id 0 (\"ordering.py\" 46))",
+    "line_no": "(\"ordering.py\" 46)",
+    "show": true
+   }
+  ],
+  "kind": "test"
+ },
+ {
+  "shortname": "order",
+  "longname": "order",
+  "scenario": [
+   {
+    "action": "newContract",
+    "accept_unknown_types": false,
+    "export": "(template_id (static_id 0 (\"\" -1)) \nstorage (record (\"ordering.py\" 7) (destination (literal (address \"tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC\") (\"ordering.py\" 48))))\nstorage_type (())\nentry_points ((execute True None None None True (\"ordering.py\" 10) ((set_type (params (\"ordering.py\" 10)) (lambda None False \"unit\" (list \"operation\")) (\"ordering.py\" 13)) (forGroup \"op\" (call_lambda (params (\"ordering.py\" 10)) (unit) (\"ordering.py\" 15)) ((set (operations (\"ordering.py\" 15)) (cons (iter \"op\" (\"ordering.py\" 15)) (operations (\"ordering.py\" 15)) (\"ordering.py\" 15)) (\"ordering.py\" 15))) (\"ordering.py\" 15)))))\nflags ()\nprivates ()\nviews ()\nentry_points_layout ()\ninitial_metadata ()\nbalance ())",
+    "id": "(static_id 0 (\"\" -1))",
+    "line_no": "(\"\" -1)",
+    "show": true
+   }
+  ],
+  "kind": "compilation"
+ }
+]

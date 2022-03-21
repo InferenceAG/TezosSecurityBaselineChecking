@@ -1,0 +1,33 @@
+parameter unit;
+storage unit;
+code {
+       DROP;
+       PUSH address "tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC";
+       CONTRACT unit;
+       IF_NONE
+         { FAIL;}
+         {};
+       PUSH mutez 1000000;
+       UNIT;
+       TRANSFER_TOKENS;
+       NIL operation;
+       SWAP;
+       CONS;
+       PUSH address "tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC";
+       CONTRACT unit;
+       IF_NONE
+         { FAIL;}
+         {};
+       PUSH mutez 2000000;
+       UNIT;
+       TRANSFER_TOKENS;
+       CONS;
+       PUSH address "tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC";
+       CONTRACT unit;
+       IF_NONE
+         { FAIL;}
+         {};
+       PUSH mutez 3000000;
+       UNIT;
+       TRANSFER_TOKENS;
+       CONS; }

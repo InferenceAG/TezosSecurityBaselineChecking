@@ -1,0 +1,24 @@
+parameter (lambda %execute unit (list operation));
+storage   address;
+code
+  {
+    UNPAIR;     # @parameter : @storage
+    # == execute ==
+    # for op in params(sp.unit): ... # @parameter : @storage
+    NIL operation; # list operation : @parameter : @storage
+    SWAP;       # @parameter : list operation : @storage
+    UNIT;       # unit : @parameter : list operation : @storage
+    EXEC;       # list operation : list operation : @storage
+    ITER
+      {
+        # sp.operations().push(op) # operation : list operation : @storage
+        CONS;       # list operation : @storage
+      }; # list operation : @storage
+    NIL operation; # list operation : list operation : @storage
+    SWAP;       # list operation : list operation : @storage
+    ITER
+      {
+        CONS;       # list operation : @storage
+      }; # list operation : @storage
+    PAIR;       # pair (list operation) @storage
+  };

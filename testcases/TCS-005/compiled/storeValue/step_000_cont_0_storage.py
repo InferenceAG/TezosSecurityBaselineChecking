@@ -1,1 +1,0 @@
-sp.record(magic_one = True, storedValue = 12)
