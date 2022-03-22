@@ -1,0 +1,53 @@
+[
+ {
+  "shortname": "ordering",
+  "longname": "ordering",
+  "scenario": [
+   {
+    "action": "newContract",
+    "accept_unknown_types": false,
+    "export": "(template_id (static_id 0 (\"ordering.py\" 45)) \nstorage (record (\"ordering.py\" 19) (counter (literal (intOrNat 0) (\"ordering.py\" 19))))\nstorage_type (())\nentry_points ((default True None None None False (\"ordering.py\" 22) ((ifBlock (eq (attr (data) \"counter\" (\"ordering.py\" 24)) (literal (intOrNat 0) (\"ordering.py\" 24)) (\"ordering.py\" 24)) ((verify (eq (amount) (literal (mutez 1000000) (\"ordering.py\" 25)) (\"ordering.py\" 25)) (\"ordering.py\" 25)) (set (attr (data) \"counter\" (\"ordering.py\" 24)) (add (attr (data) \"counter\" (\"ordering.py\" 24)) (literal (intOrNat 1) (\"ordering.py\" 26)) (\"ordering.py\" 26)) (\"ordering.py\" 26))) (\"ordering.py\" 24)) (elseBlock ((ifBlock (eq (attr (data) \"counter\" (\"ordering.py\" 24)) (literal (intOrNat 1) (\"ordering.py\" 28)) (\"ordering.py\" 28)) ((verify (eq (amount) (literal (mutez 2000000) (\"ordering.py\" 29)) (\"ordering.py\" 29)) (\"ordering.py\" 29)) (set (attr (data) \"counter\" (\"ordering.py\" 24)) (add (attr (data) \"counter\" (\"ordering.py\" 24)) (literal (intOrNat 1) (\"ordering.py\" 30)) (\"ordering.py\" 30)) (\"ordering.py\" 30))) (\"ordering.py\" 28)) (elseBlock ((ifBlock (eq (attr (data) \"counter\" (\"ordering.py\" 24)) (literal (intOrNat 2) (\"ordering.py\" 32)) (\"ordering.py\" 32)) ((verify (eq (amount) (literal (mutez 3000000) (\"ordering.py\" 33)) (\"ordering.py\" 33)) (\"ordering.py\" 33)) (set (attr (data) \"counter\" (\"ordering.py\" 24)) (add (attr (data) \"counter\" (\"ordering.py\" 24)) (literal (intOrNat 1) (\"ordering.py\" 34)) (\"ordering.py\" 34)) (\"ordering.py\" 34))) (\"ordering.py\" 32)) (elseBlock ((failwith (literal (string \"fail\") (\"ordering.py\" 36)) (\"ordering.py\" 36)))))))))))\nflags ()\nprivates ()\nviews ()\nentry_points_layout ()\ninitial_metadata ()\nbalance ())",
+    "id": "(static_id 0 (\"ordering.py\" 45))",
+    "line_no": "(\"ordering.py\" 45)",
+    "show": true
+   },
+   {
+    "action": "newContract",
+    "accept_unknown_types": false,
+    "export": "(template_id (static_id 1 (\"ordering.py\" 48)) \nstorage (record (\"ordering.py\" 7) (admin (contract_address (static_id 0 (\"ordering.py\" 45)) \"\" (\"ordering.py\" 45))))\nstorage_type (())\nentry_points ((execute True None None None False (\"ordering.py\" 10) ((set (operations (\"ordering.py\" 12)) (cons (transfer (unit) (literal (mutez 1000000) (\"ordering.py\" 12)) (openVariant (contract \"\" \"unit\" (attr (data) \"admin\" (\"ordering.py\" 12)) (\"ordering.py\" 12)) \"Some\" \"None\" (\"ordering.py\" 12)) (\"ordering.py\" 12)) (operations (\"ordering.py\" 12)) (\"ordering.py\" 12)) (\"ordering.py\" 12)) (set (operations (\"ordering.py\" 13)) (cons (transfer (unit) (literal (mutez 2000000) (\"ordering.py\" 13)) (openVariant (contract \"\" \"unit\" (attr (data) \"admin\" (\"ordering.py\" 12)) (\"ordering.py\" 13)) \"Some\" \"None\" (\"ordering.py\" 13)) (\"ordering.py\" 13)) (operations (\"ordering.py\" 13)) (\"ordering.py\" 13)) (\"ordering.py\" 13)) (set (operations (\"ordering.py\" 14)) (cons (transfer (unit) (literal (mutez 3000000) (\"ordering.py\" 14)) (openVariant (contract \"\" \"unit\" (attr (data) \"admin\" (\"ordering.py\" 12)) (\"ordering.py\" 14)) \"Some\" \"None\" (\"ordering.py\" 14)) (\"ordering.py\" 14)) (operations (\"ordering.py\" 14)) (\"ordering.py\" 14)) (\"ordering.py\" 14)))))\nflags ()\nprivates ()\nviews ()\nentry_points_layout ()\ninitial_metadata ()\nbalance (literal (mutez 6000000) (\"ordering.py\" 47)))",
+    "id": "(static_id 1 (\"ordering.py\" 48))",
+    "line_no": "(\"ordering.py\" 48)",
+    "show": true
+   },
+   {
+    "action": "html",
+    "inner": "Ordering",
+    "line_no": "(\"ordering.py\" 50)",
+    "tag": "h1"
+   },
+   {
+    "action": "message",
+    "id": "(static_id 1 (\"ordering.py\" 48))",
+    "line_no": "(\"ordering.py\" 51)",
+    "message": "execute",
+    "params": "(record (\"ordering.py\" 51) )"
+   }
+  ],
+  "kind": "test"
+ },
+ {
+  "shortname": "order",
+  "longname": "order",
+  "scenario": [
+   {
+    "action": "newContract",
+    "accept_unknown_types": false,
+    "export": "(template_id (static_id 0 (\"\" -1)) \nstorage (record (\"ordering.py\" 7) (admin (literal (address \"tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC\") (\"ordering.py\" 53))))\nstorage_type (())\nentry_points ((execute True None None None False (\"ordering.py\" 10) ((set (operations (\"ordering.py\" 12)) (cons (transfer (unit) (literal (mutez 1000000) (\"ordering.py\" 12)) (openVariant (contract \"\" \"unit\" (attr (data) \"admin\" (\"ordering.py\" 12)) (\"ordering.py\" 12)) \"Some\" \"None\" (\"ordering.py\" 12)) (\"ordering.py\" 12)) (operations (\"ordering.py\" 12)) (\"ordering.py\" 12)) (\"ordering.py\" 12)) (set (operations (\"ordering.py\" 13)) (cons (transfer (unit) (literal (mutez 2000000) (\"ordering.py\" 13)) (openVariant (contract \"\" \"unit\" (attr (data) \"admin\" (\"ordering.py\" 12)) (\"ordering.py\" 13)) \"Some\" \"None\" (\"ordering.py\" 13)) (\"ordering.py\" 13)) (operations (\"ordering.py\" 13)) (\"ordering.py\" 13)) (\"ordering.py\" 13)) (set (operations (\"ordering.py\" 14)) (cons (transfer (unit) (literal (mutez 3000000) (\"ordering.py\" 14)) (openVariant (contract \"\" \"unit\" (attr (data) \"admin\" (\"ordering.py\" 12)) (\"ordering.py\" 14)) \"Some\" \"None\" (\"ordering.py\" 14)) (\"ordering.py\" 14)) (operations (\"ordering.py\" 14)) (\"ordering.py\" 14)) (\"ordering.py\" 14)))))\nflags ()\nprivates ()\nviews ()\nentry_points_layout ()\ninitial_metadata ()\nbalance ())",
+    "id": "(static_id 0 (\"\" -1))",
+    "line_no": "(\"\" -1)",
+    "show": true
+   }
+  ],
+  "kind": "compilation"
+ }
+]

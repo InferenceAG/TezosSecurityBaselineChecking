@@ -1,0 +1,35 @@
+parameter unit;
+storage unit;
+code {
+       DROP;
+       UNIT;
+       PUSH address "destinationAddress";
+       CONTRACT unit;
+       IF_NONE
+         { FAIL;}
+         {};
+       PUSH mutez 3000000;
+       UNIT;
+       TRANSFER_TOKENS;
+       NIL operation;
+       SWAP;
+       CONS;
+       PUSH address "destinationAddress";
+       CONTRACT unit;
+       IF_NONE
+         { FAIL;}
+         {};
+       PUSH mutez 2000000;
+       UNIT;
+       TRANSFER_TOKENS;
+       CONS;
+       PUSH address "destinationAddress";
+       CONTRACT unit;
+       IF_NONE
+         { FAIL;}
+         {};
+       PUSH mutez 1000000;
+       UNIT;
+       TRANSFER_TOKENS;
+       CONS; 
+       PAIR; }

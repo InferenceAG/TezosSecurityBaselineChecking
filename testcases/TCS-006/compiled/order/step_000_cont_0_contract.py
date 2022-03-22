@@ -8,7 +8,7 @@ class Contract(sp.Contract):
   @sp.entry_point
   def execute(self, params):
     sp.set_type(params, sp.TLambda(sp.TUnit, sp.TList(sp.TOperation)))
-    sp.for op in params(sp.unit):
+    sp.for op in params(sp.unit).rev():
       sp.operations().push(op)
 
 sp.add_compilation_target("test", Contract())

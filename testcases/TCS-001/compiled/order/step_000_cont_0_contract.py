@@ -1,0 +1,14 @@
+import smartpy as sp
+
+class Contract(sp.Contract):
+  def __init__(self):
+    self.init_type(sp.TRecord(admin = sp.TAddress).layout("admin"))
+    self.init(admin = sp.address('tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC'))
+
+  @sp.entry_point
+  def execute(self):
+    sp.send(self.data.admin, sp.tez(1))
+    sp.send(self.data.admin, sp.tez(2))
+    sp.send(self.data.admin, sp.tez(3))
+
+sp.add_compilation_target("test", Contract())

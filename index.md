@@ -11,6 +11,7 @@
 - [TC-008: BALANCE instruction](./testcases/TC-008/readme.md)
 - [TC-009: Wrong field annotations](./testcases/TC-009/readme.md)
 - [TC-010: Batch operation failing](./testcases/TC-010/readme.md)
+- [TC-011: Operation ordering](./testcases/TC-011/readme.md)
 
 ## Overview of ticket testcases
 - [TC-T-001: Tickets - Duplicate ticket - dup](./testcases/TC-T-001/readme.md)

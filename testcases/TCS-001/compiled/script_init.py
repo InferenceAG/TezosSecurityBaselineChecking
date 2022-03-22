@@ -4,15 +4,14 @@ import smartpy as sp
 class OrderingContract(sp.Contract):
     def __init__(self, address):
         self.init(
-            destination = address
+            admin = address
         )
 
     @sp.entry_point
-    def execute(self, execution_payload):
-        sp.set_type(execution_payload, sp.TLambda(
-            sp.TUnit, sp.TList(sp.TOperation)))
-                
-        sp.add_operations(execution_payload(sp.unit).rev())
+    def execute(self):
+        sp.send(self.data.admin, sp.mutez(1000000))
+        sp.send(self.data.admin, sp.mutez(2000000))
+        sp.send(self.data.admin, sp.mutez(3000000))
 
 class CheckContract(sp.Contract):
     def __init__(self, ):
@@ -44,5 +43,11 @@ if "templates" not in __name__:
         scenario = sp.test_scenario()
         checkContract = CheckContract()
         scenario += checkContract
+        orderingContract = OrderingContract(checkContract.address)
+        orderingContract.set_initial_balance(sp.mutez(6000000))
+        scenario += orderingContract
+        
+        scenario.h1("Ordering")        
+        scenario = orderingContract.execute().run()
 
 sp.add_compilation_target("order", OrderingContract(sp.address("tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC")))

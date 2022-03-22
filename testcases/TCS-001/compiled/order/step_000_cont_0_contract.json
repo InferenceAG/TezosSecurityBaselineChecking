@@ -1,0 +1,43 @@
+[
+  { "prim": "storage", "args": [ { "prim": "address" } ] },
+  { "prim": "parameter", "args": [ { "prim": "unit", "annots": [ "%execute" ] } ] },
+  {
+    "prim": "code",
+    "args": [
+      [
+        { "prim": "CDR" },
+        { "prim": "DUP" },
+        { "prim": "CONTRACT", "args": [ { "prim": "unit" } ] },
+        { "prim": "IF_NONE", "args": [ [ { "prim": "PUSH", "args": [ { "prim": "int" }, { "int": "12" } ] }, { "prim": "FAILWITH" } ], [] ] },
+        { "prim": "NIL", "args": [ { "prim": "operation" } ] },
+        { "prim": "SWAP" },
+        { "prim": "PUSH", "args": [ { "prim": "mutez" }, { "int": "1000000" } ] },
+        { "prim": "UNIT" },
+        { "prim": "TRANSFER_TOKENS" },
+        { "prim": "CONS" },
+        { "prim": "SWAP" },
+        { "prim": "DUP" },
+        { "prim": "DUG", "args": [ { "int": "2" } ] },
+        { "prim": "CONTRACT", "args": [ { "prim": "unit" } ] },
+        { "prim": "IF_NONE", "args": [ [ { "prim": "PUSH", "args": [ { "prim": "int" }, { "int": "13" } ] }, { "prim": "FAILWITH" } ], [] ] },
+        { "prim": "PUSH", "args": [ { "prim": "mutez" }, { "int": "2000000" } ] },
+        { "prim": "UNIT" },
+        { "prim": "TRANSFER_TOKENS" },
+        { "prim": "CONS" },
+        { "prim": "SWAP" },
+        { "prim": "DUP" },
+        { "prim": "DUG", "args": [ { "int": "2" } ] },
+        { "prim": "CONTRACT", "args": [ { "prim": "unit" } ] },
+        { "prim": "IF_NONE", "args": [ [ { "prim": "PUSH", "args": [ { "prim": "int" }, { "int": "14" } ] }, { "prim": "FAILWITH" } ], [] ] },
+        { "prim": "PUSH", "args": [ { "prim": "mutez" }, { "int": "3000000" } ] },
+        { "prim": "UNIT" },
+        { "prim": "TRANSFER_TOKENS" },
+        { "prim": "CONS" },
+        { "prim": "NIL", "args": [ { "prim": "operation" } ] },
+        { "prim": "SWAP" },
+        { "prim": "ITER", "args": [ [ { "prim": "CONS" } ] ] },
+        { "prim": "PAIR" }
+      ]
+    ]
+  }
+]

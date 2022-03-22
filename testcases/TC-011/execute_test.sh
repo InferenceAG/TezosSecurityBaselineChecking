@@ -7,19 +7,14 @@ head -n 1 readme.md
 case $1 in
 	*)
 		echo "executing tests for $1"
-		$SMARTPY compile ordering.py compiled/ --purge
-		storage=$(cat ./compiled/order/step_000_cont_0_storage.tz)
-		$TEZOSCLIENT originate contract ordering_external_lambda transferring 6 from deploy running ./compiled/order/step_000_cont_0_contract.tz --init $storage --burn-cap 0.2 --force >out.tmp 2>&1
-		
-		# CONS is prepending an item to a list.
-		# Thus, the generated list of operations from the lambda is: { tez_1_transfer; tez_2_transfer; tez_3_transfer }
-		lambda="{DROP; PUSH address myDestination; CONTRACT unit; IF_NONE { FAIL;} {}; PUSH mutez 3000000; UNIT; TRANSFER_TOKENS; NIL operation; SWAP; CONS; PUSH address myDestination; CONTRACT unit; IF_NONE { FAIL;} {}; PUSH mutez 2000000; UNIT; TRANSFER_TOKENS; CONS; PUSH address myDestination; CONTRACT unit; IF_NONE { FAIL;} {}; PUSH mutez 1000000; UNIT; TRANSFER_TOKENS; CONS;}"
 		admin=""\"$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')\"""
 
-		lambdaAddr=$(echo $lambda | sed "s/myDestination/$admin/g")
-		#echo $lambdaAddr
+		sed "s/destinationAddress/$admin/g" ordering_temp.tz > ordering.tz
+		
+		$TEZOSCLIENT originate contract ordering_basic transferring 6 from deploy running ordering.tz --burn-cap 0.2 --force >out.tmp 2>&1
+		
 
-		$TEZOSCLIENT transfer 0 from admin to ordering_external_lambda --entrypoint 'default' --arg "$lambdaAddr" >result.tmp 2>&1
+		$TEZOSCLIENT transfer 0 from admin to ordering_basic --entrypoint 'default' >result.tmp 2>&1
 
 		### Note!!!
 		### The test is also successful, if the transaction fails, since the following check does verify whether also failed operations are in the correct order.

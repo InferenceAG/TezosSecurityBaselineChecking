@@ -5,6 +5,6 @@ Creating contract KT1TezoooozzSmartPyzzSTATiCzzzwwBFA1
  => compiled/order/step_000_cont_0_sizes.csv 2
  => compiled/order/step_000_cont_0_storage.py 1
  => compiled/order/step_000_cont_0_types.py 7
- => compiled/order/step_000_cont_0_contract.tz 30
- => compiled/order/step_000_cont_0_contract.json 24
+ => compiled/order/step_000_cont_0_contract.tz 59
+ => compiled/order/step_000_cont_0_contract.json 43
  => compiled/order/step_000_cont_0_contract.py 14
