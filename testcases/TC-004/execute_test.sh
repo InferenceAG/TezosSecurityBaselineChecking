@@ -5,7 +5,7 @@
 head -n 1 readme.md
 
 case $1 in
-	ithaca)
+	ithaca | jakarta)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract mutezUnderflow transferring 0 from deploy running mutezUnderflow-ithaca.tz --init '0' --burn-cap 0.5 --force >out.tmp 2>&1 
 		$TEZOSCLIENT transfer 0 from deploy to mutezUnderflow --entrypoint "default" --arg 'Unit' >result.tmp 2>&1 
@@ -18,4 +18,4 @@ case $1 in
 		checkResult result.tmp "Underflowing subtraction of 0.000001 tez and 0.000002 tez"
 		;;
 esac
-rm *.tmp
+#rm *.tmp

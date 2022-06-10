@@ -1,5 +1,5 @@
 testcases/python-env
-*.tmp
+*.tmp.*
 *.swp
 *TODO*
 

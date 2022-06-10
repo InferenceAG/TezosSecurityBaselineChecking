@@ -1,0 +1,31 @@
+Node is bootstrapped.
+This simulation failed:
+  Manager signed operations:
+    From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+    Fee to the baker: ꜩ0
+    Expected counter: 214581
+    Gas limit: 1040000
+    Storage limit: 60000 bytes
+    Origination:
+      From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+      Credit: ꜩ0
+      Script:
+        { parameter unit ;
+          storage unit ;
+          code { DROP ; UNIT ; NIL operation ; PAIR } ;
+          view "rogue" unit nat { DUP 2 ; DROP ; DROP ; PUSH nat 1 } }
+        Initial storage: Unit
+        No delegate for this contract
+        This operation FAILED.
+
+Ill typed contract:
+  1: { parameter unit ;
+  2:   storage unit ;
+  3:   code { DROP ; UNIT ; NIL operation ; PAIR } ;
+  4:   view "rogue" unit nat { DUP 2 ; DROP ; DROP ; PUSH nat 1 } }
+{ "id": "proto.013-PtJakart.michelson_v1.bad_dupn_stack",
+  "description": "Stack present when typing DUP n was too short",
+  "data": { "loc": 17 } }
+At line 4 characters 26 to 31, wrong stack type for instruction DUP: [].
+Fatal error:
+  origination simulation failed

@@ -12,7 +12,7 @@ class OrderingContract(sp.Contract):
         sp.set_type(execution_payload, sp.TLambda(
             sp.TUnit, sp.TList(sp.TOperation)))
                 
-        sp.add_operations(execution_payload(sp.unit).rev())
+        sp.add_operations(execution_payload(sp.unit))
 
 class CheckContract(sp.Contract):
     def __init__(self, ):

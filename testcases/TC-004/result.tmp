@@ -1,0 +1,29 @@
+Node is bootstrapped.
+This simulation failed:
+  Manager signed operations:
+    From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+    Fee to the baker: ꜩ0
+    Expected counter: 214543
+    Gas limit: 1040000
+    Storage limit: 60000 bytes
+    Transaction:
+      Amount: ꜩ0
+      From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+      To: KT1TrbF5hHqrhAd4VZGhj9izgrNQSbtGgKHh
+      This operation FAILED.
+
+Runtime error in contract KT1TrbF5hHqrhAd4VZGhj9izgrNQSbtGgKHh:
+  1: { parameter unit ;
+  2:   storage mutez ;
+  3:   code { DROP ;
+  4:          PUSH mutez 2 ;
+  5:          PUSH mutez 1 ;
+  6:          SUB_MUTEZ ;
+  7:          ASSERT_SOME ;
+  8:          NIL operation ;
+  9:          PAIR } }
+At line 7 characters 9 to 20,
+script reached FAILWITH instruction
+with Unit
+Fatal error:
+  transfer simulation failed

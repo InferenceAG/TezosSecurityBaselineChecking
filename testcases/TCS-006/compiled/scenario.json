@@ -21,7 +21,7 @@
    {
     "action": "newContract",
     "accept_unknown_types": false,
-    "export": "(template_id (static_id 0 (\"\" -1)) \nstorage (record (\"ordering.py\" 7) (destination (literal (address \"tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC\") (\"ordering.py\" 48))))\nstorage_type (())\nentry_points ((execute True None None None True (\"ordering.py\" 10) ((set_type (params (\"ordering.py\" 10)) (lambda None False \"unit\" (list \"operation\")) (\"ordering.py\" 13)) (forGroup \"op\" (rev (call_lambda (params (\"ordering.py\" 10)) (unit) (\"ordering.py\" 15)) (\"ordering.py\" 15)) ((set (operations (\"ordering.py\" 15)) (cons (iter \"op\" (\"ordering.py\" 15)) (operations (\"ordering.py\" 15)) (\"ordering.py\" 15)) (\"ordering.py\" 15))) (\"ordering.py\" 15)))))\nflags ()\nprivates ()\nviews ()\nentry_points_layout ()\ninitial_metadata ()\nbalance ())",
+    "export": "(template_id (static_id 0 (\"\" -1)) \nstorage (record (\"ordering.py\" 7) (destination (literal (address \"tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC\") (\"ordering.py\" 48))))\nstorage_type (())\nentry_points ((execute True None None None True (\"ordering.py\" 10) ((set_type (params (\"ordering.py\" 10)) (lambda None False \"unit\" (list \"operation\")) (\"ordering.py\" 13)) (forGroup \"op\" (call_lambda (params (\"ordering.py\" 10)) (unit) (\"ordering.py\" 15)) ((set (operations (\"ordering.py\" 15)) (cons (iter \"op\" (\"ordering.py\" 15)) (operations (\"ordering.py\" 15)) (\"ordering.py\" 15)) (\"ordering.py\" 15))) (\"ordering.py\" 15)))))\nflags ()\nprivates ()\nviews ()\nentry_points_layout ()\ninitial_metadata ()\nbalance ())",
     "id": "(static_id 0 (\"\" -1))",
     "line_no": "(\"\" -1)",
     "show": true

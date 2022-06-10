@@ -1,0 +1,97 @@
+Node is bootstrapped.
+This simulation failed:
+  Manager signed operations:
+    From: tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh
+    Fee to the baker: ꜩ0
+    Expected counter: 214469
+    Gas limit: 1040000
+    Storage limit: 60000 bytes
+    Transaction:
+      Amount: ꜩ0
+      From: tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh
+      To: KT1X4Xu4RdXCF28ULjCTfiQtxg273A1rSX7J
+      Entrypoint: payout
+      Parameter: (Pair 3000000 "KT1SeWDmU5A3YR1yZ2B7KWuicPUKLsSuNraj")
+      This transaction was BACKTRACKED, its expected effects (as follow) were NOT applied.
+      Updated storage:
+        (Pair 0x00003820a06c0f67e091c4c7cc1df2a7c2c1de60d918 4000000)
+      Storage size: 468 bytes
+      Consumed gas: 3567.358
+    Internal operations:
+      Transaction:
+        Amount: ꜩ3
+        From: KT1X4Xu4RdXCF28ULjCTfiQtxg273A1rSX7J
+        To: KT1SeWDmU5A3YR1yZ2B7KWuicPUKLsSuNraj
+        This transaction was BACKTRACKED, its expected effects (as follow) were NOT applied.
+        Updated storage: Unit
+        Storage size: 200 bytes
+        Consumed gas: 1673.294
+        Balance updates:
+          KT1X4Xu4RdXCF28ULjCTfiQtxg273A1rSX7J ... -ꜩ3
+          KT1SeWDmU5A3YR1yZ2B7KWuicPUKLsSuNraj ... +ꜩ3
+      Transaction:
+        Amount: ꜩ0
+        From: KT1SeWDmU5A3YR1yZ2B7KWuicPUKLsSuNraj
+        To: KT1X4Xu4RdXCF28ULjCTfiQtxg273A1rSX7J
+        Entrypoint: payout
+        Parameter: (Pair 3000000 0x0000d6a3c0c24bdd6c7f1b557e6a8176427a8b9cf5ec)
+        This operation FAILED.
+
+Runtime error in contract KT1X4Xu4RdXCF28ULjCTfiQtxg273A1rSX7J:
+  01: { parameter (or (pair %adminPayout mutez address) (pair %payout mutez address)) ;
+  02:   storage (pair address mutez) ;
+  03:   code { UNPAIR ;
+  04:          IF_LEFT
+  05:            { SWAP ;
+  06:              DUP ;
+  07:              CAR ;
+  08:              SENDER ;
+  09:              COMPARE ;
+  10:              EQ ;
+  11:              IF {} { PUSH string "failed assertion" ; FAILWITH } ;
+  12:              SWAP ;
+  13:              DUP ;
+  14:              DUG 2 ;
+  15:              CDR ;
+  16:              CONTRACT unit ;
+  17:              IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+  18:              DIG 2 ;
+  19:              CAR ;
+  20:              UNIT ;
+  21:              TRANSFER_TOKENS ;
+  22:              SWAP ;
+  23:              NIL operation ;
+  24:              DIG 2 ;
+  25:              CONS ;
+  26:              PAIR }
+  27:            { SWAP ;
+  28:              DUP ;
+  29:              CDR ;
+  30:              DUP 3 ;
+  31:              CAR ;
+  32:              BALANCE ;
+  33:              SUB_MUTEZ ;
+  34:              ASSERT_SOME ;
+  35:              COMPARE ;
+  36:              GE ;
+  37:              IF {} { PUSH string "failed assertion" ; FAILWITH } ;
+  38:              SWAP ;
+  39:              DUP ;
+  40:              DUG 2 ;
+  41:              CDR ;
+  42:              CONTRACT unit ;
+  43:              IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+  44:              DIG 2 ;
+  45:              CAR ;
+  46:              UNIT ;
+  47:              TRANSFER_TOKENS ;
+  48:              SWAP ;
+  49:              NIL operation ;
+  50:              DIG 2 ;
+  51:              CONS ;
+  52:              PAIR } } }
+At line 37 characters 54 to 62,
+script reached FAILWITH instruction
+with "failed assertion"
+Fatal error:
+  transfer simulation failed

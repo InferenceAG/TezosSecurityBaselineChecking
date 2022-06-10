@@ -1,0 +1,72 @@
+Node is bootstrapped.
+Estimated gas: 1494.537 units (will add 100 for safety)
+Estimated storage: 511 bytes added (will add 20 for safety)
+Operation successfully injected in the node.
+Operation hash is 'ooCvdjtBJrewnAxn1pkE6Q6vmC87zWiRioDa9Qc2KUnCkX7MUEN'
+Waiting for the operation to be included...
+Operation found in block: BM8MNnVXmE6mNz2wemEkTKr4fFMwJ6v7RjXbb7zPSokwoMqdL9V (pass: 3, offset: 0)
+This sequence of operations was run:
+  Manager signed operations:
+    From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+    Fee to the baker: ꜩ0.000688
+    Expected counter: 214560
+    Gas limit: 1595
+    Storage limit: 531 bytes
+    Balance updates:
+      tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B ... -ꜩ0.000688
+      payload fees(the block proposer) ....... +ꜩ0.000688
+    Origination:
+      From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+      Credit: ꜩ6
+      Script:
+        { parameter unit ;
+          storage unit ;
+          code { DROP ;
+                 UNIT ;
+                 PUSH address "tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh" ;
+                 CONTRACT unit ;
+                 IF_NONE { FAIL } {} ;
+                 PUSH mutez 3000000 ;
+                 UNIT ;
+                 TRANSFER_TOKENS ;
+                 NIL operation ;
+                 SWAP ;
+                 CONS ;
+                 PUSH address "tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh" ;
+                 CONTRACT unit ;
+                 IF_NONE { FAIL } {} ;
+                 PUSH mutez 2000000 ;
+                 UNIT ;
+                 TRANSFER_TOKENS ;
+                 CONS ;
+                 PUSH address "tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh" ;
+                 CONTRACT unit ;
+                 IF_NONE { FAIL } {} ;
+                 PUSH mutez 1000000 ;
+                 UNIT ;
+                 TRANSFER_TOKENS ;
+                 CONS ;
+                 PAIR } }
+        Initial storage: Unit
+        No delegate for this contract
+        This origination was successfully applied
+        Originated contracts:
+          KT19SCEYadGvm3vwyG3KYUV4ft9wCZmZ6jdE
+        Storage size: 254 bytes
+        Paid storage size diff: 254 bytes
+        Consumed gas: 1494.537
+        Balance updates:
+          tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B ... -ꜩ0.0635
+          storage fees ........................... +ꜩ0.0635
+          tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B ... -ꜩ0.06425
+          storage fees ........................... +ꜩ0.06425
+          tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B ... -ꜩ6
+          KT19SCEYadGvm3vwyG3KYUV4ft9wCZmZ6jdE ... +ꜩ6
+
+New contract KT19SCEYadGvm3vwyG3KYUV4ft9wCZmZ6jdE originated.
+The operation has only been included 0 blocks ago.
+We recommend to wait more.
+Use command
+  tezos-client wait for ooCvdjtBJrewnAxn1pkE6Q6vmC87zWiRioDa9Qc2KUnCkX7MUEN to be included --confirmations 1 --branch BLPPufcwsThHSjg6C2Ke4ZYuoxrCtJqSPkDKszd3ihdDgUcxKSf
+and/or an external block explorer.
+Contract memorized as ordering_basic.

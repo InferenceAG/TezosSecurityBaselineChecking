@@ -7,8 +7,8 @@ head -n 1 readme.md
 case $1 in
 	*)
 		echo "executing tests for $1"
-		admin=""\"$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')\"""
-
+		admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
+		
 		sed "s/destinationAddress/$admin/g" ordering_temp.tz > ordering.tz
 		
 		$TEZOSCLIENT originate contract ordering_basic transferring 6 from deploy running ordering.tz --burn-cap 0.2 --force >out.tmp 2>&1

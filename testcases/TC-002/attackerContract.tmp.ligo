@@ -6,11 +6,11 @@
     function main (const _action : unit; const store : unit): (list(operation) * unit) is
     block {
         const pa: payoutParam = record 
-            destination = ("tz1PA7negGe2fBpPKAMSWii3mwh2Gt1LCffs":address);
+            destination = ("tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B":address);
             amount = 3tez;
         end;
 
-        const dest : contract(payoutParam) = case (Tezos.get_entrypoint_opt("%payout", ("KT1Xp6jzrNqHWmG9FjnMaQT2irRUzQKNX2gW":address)) : option(contract(payoutParam))) of 
+        const dest : contract(payoutParam) = case (Tezos.get_entrypoint_opt("%payout", ("KT1X4Xu4RdXCF28ULjCTfiQtxg273A1rSX7J":address)) : option(contract(payoutParam))) of 
         | None -> failwith("none")
         | Some(x) -> x
         end;

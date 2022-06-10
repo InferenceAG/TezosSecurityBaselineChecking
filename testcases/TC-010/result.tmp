@@ -1,0 +1,62 @@
+Node is bootstrapped.
+This simulation failed:
+  Manager signed operations:
+    From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+    Fee to the baker: ꜩ0
+    Expected counter: 214560
+    Gas limit: 1040000
+    Storage limit: 60000 bytes
+    Transaction:
+      Amount: ꜩ0
+      From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+      To: KT1GZR1rC3XK6pYngEEjuFcix6THVJAj69Bn
+      Entrypoint: add
+      Parameter: 2
+      This transaction was BACKTRACKED, its expected effects (as follow) were NOT applied.
+      Updated storage: 2
+      Storage size: 130 bytes
+      Consumed gas: 2121.811
+  Manager signed operations:
+    From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+    Fee to the baker: ꜩ0
+    Expected counter: 214561
+    Gas limit: 1040000
+    Storage limit: 60000 bytes
+    Transaction:
+      Amount: ꜩ0
+      From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+      To: KT1GZR1rC3XK6pYngEEjuFcix6THVJAj69Bn
+      Entrypoint: sub
+      Parameter: 4
+      This operation FAILED.
+  Manager signed operations:
+    From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+    Fee to the baker: ꜩ0
+    Expected counter: 214562
+    Gas limit: 1040000
+    Storage limit: 60000 bytes
+    Transaction:
+      Amount: ꜩ0
+      From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+      To: KT1GZR1rC3XK6pYngEEjuFcix6THVJAj69Bn
+      Entrypoint: add
+      Parameter: 3
+      This operation was skipped
+
+Runtime error in contract KT1GZR1rC3XK6pYngEEjuFcix6THVJAj69Bn:
+  01: { parameter (or (nat %add) (nat %sub)) ;
+  02:   storage nat ;
+  03:   code { UNPAIR ;
+  04:          IF_LEFT
+  05:            { ADD ; NIL operation ; PAIR }
+  06:            { SWAP ;
+  07:              SUB ;
+  08:              ISNAT ;
+  09:              IF_NONE { PUSH string "substraction_below_zero" ; FAILWITH } {} ;
+  10:              NIL operation ;
+  11:              PAIR } } }
+At line 9 characters 63 to 71,
+script reached FAILWITH instruction
+with "substraction_below_zero"
+Fatal error:
+  multiple transfers simulation failed

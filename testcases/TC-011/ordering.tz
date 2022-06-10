@@ -3,7 +3,7 @@ storage unit;
 code {
        DROP;
        UNIT;
-       PUSH address ""tz1TCrX85gdmRTB29LV2dNNmGEcypbawxdMh"";
+       PUSH address "tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh";
        CONTRACT unit;
        IF_NONE
          { FAIL;}
@@ -14,7 +14,7 @@ code {
        NIL operation;
        SWAP;
        CONS;
-       PUSH address ""tz1TCrX85gdmRTB29LV2dNNmGEcypbawxdMh"";
+       PUSH address "tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh";
        CONTRACT unit;
        IF_NONE
          { FAIL;}
@@ -23,7 +23,7 @@ code {
        UNIT;
        TRANSFER_TOKENS;
        CONS;
-       PUSH address ""tz1TCrX85gdmRTB29LV2dNNmGEcypbawxdMh"";
+       PUSH address "tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh";
        CONTRACT unit;
        IF_NONE
          { FAIL;}

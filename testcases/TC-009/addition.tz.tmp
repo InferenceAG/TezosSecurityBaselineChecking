@@ -1,0 +1,152 @@
+{ parameter
+    (or (or (or (pair %add (nat %valueA) (nat %valueB)) (pair %addNoAnnot nat nat))
+            (or (pair %addWrongAnnot (nat %a) (nat %b))
+                (pair %call (string %entrypoint) (pair %param (nat %valueA) (nat %valueB)))))
+        (or (pair %callNoAnnot (string %entrypoint) (pair %param nat nat))
+            (pair %callWrongAnnot (string %entrypoint) (pair %param (nat %a) (nat %b))))) ;
+  storage nat ;
+  code { UNPAIR ;
+         IF_LEFT
+           { IF_LEFT
+               { IF_LEFT
+                   { SWAP ; DROP ; UNPAIR ; ADD ; NIL operation ; PAIR }
+                   { SWAP ; DROP ; UNPAIR ; ADD ; NIL operation ; PAIR } }
+               { IF_LEFT
+                   { SWAP ; DROP ; UNPAIR ; ADD ; NIL operation ; PAIR }
+                   { SWAP ;
+                     NIL operation ;
+                     PUSH string "Add" ;
+                     DUP 4 ;
+                     CAR ;
+                     COMPARE ;
+                     EQ ;
+                     IF { SELF_ADDRESS ;
+                          CONTRACT %add (pair (nat %valueA) (nat %valueB)) ;
+                          IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+                          PUSH mutez 0 ;
+                          DUP 5 ;
+                          CDR ;
+                          TRANSFER_TOKENS ;
+                          CONS }
+                        {} ;
+                     PUSH string "AddNoAnnot" ;
+                     DUP 4 ;
+                     CAR ;
+                     COMPARE ;
+                     EQ ;
+                     IF { SELF_ADDRESS ;
+                          CONTRACT %addNoAnnot (pair (nat %valueA) (nat %valueB)) ;
+                          IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+                          PUSH mutez 0 ;
+                          DUP 5 ;
+                          CDR ;
+                          TRANSFER_TOKENS ;
+                          CONS }
+                        {} ;
+                     PUSH string "AddWrongAnnot" ;
+                     DUP 4 ;
+                     CAR ;
+                     COMPARE ;
+                     EQ ;
+                     IF { SELF_ADDRESS ;
+                          CONTRACT %addWrongAnnot (pair (nat %valueA) (nat %valueB)) ;
+                          IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+                          PUSH mutez 0 ;
+                          DIG 4 ;
+                          CDR ;
+                          TRANSFER_TOKENS ;
+                          CONS }
+                        { DIG 2 ; DROP } ;
+                     PAIR } } }
+           { IF_LEFT
+               { SWAP ;
+                 NIL operation ;
+                 PUSH string "Add" ;
+                 DUP 4 ;
+                 CAR ;
+                 COMPARE ;
+                 EQ ;
+                 IF { SELF_ADDRESS ;
+                      CONTRACT %add (pair nat nat) ;
+                      IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+                      PUSH mutez 0 ;
+                      DUP 5 ;
+                      CDR ;
+                      TRANSFER_TOKENS ;
+                      CONS }
+                    {} ;
+                 PUSH string "AddNoAnnot" ;
+                 DUP 4 ;
+                 CAR ;
+                 COMPARE ;
+                 EQ ;
+                 IF { SELF_ADDRESS ;
+                      CONTRACT %addNoAnnot (pair nat nat) ;
+                      IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+                      PUSH mutez 0 ;
+                      DUP 5 ;
+                      CDR ;
+                      TRANSFER_TOKENS ;
+                      CONS }
+                    {} ;
+                 PUSH string "AddWrongAnnot" ;
+                 DUP 4 ;
+                 CAR ;
+                 COMPARE ;
+                 EQ ;
+                 IF { SELF_ADDRESS ;
+                      CONTRACT %addWrongAnnot (pair nat nat) ;
+                      IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+                      PUSH mutez 0 ;
+                      DIG 4 ;
+                      CDR ;
+                      TRANSFER_TOKENS ;
+                      CONS }
+                    { DIG 2 ; DROP } ;
+                 PAIR }
+               { SWAP ;
+                 NIL operation ;
+                 PUSH string "Add" ;
+                 DUP 4 ;
+                 CAR ;
+                 COMPARE ;
+                 EQ ;
+                 IF { SELF_ADDRESS ;
+                      CONTRACT %add (pair (nat %a) (nat %b)) ;
+                      IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+                      PUSH mutez 0 ;
+                      DUP 5 ;
+                      CDR ;
+                      TRANSFER_TOKENS ;
+                      CONS }
+                    {} ;
+                 PUSH string "AddNoAnnot" ;
+                 DUP 4 ;
+                 CAR ;
+                 COMPARE ;
+                 EQ ;
+                 IF { SELF_ADDRESS ;
+                      CONTRACT %addNoAnnot (pair (nat %a) (nat %b)) ;
+                      IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+                      PUSH mutez 0 ;
+                      DUP 5 ;
+                      CDR ;
+                      TRANSFER_TOKENS ;
+                      CONS }
+                    {} ;
+                 PUSH string "AddWrongAnnot" ;
+                 DUP 4 ;
+                 CAR ;
+                 COMPARE ;
+                 EQ ;
+                 IF { SELF_ADDRESS ;
+                      CONTRACT %addWrongAnnot (pair (nat %a) (nat %b)) ;
+                      IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+                      PUSH mutez 0 ;
+                      DIG 4 ;
+                      CDR ;
+                      TRANSFER_TOKENS ;
+                      CONS }
+                    { DIG 2 ; DROP } ;
+                 PAIR } } } }
+
