@@ -17,10 +17,13 @@ case $1 in
 		$TEZOSCLIENT multiple transfers from deploy using transaction.tmp.json > result.tmp 2>&1
 		
 		# TODO: Improve. Check order, etc.
-		checkResult result.tmp "      This transaction was BACKTRACKED, its expected effects (as follow) were NOT applied."
-		checkResult result.tmp "      This operation FAILED."	
-		checkResult result.tmp "      This operation was skipped"
+		#checkResult result.tmp "      This transaction was BACKTRACKED, its expected effects (as follow) were NOT applied."
+                checkResult result.tmp "      This transaction was BACKTRACKED, its expected effects were NOT applied."
 
+		checkResult result.tmp "      This operation FAILED."	
+
+		#checkResult result.tmp "      This operation was skipped"
+                checkResult result.tmp "      This operation was skipped."
 		;;
 esac
 #rm *.tmp

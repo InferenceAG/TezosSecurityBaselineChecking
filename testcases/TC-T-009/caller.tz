@@ -10,7 +10,7 @@
              SWAP ;
              NIL operation ;
              DIG 2 ;
-             CONS ;
-             PAIR }
-           { SWAP ; DROP ; NIL operation ; PAIR } } }
+             CONS }
+           { SWAP ; DROP ; NIL operation } ;
+         PAIR } }
 

@@ -1,13 +1,15 @@
 #!/bin/bash/
 # SmartPy
-export SMARTPY=/home/user/smartpy-cli/SmartPy.sh
+#export SMARTPY=/home/user/smartpy-cli/SmartPy.sh
+export SMARTPY=/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/SmartPy.sh
 
 # Ligo
 #export LIGO=/home/user/ligo/ligo-20211215-1acb57254d3b46dce1a2cdf34283564a2a36f084
 export LIGO=/home/user/ligo/ligo-20220113-d1f2b59c70c5a6ffca9006773f538afd0cda7af0
 
 # Tezos
-export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Jakarta -E http://10.30.0.200:44444/"
+export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Kathmandu -E https://kathmandunet.smartpy.io/"
+#export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Jakarta -E https://jakartanet.smartpy.io/"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Ithaca -E https://ithacanet.smartpy.io/"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Flextesa -E http://10.137.0.18:20000/"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Hangzhou -E https://hangzhounet.smartpy.io/"

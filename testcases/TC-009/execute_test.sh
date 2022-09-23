@@ -31,7 +31,7 @@ case $1 in
 		# Calling Michelson code: CONTRACT %addWrongAnnot (pair (nat %valueA) (nat %valueB)) ;
 		echo "testcase 3"
 		$TEZOSCLIENT transfer 0 from deploy to addition --entrypoint 'call' --arg "(Pair \"AddWrongAnnot\" (Pair 1 2))" > result3.tmp 2>&1
-		checkResult result4.tmp "The operation has only been included 0 blocks ago."
+		checkResult result3.tmp "The operation has only been included 0 blocks ago."
 
 		# Case 4: This works
 		# Calls entrypoint: (pair %add (nat %valueA) (nat %valueB))

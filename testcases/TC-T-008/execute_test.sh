@@ -15,4 +15,4 @@ case $1 in
 		checkResult result.tmp "script reached FAILWITH instruction"
 		;;
 esac
-rm *.tmp
+#rm *.tmp

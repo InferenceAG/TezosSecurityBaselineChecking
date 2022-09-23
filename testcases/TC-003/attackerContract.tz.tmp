@@ -1,11 +1,11 @@
 { parameter unit ;
   storage unit ;
   code { CDR ;
-         PUSH address "KT1TYav7dE6vhw89AyZgjYCanpKciBHpegRW" ;
+         PUSH address "KT1Q1D728SJ8oBodUH6qPfjcAgtuRdTBch6p" ;
          CONTRACT %payout (pair (mutez %amount) (address %destination)) ;
          IF_NONE { PUSH string "none" ; FAILWITH } {} ;
          PUSH mutez 0 ;
-         PUSH address "tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B" ;
+         PUSH address "tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m" ;
          PUSH mutez 3000000 ;
          PAIR ;
          TRANSFER_TOKENS ;

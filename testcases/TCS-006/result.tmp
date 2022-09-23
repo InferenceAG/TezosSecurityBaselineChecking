@@ -1,26 +1,26 @@
 Node is bootstrapped.
-Estimated gas: 6513.962 units (will add 100 for safety)
+Estimated gas: 5154.205 units (will add 100 for safety)
 Estimated storage: no bytes added
 Operation successfully injected in the node.
-Operation hash is 'oohdvf6g4bNiNn5xMMzQXFmPD7KbheHJssb35daAMp3AaFZaiG7'
+Operation hash is 'opQmuFWpRnmoYCYwj29HYxiCYWYcPYvsjJXyZQ96o2P7uTkhxAd'
 Waiting for the operation to be included...
-Operation found in block: BMbd2JKbJ39MCiJ4oAxg2ECFEYY5q5yTdGLjWdJqJQk5hZkekVC (pass: 3, offset: 0)
+Operation found in block: BL2Sv7ogdCwUF5B4x3GUnDJN3Pr37QnFoZ4dQZCdVtu648q4upt (pass: 3, offset: 3)
 This sequence of operations was run:
   Manager signed operations:
-    From: tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh
-    Fee to the baker: ꜩ0.001184
-    Expected counter: 214474
-    Gas limit: 6614
+    From: tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW
+    Fee to the baker: ꜩ0.001048
+    Expected counter: 272992
+    Gas limit: 5255
     Storage limit: 0 bytes
     Balance updates:
-      tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh ... -ꜩ0.001184
-      payload fees(the block proposer) ....... +ꜩ0.001184
+      tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW ... -ꜩ0.001048
+      payload fees(the block proposer) ....... +ꜩ0.001048
     Transaction:
       Amount: ꜩ0
-      From: tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh
-      To: KT1Mp2pZpgcvZZrycZ9HM2LChTyGirSocZS1
+      From: tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW
+      To: KT1Uh9XPu4Pj9oWBhjgWTdVwztgVJYM1Wk18
       Parameter: { DROP ;
-                   PUSH address "tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh" ;
+                   PUSH address "tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW" ;
                    CONTRACT unit ;
                    IF_NONE { { UNIT ; FAILWITH } } {} ;
                    PUSH mutez 3000000 ;
@@ -29,14 +29,14 @@ This sequence of operations was run:
                    NIL operation ;
                    SWAP ;
                    CONS ;
-                   PUSH address "tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh" ;
+                   PUSH address "tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW" ;
                    CONTRACT unit ;
                    IF_NONE { { UNIT ; FAILWITH } } {} ;
                    PUSH mutez 2000000 ;
                    UNIT ;
                    TRANSFER_TOKENS ;
                    CONS ;
-                   PUSH address "tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh" ;
+                   PUSH address "tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW" ;
                    CONTRACT unit ;
                    IF_NONE { { UNIT ; FAILWITH } } {} ;
                    PUSH mutez 1000000 ;
@@ -46,38 +46,38 @@ This sequence of operations was run:
       This transaction was successfully applied
       Updated storage: 0x0000c95792b0ea794e0fbbb5f6831b70640594efc621
       Storage size: 111 bytes
-      Consumed gas: 2163.962
-    Internal operations:
-      Transaction:
-        Amount: ꜩ1
-        From: KT1Mp2pZpgcvZZrycZ9HM2LChTyGirSocZS1
-        To: tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh
-        This transaction was successfully applied
-        Consumed gas: 1450
-        Balance updates:
-          KT1Mp2pZpgcvZZrycZ9HM2LChTyGirSocZS1 ... -ꜩ1
-          tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh ... +ꜩ1
-      Transaction:
-        Amount: ꜩ2
-        From: KT1Mp2pZpgcvZZrycZ9HM2LChTyGirSocZS1
-        To: tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh
-        This transaction was successfully applied
-        Consumed gas: 1450
-        Balance updates:
-          KT1Mp2pZpgcvZZrycZ9HM2LChTyGirSocZS1 ... -ꜩ2
-          tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh ... +ꜩ2
-      Transaction:
-        Amount: ꜩ3
-        From: KT1Mp2pZpgcvZZrycZ9HM2LChTyGirSocZS1
-        To: tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh
-        This transaction was successfully applied
-        Consumed gas: 1450
-        Balance updates:
-          KT1Mp2pZpgcvZZrycZ9HM2LChTyGirSocZS1 ... -ꜩ3
-          tz1QkocoQpjahs6GmBk6eJMfM1RWwu2u1QXh ... +ꜩ3
+      Consumed gas: 2154.205
+      Internal operations:
+        Internal Transaction:
+          Amount: ꜩ1
+          From: KT1Uh9XPu4Pj9oWBhjgWTdVwztgVJYM1Wk18
+          To: tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW
+          This transaction was successfully applied
+          Consumed gas: 1000
+          Balance updates:
+            KT1Uh9XPu4Pj9oWBhjgWTdVwztgVJYM1Wk18 ... -ꜩ1
+            tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW ... +ꜩ1
+        Internal Transaction:
+          Amount: ꜩ2
+          From: KT1Uh9XPu4Pj9oWBhjgWTdVwztgVJYM1Wk18
+          To: tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW
+          This transaction was successfully applied
+          Consumed gas: 1000
+          Balance updates:
+            KT1Uh9XPu4Pj9oWBhjgWTdVwztgVJYM1Wk18 ... -ꜩ2
+            tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW ... +ꜩ2
+        Internal Transaction:
+          Amount: ꜩ3
+          From: KT1Uh9XPu4Pj9oWBhjgWTdVwztgVJYM1Wk18
+          To: tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW
+          This transaction was successfully applied
+          Consumed gas: 1000
+          Balance updates:
+            KT1Uh9XPu4Pj9oWBhjgWTdVwztgVJYM1Wk18 ... -ꜩ3
+            tz1bZTmRtKK2rLs3aUf4uiAVnydmeK1tv7pW ... +ꜩ3
 
 The operation has only been included 0 blocks ago.
 We recommend to wait more.
 Use command
-  tezos-client wait for oohdvf6g4bNiNn5xMMzQXFmPD7KbheHJssb35daAMp3AaFZaiG7 to be included --confirmations 1 --branch BM5cyf8KLizqTSt62CntKW1sXtXz65dtvzZAEepG6yMZmivWSvc
+  tezos-client wait for opQmuFWpRnmoYCYwj29HYxiCYWYcPYvsjJXyZQ96o2P7uTkhxAd to be included --confirmations 1 --branch BLb7aeoNkWcfFMejEKMbhSACL3hzDQDtNUF1kC8ozG6zzPSAKMh
 and/or an external block explorer.

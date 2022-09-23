@@ -1,22 +1,22 @@
 Node is bootstrapped.
-Estimated gas: 1735.063 units (will add 100 for safety)
+Estimated gas: 1727.413 units (will add 100 for safety)
 Estimated storage: 1776 bytes added (will add 20 for safety)
 Operation successfully injected in the node.
-Operation hash is 'ooTShyKP5mn4RNvaj6BKnW9U1wS3xsfzsUjzwtZyBAhpRsJ3MUH'
+Operation hash is 'opQhBvYCekAEY3VcLR4Z12BceyzEVj53WqpHCBXMGHrBbY31oUb'
 Waiting for the operation to be included...
-Operation found in block: BLuKnYZerzNrUR6dyf3otK11ozMjHj1ecHH5UCCXsaH8F77jjyL (pass: 3, offset: 0)
+Operation found in block: BMMcJRietJa3uuo6Rn2wQXiFDY9MaYdDS8EMyGRVwWBHcQup9iP (pass: 3, offset: 6)
 This sequence of operations was run:
   Manager signed operations:
-    From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
-    Fee to the baker: ꜩ0.001932
-    Expected counter: 214549
-    Gas limit: 1836
+    From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+    Fee to the baker: ꜩ0.001931
+    Expected counter: 273081
+    Gas limit: 1828
     Storage limit: 1796 bytes
     Balance updates:
-      tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B ... -ꜩ0.001932
-      payload fees(the block proposer) ....... +ꜩ0.001932
+      tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.001931
+      payload fees(the block proposer) ....... +ꜩ0.001931
     Origination:
-      From: tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B
+      From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
       Credit: ꜩ0
       Script:
         { parameter
@@ -174,20 +174,20 @@ This sequence of operations was run:
         No delegate for this contract
         This origination was successfully applied
         Originated contracts:
-          KT1DUDuV4j7BgUe7ob2iwKKStbo1pj4DVPqB
+          KT1U5TwCST38pP5hFw2B71qahD2xeN46D2Yk
         Storage size: 1519 bytes
         Paid storage size diff: 1519 bytes
-        Consumed gas: 1735.063
+        Consumed gas: 1727.413
         Balance updates:
-          tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B ... -ꜩ0.37975
+          tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.37975
           storage fees ........................... +ꜩ0.37975
-          tz1fCwTvgX7F8mDTMKjVtos5wFsFvZsybY9B ... -ꜩ0.06425
+          tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.06425
           storage fees ........................... +ꜩ0.06425
 
-New contract KT1DUDuV4j7BgUe7ob2iwKKStbo1pj4DVPqB originated.
+New contract KT1U5TwCST38pP5hFw2B71qahD2xeN46D2Yk originated.
 The operation has only been included 0 blocks ago.
 We recommend to wait more.
 Use command
-  tezos-client wait for ooTShyKP5mn4RNvaj6BKnW9U1wS3xsfzsUjzwtZyBAhpRsJ3MUH to be included --confirmations 1 --branch BL2pqnXSnH4DxUWgbfVfK5ZTLEqR2mD6MAvHiFz9SRkiPYxdPir
+  tezos-client wait for opQhBvYCekAEY3VcLR4Z12BceyzEVj53WqpHCBXMGHrBbY31oUb to be included --confirmations 1 --branch BM4SkSYYEo6sekJEzANxLzHPv7Pi7t8ncMaYkXusZsejR9Tn3hk
 and/or an external block explorer.
 Contract memorized as addition.

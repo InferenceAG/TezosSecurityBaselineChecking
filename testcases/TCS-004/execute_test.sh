@@ -12,5 +12,5 @@ case $1 in
 
 		;;
 esac
-rm *.tmp
-rm -rf compiled
+#rm *.tmp
+#rm -rf compiled

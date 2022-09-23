@@ -1,0 +1,51 @@
+Node is bootstrapped.
+This simulation failed:
+  Manager signed operations:
+    From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+    Fee to the baker: ꜩ0
+    Expected counter: 273079
+    Gas limit: 1040000
+    Storage limit: 60000 bytes
+    Transaction:
+      Amount: ꜩ0
+      From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+      To: KT1GhZK55YmrmLg4K6estkimcQvPBrAKZ8bj
+      Entrypoint: init
+      Parameter: "KT1LuSoxmmq9fa9XLGNvBuswBggQ2XcCTbiV"
+      This transaction was BACKTRACKED, its expected effects were NOT applied.
+      Updated storage: Unit
+      Storage size: 133 bytes
+      Consumed gas: 2584.460
+      Internal operations:
+        Internal Transaction:
+          Amount: ꜩ0
+          From: KT1GhZK55YmrmLg4K6estkimcQvPBrAKZ8bj
+          To: KT1LuSoxmmq9fa9XLGNvBuswBggQ2XcCTbiV
+          This operation FAILED.
+
+Runtime error in contract KT1LuSoxmmq9fa9XLGNvBuswBggQ2XcCTbiV:
+  01: { parameter unit ;
+  02:   storage unit ;
+  03:   code { DROP ;
+  04:          PUSH nat 1 ;
+  05:          PUSH string "test" ;
+  06:          SENDER ;
+  07:          PAIR 3 ;
+  08:          SENDER ;
+  09:          CONTRACT %setToken (pair address string nat) ;
+  10:          IF_NONE { FAIL } {} ;
+  11:          SWAP ;
+  12:          PUSH mutez 0 ;
+  13:          DUG 1 ;
+  14:          TRANSFER_TOKENS ;
+  15:          NIL operation ;
+  16:          SWAP ;
+  17:          CONS ;
+  18:          UNIT ;
+  19:          SWAP ;
+  20:          PAIR } }
+At line 10 characters 19 to 23,
+script reached FAILWITH instruction
+with Unit
+Fatal error:
+  transfer simulation failed
