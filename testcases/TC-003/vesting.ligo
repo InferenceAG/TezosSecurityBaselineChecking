@@ -1,13 +1,13 @@
-    type storage is record
+    type storage is record [
         admin: address;
         minLockedValue: tez;  
         balance: tez;
-    end;
+    ]
 
-    type payoutParam is record
+    type payoutParam is record [
         destination: address;
         amount: tez;
-    end;
+    ]
 
     type parameter is
     | Payout of payoutParam
@@ -17,15 +17,21 @@
     // smart contract "should" ensure that always "minLockedValue" is available as tez balance in the smart contract
     function payout(var store : storage; const param: payoutParam): (list(operation) * storage) is
     block {
-        store.balance := store.balance + Tezos.amount;
-        assert(store.balance - param.amount >= store.minLockedValue);
+        store.balance := store.balance + Tezos.get_amount();
+
+        const residualBalance: tez = case ((store.balance - param.amount): option(tez)) of [
+            | None -> failwith("negative balance")
+            | Some(x) -> x
+        ];
+
+        assert(residualBalance >= store.minLockedValue);
         
-        const dest : contract(unit) = case (Tezos.get_contract_opt(param.destination) : option(contract(unit))) of 
+        const dest : contract(unit) = case (Tezos.get_contract_opt(param.destination) : option(contract(unit))) of [
         | None -> failwith("none")
         | Some(x) -> x
-        end;
+        ];
 
-        store.balance := store.balance - param.amount;
+        store.balance := residualBalance;
 
         const op1 : operation = Tezos.transaction(unit, param.amount, dest);
         const txs : list(operation) = list[op1];   
@@ -34,15 +40,20 @@
 
     function adminPayout(var store : storage; const param: payoutParam): (list(operation) * storage) is
     block {
-        store.balance := store.balance + Tezos.amount;
-        assert(Tezos.sender = store.admin);
+        store.balance := store.balance + Tezos.get_amount();
+        assert(Tezos.get_sender() = store.admin);
         
-        const dest : contract(unit) = case (Tezos.get_contract_opt(param.destination) : option(contract(unit))) of 
+        const dest : contract(unit) = case (Tezos.get_contract_opt(param.destination) : option(contract(unit))) of [
         | None -> failwith("none")
         | Some(x) -> x
-        end;
+        ];
 
-        store.balance := store.balance - param.amount;
+        const residualBalance: tez = case ((store.balance - param.amount): option(tez)) of [
+            | None -> failwith("negative balance")
+            | Some(x) -> x
+        ];
+
+        store.balance := residualBalance;
 
         const op1 : operation = Tezos.transaction(unit, param.amount, dest);
         const txs : list(operation) = list[op1];   
@@ -52,7 +63,7 @@
     function main (const action : parameter; const store : storage): (list(operation) * storage) is
     block {
         skip
-    } with case action of
+    } with case action of [
     | Payout(param) -> payout(store, param)        
     | AdminPayout(param) -> adminPayout(store, param) 
-    end;
+    ];

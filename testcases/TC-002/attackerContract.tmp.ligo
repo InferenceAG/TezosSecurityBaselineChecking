@@ -1,19 +1,19 @@
-    type payoutParam is record
+    type payoutParam is record [
         destination: address;
         amount: tez;
-    end;
+    ]
 
     function main (const _action : unit; const store : unit): (list(operation) * unit) is
     block {
-        const pa: payoutParam = record 
+        const pa: payoutParam = record [
             destination = ("tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m":address);
             amount = 3tez;
-        end;
+        ];
 
-        const dest : contract(payoutParam) = case (Tezos.get_entrypoint_opt("%payout", ("KT1WSahuEGkajtymK8jw9FSVFibdXqqcvGTH":address)) : option(contract(payoutParam))) of 
+        const dest : contract(payoutParam) = case (Tezos.get_entrypoint_opt("%payout", ("KT1LY9JtqBWdVp9yvScrN3ZtbbFCSrq4NC85":address)) : option(contract(payoutParam))) of [
         | None -> failwith("none")
         | Some(x) -> x
-        end;
+        ];
 
         const op1 : operation = Tezos.transaction(pa, 0tez, dest);
         const txs : list(operation) = list[op1]; 

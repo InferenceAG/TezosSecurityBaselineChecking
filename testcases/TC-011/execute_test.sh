@@ -49,5 +49,5 @@ case $1 in
 		fi
 		;;
 esac
-#rm *.tmp
-#rm -rf compiled
+rm *.tmp
+rm -rf compiled

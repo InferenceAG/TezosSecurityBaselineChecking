@@ -1,0 +1,13 @@
+parameter unit;
+storage unit;
+code
+  {
+    DROP ; # drop storage and input
+    PUSH nat 0;
+    PUSH string "test";
+    TICKET;
+    IF_NONE { } { PUSH string "error should actually fail"; FAILWITH};
+    UNIT;
+    NIL operation;
+    PAIR;
+  };

@@ -38,6 +38,7 @@
 - [TC-T-022: Tickets - Duplicate ticket - duplicate transaction operation](./testcases/TC-T-022/readme.md)
 - [TC-T-023: Tickets - Duplicate ticket - duplicate map containing tickets](./testcases/TC-T-023/readme.md)
 - [TC-T-024: Tickets - Duplicate ticket - duplicate big_map containing tickets](./testcases/TC-T-024/readme.md)
+- [TC-T-025: Tickets - zero amount ticket](./testcases/TC-T-025/readme.md)
 
 ## Overview of on-chain view testcases
 - [TC-V-001: On-chain view - Manipulate caller stack - add](./testcases/TC-V-001/readme.md)

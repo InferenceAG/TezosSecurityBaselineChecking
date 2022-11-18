@@ -1,0 +1,19 @@
+parameter unit;
+storage unit;
+code
+  {
+    DROP; # drop input and storage
+    PUSH nat 4;
+    PUSH string "test";
+    TICKET;
+    PUSH nat 1;
+    PUSH string "tes";
+    TICKET;
+    PAIR;
+    JOIN_TICKETS;
+    IF_NONE { FAIL } {};
+    DROP;
+    UNIT;
+    NIL operation;
+    PAIR;
+  };

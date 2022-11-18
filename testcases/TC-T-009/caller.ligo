@@ -4,11 +4,10 @@
     | SetToken of option (ticket (string))
     | Init of address;
 
-    function setToken(var store : storage; const param: option (ticket (string))): (list(operation) * storage) is
+    function setToken(var _store : storage; const param: option (ticket (string))): (list(operation) * storage) is
     block {
-        store := param;
         const txs : list(operation) = list[];   
-    } with (txs, store)
+    } with (txs, param)
 
 
     function init(const store : storage; const param: address): (list(operation) * storage) is

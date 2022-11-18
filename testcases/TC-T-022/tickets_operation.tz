@@ -6,6 +6,7 @@ code
     PUSH nat 1;
     PUSH string "test";
     TICKET;
+    ASSERT_SOME;
     SWAP;
     CONTRACT (ticket string);
     IF_NONE { FAIL } {};

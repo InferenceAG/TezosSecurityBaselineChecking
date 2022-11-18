@@ -5,7 +5,7 @@
 head -n 1 readme.md
 
 case $1 in
-	jakarta)
+	*)
 		echo "executing tests for $1"
 
 		# addition contract
@@ -76,7 +76,7 @@ case $1 in
 		checkResult result9.tmp "The operation has only been included 0 blocks ago."
 
 		;;
-	*)
+	old)
 		echo "executing tests for $1"
 
 		# addition contract
@@ -148,4 +148,4 @@ case $1 in
 
 		;;
 esac
-#rm *.tmp
+rm *.tmp

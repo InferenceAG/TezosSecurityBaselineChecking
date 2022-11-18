@@ -19,6 +19,7 @@ code
     PUSH nat 1;
     PUSH string "test";
     TICKET;
+    ASSERT_SOME;
     SWAP;
     PAIR;
   };

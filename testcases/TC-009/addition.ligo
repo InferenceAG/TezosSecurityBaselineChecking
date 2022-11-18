@@ -2,28 +2,30 @@
        
     type addParamNoAnnot is michelson_pair(nat, "", nat, "")
  
-    type addParamWrong is record
+    type addParamWrong is record [
         a: nat;
         b: nat;
-    end;
+    ];
    
-    type addParam is record
+    type addParam is record [
         valueA: nat;
         valueB: nat;
-    end;
+    ];
 
-    type inputcallA is record
+    type inputcallA is record [
         entrypoint: string;
         param: addParam;
-    end;
-    type inputcallB is record
+    ];
+
+    type inputcallB is record [
         entrypoint: string;
         param: addParamNoAnnot;
-    end;
-    type inputcallC is record
+    ];
+
+    type inputcallC is record [
         entrypoint: string;
         param: addParamWrong;
-    end;
+    ];
 
     type parameter is
     | Add of addParam
@@ -41,31 +43,32 @@
     function call(const store : storage; const param: inputcallA): (list(operation) * storage) is
     block {
         var txs : list(operation) := list[];  
+
         if param.entrypoint = "Add" then {
-            const dest : contract(addParam) = case (Tezos.get_entrypoint_opt("%add", Tezos.self_address) : option(contract(addParam))) of 
+            const dest : contract(addParam) = case (Tezos.get_entrypoint_opt("%add", Tezos.get_self_address()) : option(contract(addParam))) of [
             | None -> failwith("none")
             | Some(x) -> x
-            end;
+            ];
             const op1 : operation = Tezos.transaction(param.param, 0mutez, dest);
             txs := op1 # txs;
         }
         else skip;
         
         if param.entrypoint = "AddNoAnnot" then {
-            const dest : contract(addParam) = case (Tezos.get_entrypoint_opt("%addNoAnnot", Tezos.self_address) : option(contract(addParam))) of 
+            const dest : contract(addParam) = case (Tezos.get_entrypoint_opt("%addNoAnnot", Tezos.get_self_address()) : option(contract(addParam))) of [
             | None -> failwith("none")
             | Some(x) -> x
-            end;
+            ];
             const op1 : operation = Tezos.transaction(param.param, 0mutez, dest);
             txs := op1 # txs;
         }
         else skip;
         
         if param.entrypoint = "AddWrongAnnot" then {
-            const dest : contract(addParam) = case (Tezos.get_entrypoint_opt("%addWrongAnnot", Tezos.self_address) : option(contract(addParam))) of 
+            const dest : contract(addParam) = case (Tezos.get_entrypoint_opt("%addWrongAnnot", Tezos.get_self_address()) : option(contract(addParam))) of [
             | None -> failwith("none")
             | Some(x) -> x
-            end;
+            ];
             const op1 : operation = Tezos.transaction(param.param, 0mutez, dest);
             txs := op1 # txs;
         }
@@ -77,30 +80,30 @@
     block {
         var txs : list(operation) := list[];  
         if param.entrypoint = "Add" then {
-            const dest : contract(addParamNoAnnot) = case (Tezos.get_entrypoint_opt("%add", Tezos.self_address) : option(contract(addParamNoAnnot))) of 
+            const dest : contract(addParamNoAnnot) = case (Tezos.get_entrypoint_opt("%add", Tezos.get_self_address()) : option(contract(addParamNoAnnot))) of [
             | None -> failwith("none")
             | Some(x) -> x
-            end;
+            ];
             const op1 : operation = Tezos.transaction(param.param, 0mutez, dest);
             txs := op1 # txs;
         }
         else skip;
         
         if param.entrypoint = "AddNoAnnot" then {
-            const dest : contract(addParamNoAnnot) = case (Tezos.get_entrypoint_opt("%addNoAnnot", Tezos.self_address) : option(contract(addParamNoAnnot))) of 
+            const dest : contract(addParamNoAnnot) = case (Tezos.get_entrypoint_opt("%addNoAnnot", Tezos.get_self_address()) : option(contract(addParamNoAnnot))) of [
             | None -> failwith("none")
             | Some(x) -> x
-            end;
+            ];
             const op1 : operation = Tezos.transaction(param.param, 0mutez, dest);
             txs := op1 # txs;
         }
         else skip;
         
         if param.entrypoint = "AddWrongAnnot" then {
-            const dest : contract(addParamNoAnnot) = case (Tezos.get_entrypoint_opt("%addWrongAnnot", Tezos.self_address) : option(contract(addParamNoAnnot))) of 
+            const dest : contract(addParamNoAnnot) = case (Tezos.get_entrypoint_opt("%addWrongAnnot", Tezos.get_self_address()) : option(contract(addParamNoAnnot))) of [
             | None -> failwith("none")
             | Some(x) -> x
-            end;
+            ];
             const op1 : operation = Tezos.transaction(param.param, 0mutez, dest);
             txs := op1 # txs;
         }
@@ -112,30 +115,30 @@
     block {
         var txs : list(operation) := list[];  
         if param.entrypoint = "Add" then {
-            const dest : contract(addParamWrong) = case (Tezos.get_entrypoint_opt("%add", Tezos.self_address) : option(contract(addParamWrong))) of 
+            const dest : contract(addParamWrong) = case (Tezos.get_entrypoint_opt("%add", Tezos.get_self_address()) : option(contract(addParamWrong))) of [
             | None -> failwith("none")
             | Some(x) -> x
-            end;
+            ];
             const op1 : operation = Tezos.transaction(param.param, 0mutez, dest);
             txs := op1 # txs;
         }
         else skip;
         
         if param.entrypoint = "AddNoAnnot" then {
-            const dest : contract(addParamWrong) = case (Tezos.get_entrypoint_opt("%addNoAnnot", Tezos.self_address) : option(contract(addParamWrong))) of 
+            const dest : contract(addParamWrong) = case (Tezos.get_entrypoint_opt("%addNoAnnot", Tezos.get_self_address()) : option(contract(addParamWrong))) of [
             | None -> failwith("none")
             | Some(x) -> x
-            end;
+            ];
             const op1 : operation = Tezos.transaction(param.param, 0mutez, dest);
             txs := op1 # txs;
         }
         else skip;
         
         if param.entrypoint = "AddWrongAnnot" then {
-            const dest : contract(addParamWrong) = case (Tezos.get_entrypoint_opt("%addWrongAnnot", Tezos.self_address) : option(contract(addParamWrong))) of 
+            const dest : contract(addParamWrong) = case (Tezos.get_entrypoint_opt("%addWrongAnnot", Tezos.get_self_address()) : option(contract(addParamWrong))) of [ 
             | None -> failwith("none")
             | Some(x) -> x
-            end;
+            ];
             const op1 : operation = Tezos.transaction(param.param, 0mutez, dest);
             txs := op1 # txs;
         }
@@ -146,11 +149,11 @@
     function main (const action : parameter; const store : storage): (list(operation) * storage) is
     block {
         skip
-    } with case action of
+    } with case action of [
     | Add(param) -> add(store, param)        
     | AddNoAnnot(param) -> addNoAnnot(store, param)    
     | AddWrongAnnot(param) -> addWrongAnnot(store, param)    
     | Call(param) -> call(store, param) 
     | CallNoAnnot(param) -> callNoAnnot(store, param) 
     | CallWrongAnnot(param) -> callWrongAnnot(store, param) 
-    end;
+    ];

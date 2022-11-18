@@ -25,7 +25,6 @@ code
     PUSH nat 1;
     PUSH string "test";
     TICKET; 
-    SOME;
     SWAP;
     PAIR;
   };

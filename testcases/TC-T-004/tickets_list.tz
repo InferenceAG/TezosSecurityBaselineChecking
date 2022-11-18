@@ -6,6 +6,7 @@ code
     PUSH nat 1;
     PUSH string "test";
     TICKET;
+    IF_NONE { PUSH string "ticket error"; FAILWITH } {};
     NIL (ticket string);
     SWAP;
     CONS;

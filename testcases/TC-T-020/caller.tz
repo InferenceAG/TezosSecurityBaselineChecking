@@ -9,7 +9,6 @@ code
     PUSH nat 1;
     PUSH string "test";
     TICKET;
-    SOME;
     TRANSFER_TOKENS;
     NIL operation;
     SWAP;

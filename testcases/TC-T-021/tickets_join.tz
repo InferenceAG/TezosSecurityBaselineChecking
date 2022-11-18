@@ -6,9 +6,11 @@ code
     PUSH nat 4;
     PUSH string "test";
     TICKET;
+    ASSERT_SOME;
     PUSH nat 1;
     PUSH string "tes";
     TICKET;
+    ASSERT_SOME;
     PAIR;
     JOIN_TICKETS;
     IF_NONE { FAIL } {};

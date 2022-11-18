@@ -7,7 +7,6 @@ code
     PUSH nat 1;
     PUSH string "test";
     TICKET;
-    SOME;
     PUSH nat 0;
     UPDATE;
     DUP;

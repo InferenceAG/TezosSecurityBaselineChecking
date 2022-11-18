@@ -6,7 +6,6 @@ code
     PUSH nat 1;
     PUSH string "test";
     TICKET;
-    SOME;
     NIL operation;
     PAIR;
   };

@@ -26,4 +26,4 @@ case $1 in
                 checkResult result.tmp "      This operation was skipped."
 		;;
 esac
-#rm *.tmp
+rm *.tmp

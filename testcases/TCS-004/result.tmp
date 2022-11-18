@@ -1,49 +1,49 @@
 Traceback (most recent call last):
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpyc.py", line 71, in run_tests
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpyc.py", line 71, in run_tests
     test.eval()
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 2654, in eval
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 2709, in eval
     self.f()
   File "storeValue.py", line 24, in test
     scenario += c1
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 2450, in __iadd__
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 2505, in __iadd__
     self.register(element, True)
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 2442, in register
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 2497, in register
     self.acc(element.scenario_message(accept_unknown_types, address), show)
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 1783, in scenario_message
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 1783, in scenario_message
     self.collect_entry_points()
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 1713, in collect_entry_points
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 1713, in collect_entry_points
     self.add_entry_point(attr, False)
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 1659, in add_entry_point
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 1659, in add_entry_point
     x = added_entry_point.f(self)
   File "storeValue.py", line 12, in set
     if self.data.magic_one:
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 198, in __bool__
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 198, in __bool__
     self.__nonzero__()
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 202, in __nonzero__
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 202, in __nonzero__
     "Cannot convert expression to bool. Conditionals are forbidden on contract expressions. Please use ~ or sp.if instead of not or if."
 Exception: Cannot convert expression to bool. Conditionals are forbidden on contract expressions. Please use ~ or sp.if instead of not or if.
 Traceback (most recent call last):
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpyc.py", line 71, in run_tests
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpyc.py", line 71, in run_tests
     test.eval()
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 2654, in eval
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 2709, in eval
     self.f()
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 2726, in f
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 2781, in f
     scenario += contract
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 2450, in __iadd__
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 2505, in __iadd__
     self.register(element, True)
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 2442, in register
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 2497, in register
     self.acc(element.scenario_message(accept_unknown_types, address), show)
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 1783, in scenario_message
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 1783, in scenario_message
     self.collect_entry_points()
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 1713, in collect_entry_points
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 1713, in collect_entry_points
     self.add_entry_point(attr, False)
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 1659, in add_entry_point
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 1659, in add_entry_point
     x = added_entry_point.f(self)
   File "storeValue.py", line 12, in set
     if self.data.magic_one:
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 198, in __bool__
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 198, in __bool__
     self.__nonzero__()
-  File "/home/user/Installs/SmartPy/v0.12.0/smartpy-cli/smartpy.py", line 202, in __nonzero__
+  File "/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/smartpy.py", line 202, in __nonzero__
     "Cannot convert expression to bool. Conditionals are forbidden on contract expressions. Please use ~ or sp.if instead of not or if."
 Exception: Cannot convert expression to bool. Conditionals are forbidden on contract expressions. Please use ~ or sp.if instead of not or if.
 [error] Python Error Cannot convert expression to bool. Conditionals are forbidden on contract expressions. Please use ~ or sp.if instead of not or if.

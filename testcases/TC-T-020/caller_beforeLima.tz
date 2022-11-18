@@ -1,0 +1,20 @@
+parameter address;
+storage unit;
+code
+  {
+    CAR; # drop storage, but leave input on stack
+    CONTRACT (option (ticket string));
+    IF_NONE { FAIL } {};
+    PUSH mutez 0;
+    PUSH nat 1;
+    PUSH string "test";
+    TICKET;
+    SOME;
+    TRANSFER_TOKENS;
+    NIL operation;
+    SWAP;
+    CONS;
+    UNIT;
+    SWAP;
+    PAIR;
+  };

@@ -1,9 +1,9 @@
     type storage is unit;
 
-    type initParam is record
+    type initParam is record [
         strAdr : string;
         adrAdr : address;
-    end;
+    ];
 
     type parameter is
     | SetToken of ticket (string)
@@ -20,10 +20,10 @@
     block {
 
         
-        const dest : contract(string) = case (Tezos.get_contract_opt(param.adrAdr) : option(contract(string))) of 
+        const dest : contract(string) = case (Tezos.get_contract_opt(param.adrAdr) : option(contract(string))) of [
         | None -> failwith("none")
         | Some(x) -> x
-        end;
+        ];
 
         const op1 : operation = Tezos.transaction(param.strAdr, 0tez, dest);
         const txs : list(operation) = list[op1];   
@@ -33,7 +33,7 @@
     function main (const action : parameter; const store : storage): (list(operation) * storage) is
     block {
         skip
-    } with case action of
+    } with case action of [
     | SetToken(param) -> setToken(store, param)        
     | Init(param) -> init(store, param) 
-    end;
+    ];
