@@ -8,8 +8,8 @@ export SMARTPY=/home/user/Installs/SmartPy/v0.15.0/smartpy-cli/SmartPy.sh
 export LIGO=/home/user/Installs/ligo/ligo-0.55.0
 
 # Tezos
-export TEZOSCLIENT="/home/user/Installs/tezos-clients/octez-client-v15.0-rc1 -d /home/user/Data/Deployments/Lima -E http://10.30.0.200:4415"
-#export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Kathmandu -E https://kathmandunet.smartpy.io/"
+#export TEZOSCLIENT="/home/user/Installs/tezos-clients/octez-client-v15.0-rc1 -d /home/user/Data/Deployments/Lima -E http://10.30.0.200:4415"
+export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Kathmandu -E https://kathmandunet.smartpy.io/"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Jakarta -E https://jakartanet.smartpy.io/"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Ithaca -E https://ithacanet.smartpy.io/"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Flextesa -E http://10.137.0.18:20000/"

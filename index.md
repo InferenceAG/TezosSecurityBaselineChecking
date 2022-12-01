@@ -3,6 +3,7 @@
 ## An overview of general testcases
 - [TC-001: Non-existing KT address](./testcases/TC-001/readme.md)
 - [TC-002: Reentrancy - contract balance](./testcases/TC-002/readme.md)
+- [TC-002b: Reentrancy - contract balance - test case B](./testcases/TC-002b/readme.md)
 - [TC-003: Reentrancy - balance tracked in storage](./testcases/TC-003/readme.md)
 - [TC-004: MUTEZ underflow](./testcases/TC-004/readme.md)
 - [TC-005: MUTEZ overflow](./testcases/TC-005/readme.md)
