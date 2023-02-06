@@ -16,4 +16,4 @@ case $1 in
 		checkResult result.tmp "type option (ticket string) cannot be used here because it is not duplicable. Only duplicable types can be used with the DUP instruction and as view inputs and outputs."
 		;;
 esac
-rm *.tmp
+#rm *.tmp

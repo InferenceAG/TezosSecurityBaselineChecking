@@ -1,1 +1,0 @@
- !!! Python Error: Cannot convert expression to bool. Conditionals are forbidden on contract expressions. Please use ~ or sp.if instead of not or if.

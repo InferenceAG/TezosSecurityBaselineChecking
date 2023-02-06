@@ -13,7 +13,7 @@ This simulation failed:
         { parameter unit ;
           storage unit ;
           code { DROP ; UNIT ; NIL operation ; PAIR } ;
-          view "rogue" unit nat { DUP 2 ; DROP ; DROP ; PUSH nat 1 } }
+          view "rogue" unit nat { DROP ; PUSH nat 3 ; ADD ; PUSH nat 1 } }
         Initial storage: Unit
         No delegate for this contract
         This operation FAILED.
@@ -22,10 +22,7 @@ Ill typed contract:
   1: { parameter unit ;
   2:   storage unit ;
   3:   code { DROP ; UNIT ; NIL operation ; PAIR } ;
-  4:   view "rogue" unit nat { DUP 2 ; DROP ; DROP ; PUSH nat 1 } }
-{ "id": "proto.016-PtMumbai.michelson_v1.bad_dupn_stack",
-  "description": "Stack present when typing DUP n was too short",
-  "data": { "loc": 17 } }
-At line 4 characters 26 to 31, wrong stack type for instruction DUP: [].
+  4:   view "rogue" unit nat { DROP ; PUSH nat 3 ; ADD ; PUSH nat 1 } }
+At line 4 characters 46 to 49, wrong stack type for instruction ADD: [].
 Fatal error:
   origination simulation failed

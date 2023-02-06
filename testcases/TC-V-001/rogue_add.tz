@@ -1,4 +1,4 @@
-bparameter unit;
+parameter unit;
 storage unit;
 code
   {

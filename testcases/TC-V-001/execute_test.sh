@@ -16,4 +16,4 @@ case $1 in
 		checkResult result.tmp "At line 4 characters 46 to 49, wrong stack type for instruction ADD: [ nat ]."
 		;;
 esac
-rm *.tmp
+#rm *.tmp

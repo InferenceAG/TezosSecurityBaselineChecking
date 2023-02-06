@@ -1,0 +1,51 @@
+Node is bootstrapped.
+This simulation failed:
+  Manager signed operations:
+    From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+    Fee to the baker: ꜩ0
+    Expected counter: 48647
+    Gas limit: 1040000
+    Storage limit: 60000 bytes
+    Origination:
+      From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+      Credit: ꜩ0
+      Script:
+        { parameter unit ;
+          storage unit ;
+          code { DROP ;
+                 PUSH nat 1 ;
+                 PUSH string "test" ;
+                 TICKET ;
+                 PUSH nat 10 ;
+                 DUP 2 ;
+                 DROP ;
+                 DROP ;
+                 DROP ;
+                 UNIT ;
+                 NIL operation ;
+                 PAIR } }
+        Initial storage: Unit
+        No delegate for this contract
+        This operation FAILED.
+
+Ill typed contract:
+  01: { parameter unit ;
+  02:   storage unit ;
+  03:   code { DROP ;
+  04:          PUSH nat 1 ;
+  05:          PUSH string "test" ;
+  06:          TICKET ;
+  07:          PUSH nat 10 ;
+  08:          DUP 2 ;
+  09:          DROP ;
+  10:          DROP ;
+  11:          DROP ;
+  12:          UNIT ;
+  13:          NIL operation ;
+  14:          PAIR } }
+At line 8 characters 9 to 14,
+type option (ticket string) cannot be used here because it is not duplicable. Only duplicable types can be used with the DUP instruction and as view inputs and outputs.
+At line 8 characters 9 to 14,
+Ticket in unauthorized position (type error).
+Fatal error:
+  origination simulation failed

@@ -1,31 +1,31 @@
 Node is bootstrapped.
-Estimated gas: 2118.324 units (will add 100 for safety)
+Estimated gas: 2118.410 units (will add 100 for safety)
 Estimated storage: no bytes added
 Operation successfully injected in the node.
-Operation hash is 'oosRXpeQ34PVw8YfaENEYEzeSsWy9196ABtR6AtF1MtXtiwuE1w'
+Operation hash is 'op7xGKcSK99kZ7aMap5zaKhHJHHiYq7pxxvrW6izSayxE5Z9dLp'
 Waiting for the operation to be included...
-Operation found in block: BLQx4oMJniRrtCYYpgFCH1hWZFTkjDDavHUR9uVK3xAnLQUzBD9 (pass: 3, offset: 0)
+Operation found in block: BLd3KgrTLpbeEytsmGhiWjAsGTED59oCKSJfRqoT2dh6rLhxGvw (pass: 3, offset: 0)
 This sequence of operations was run:
   Manager signed operations:
     From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
-    Fee to the baker: ꜩ0.000471
-    Expected counter: 207
+    Fee to the baker: ꜩ0.000472
+    Expected counter: 48662
     Gas limit: 2219
     Storage limit: 0 bytes
     Balance updates:
-      tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.000471
-      payload fees(the block proposer) ....... +ꜩ0.000471
+      tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.000472
+      payload fees(the block proposer) ....... +ꜩ0.000472
     Transaction:
       Amount: ꜩ0
       From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
-      To: KT1Ni5b5y98Ba91Hf9a8KD4PVCJ7Kz3my9m9
+      To: KT1RB5uwoCwFTX3y9TKr8Jb8LwNz2Zog2ren
       This transaction was successfully applied
       Updated storage: Unit
       Storage size: 110 bytes
-      Consumed gas: 2118.324
+      Consumed gas: 2118.410
 
 The operation has only been included 0 blocks ago.
 We recommend to wait more.
 Use command
-  octez-client wait for oosRXpeQ34PVw8YfaENEYEzeSsWy9196ABtR6AtF1MtXtiwuE1w to be included --confirmations 1 --branch BM6zhXHW5GquJM44r6dxwmw5VhDXjfibfYwoyDBJxgHUEuBGNzn
+  octez-client wait for op7xGKcSK99kZ7aMap5zaKhHJHHiYq7pxxvrW6izSayxE5Z9dLp to be included --confirmations 1 --branch BMcGzUWqKCm2jnZEFRm335HUdRyLhKbDpALpNffPRsHp4fionsL
 and/or an external block explorer.
