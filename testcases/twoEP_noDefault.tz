@@ -1,0 +1,23 @@
+parameter (or (unit %AAAAAAAA) (unit %xxxxxx));
+storage unit;
+code { UNPAIR ;
+       IF_LEFT
+         { DROP ;
+           NIL operation ;
+           SELF_ADDRESS ;
+           CONTRACT unit ;
+           IF_NONE { PUSH int 9 ; FAILWITH } {} ;
+           PUSH mutez 1000000 ;
+           UNIT ;
+           TRANSFER_TOKENS ;
+           CONS }
+         { DROP ;
+           NIL operation ;
+           SENDER ;
+           CONTRACT unit ;
+           IF_NONE { PUSH int 12 ; FAILWITH } {} ;
+           AMOUNT ;
+           UNIT ;
+           TRANSFER_TOKENS ;
+           CONS } ;
+       PAIR }
