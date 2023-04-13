@@ -4,7 +4,6 @@
 This scenario contains three different contracts, to check how the protocol behaves when looking for the default entrypoint of a contract.
 
 ### Structure of the test
-The three contracts are structured in the following way:
     - singleEP.tz: has only one EP, which was not marked as the default one;
     - twoEP_withDefault.tz: has two EPs, one of them was marked as the default one
     - twoEP_noDefault.tz: has two EPs, but none of them was marked as the default one.
