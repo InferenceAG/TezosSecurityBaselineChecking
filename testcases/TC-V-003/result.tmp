@@ -3,7 +3,7 @@ This simulation failed:
   Manager signed operations:
     From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
     Fee to the baker: ꜩ0
-    Expected counter: 48663
+    Expected counter: 304020
     Gas limit: 1040000
     Storage limit: 60000 bytes
     Origination:
@@ -23,7 +23,7 @@ Ill typed contract:
   2:   storage unit ;
   3:   code { DROP ; UNIT ; NIL operation ; PAIR } ;
   4:   view "rogue" unit nat { DUP 2 ; DROP ; DROP ; PUSH nat 1 } }
-{ "id": "proto.016-PtMumbai.michelson_v1.bad_dupn_stack",
+{ "id": "proto.017-PtNairob.michelson_v1.bad_dupn_stack",
   "description": "Stack present when typing DUP n was too short",
   "data": { "loc": 17 } }
 At line 4 characters 26 to 31, wrong stack type for instruction DUP: [].

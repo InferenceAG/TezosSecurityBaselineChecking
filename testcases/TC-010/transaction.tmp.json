@@ -1,5 +1,5 @@
 [ 
-    {"destination": "KT1NsgJkkXfYnKEEbG7pwZhHkgoqwt32jbJY", "amount": "0", "arg": "2", "entrypoint": "add"},
-    {"destination": "KT1NsgJkkXfYnKEEbG7pwZhHkgoqwt32jbJY", "amount": "0", "arg": "4", "entrypoint": "sub"}, 
-    {"destination": "KT1NsgJkkXfYnKEEbG7pwZhHkgoqwt32jbJY", "amount": "0", "arg": "3", "entrypoint": "add"}
+    {"destination": "KT1UygQrMF3Du31B7X5YqFLX9KxMBzF2mPzX", "amount": "0", "arg": "2", "entrypoint": "add"},
+    {"destination": "KT1UygQrMF3Du31B7X5YqFLX9KxMBzF2mPzX", "amount": "0", "arg": "4", "entrypoint": "sub"}, 
+    {"destination": "KT1UygQrMF3Du31B7X5YqFLX9KxMBzF2mPzX", "amount": "0", "arg": "3", "entrypoint": "add"}
 ]

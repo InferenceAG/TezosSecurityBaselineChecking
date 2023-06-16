@@ -10,7 +10,7 @@
             amount = 3tez;
         ];
 
-        const dest : contract(payoutParam) = case (Tezos.get_entrypoint_opt("%payout", ("KT1MXoXGDzYgxuxd4zhG6PpoCpNif7pLFgLw":address)) : option(contract(payoutParam))) of [
+        const dest : contract(payoutParam) = case (Tezos.get_entrypoint_opt("%payout", ("KT1DeMKxA5BpswVNgUyRpZ9K1n9fZCnLW1UG":address)) : option(contract(payoutParam))) of [
         | None -> failwith("none")
         | Some(x) -> x
         ];
