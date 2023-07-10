@@ -13,6 +13,9 @@
 - [TC-009: Wrong field annotations](./testcases/TC-009/readme.md)
 - [TC-010: Batch operation failing](./testcases/TC-010/readme.md)
 - [TC-011: Operation ordering](./testcases/TC-011/readme.md)
+- [TC-012: Default entrypoint testing](./testcases/TC-012/readme.md)
+- [TC-013: Sending tez to oneself](./testcases/TC-013/readme.md)
+- [TC-014: Long entrypoint names](./testcases/TC-011/readme.md)
 
 ## Overview of ticket testcases
 - [TC-T-001: Tickets - Duplicate ticket - dup](./testcases/TC-T-001/readme.md)

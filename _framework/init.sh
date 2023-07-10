@@ -10,7 +10,7 @@ export LIGO=/home/user/Installs/ligo/ligo-0.60.0
 #export LIGO=/home/user/Installs/ligo/ligo-0.67.1
 
 # Tezos
-export TEZOSCLIENT="/home/user/Installs/tezos-clients/octez-client-v17.0-rc1 -d /home/user/Data/Deployments/Nairobi -E http://10.30.0.200:4417"
+export TEZOSCLIENT="/home/gonzo/Installs/tezos-clients/octez-client.v17.1 -d /home/gonzo/Data/Deployments/Nairobi -E http://10.30.0.200:4417"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/octez-client-v16.0-rc1 -d /home/user/Data/Deployments/Mumbai -E http://10.30.0.200:4416"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/octez-client-v15.0-rc1 -d /home/user/Data/Deployments/Lima -E http://10.30.0.200:4415"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Kathmandu -E https://kathmandunet.smartpy.io/"

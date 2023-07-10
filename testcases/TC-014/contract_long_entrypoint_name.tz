@@ -1,0 +1,12 @@
+parameter (or (unit %test) (nat %1234567890123456789012345678901234567891012345678901234567890)) ;
+storage unit ;
+code {
+       UNPAIR ;
+       IF_LEFT
+         { DROP }
+         { DROP } ;
+       DROP ;
+       UNIT ;
+       NIL operation ;
+       PAIR
+     }
