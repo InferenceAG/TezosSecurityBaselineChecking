@@ -1,0 +1,12 @@
+parameter (or (contract unit) unit) ;
+storage unit ;
+code {
+       UNPAIR ;
+       IF_LEFT
+         { DROP }
+         { DROP } ;
+       DROP ;
+       UNIT ;
+       NIL operation ;
+       PAIR
+     }

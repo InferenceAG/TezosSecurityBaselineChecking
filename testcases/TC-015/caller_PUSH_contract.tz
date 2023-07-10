@@ -1,0 +1,11 @@
+parameter unit;
+storage unit ;
+code {
+       DROP;
+       PUSH (or (contract unit) nat) (Right 3);
+       DROP;
+       NIL operation;
+       UNIT ;
+       SWAP ;
+       PAIR
+     }
