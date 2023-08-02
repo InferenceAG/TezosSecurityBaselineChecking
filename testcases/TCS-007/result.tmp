@@ -1,0 +1,6 @@
+smartpy-parser: operator_case2.py:15:13-32: error: Not an expression: self.intFunc(x=True)
+
+Traceback (most recent call last):
+  File "operator_case2.py", line 6, in <module>
+    def main():
+SystemExit: 1

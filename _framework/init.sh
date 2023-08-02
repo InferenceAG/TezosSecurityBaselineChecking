@@ -2,7 +2,8 @@
 
 # SmartPy
 #export SMARTPY=/home/user/smartpy-cli/SmartPy.sh
-export SMARTPY=/home/user/Installs/SmartPy/v0.16.0/smartpy-cli/SmartPy.sh
+#export SMARTPY=/home/user/Installs/SmartPy/v0.16.0/smartpy-cli/SmartPy.sh
+export SMARTPY=/home/gonzo/Installs/SmartPy/smartpy_0.18.2
 
 # Ligo
 #export LIGO=/home/user/ligo/ligo-20211215-1acb57254d3b46dce1a2cdf34283564a2a36f084

@@ -1,0 +1,41 @@
+[
+ {
+  "shortname": "Wrong_operator_case_2",
+  "longname": "Wrong operator case 2",
+  "scenario": [
+   {
+    "action": "add_module",
+    "module": "((Some (\"operator_case2.py\" 9)) module main ((Some (\"operator_case2.py\" 9)) contract_def Operator () (((Some (\"operator_case2.py\" 10)) method init (value) (((Some (\"operator_case2.py\" 11)) assign ((Some (\"operator_case2.py\" 11)) attr ((Some (\"operator_case2.py\" 11)) storage) \"storedValue\") ((Some (\"operator_case2.py\" 11)) var \"value\")))) ((Some (\"operator_case2.py\" 14)) method (entrypoint update) (params) (((Some (\"operator_case2.py\" 15)) assign ((Some (\"operator_case2.py\" 15)) var \"x\") ((Some (\"operator_case2.py\" 15)) literal (bool False))) ((Some (\"operator_case2.py\" 16)) expr ((Some (\"operator_case2.py\" 16)) call ((Some (\"operator_case2.py\" 16)) private_method myInternal))))) ((Some (\"operator_case2.py\" 19)) method (private myInternal (None False)) () (((Some (\"operator_case2.py\" 20)) assign ((Some (\"operator_case2.py\" 20)) attr ((Some (\"operator_case2.py\" 20)) storage) \"storedValue\") ((Some (\"operator_case2.py\" 20)) literal (intOrNat 10))))))))",
+    "line_no": "(Some (\"operator_case2.py\" 28))"
+   },
+   {
+    "action": "html",
+    "inner": "Wrong operator",
+    "line_no": "(Some (\"operator_case2.py\" 29))",
+    "tag": "h1"
+   },
+   {
+    "action": "instantiateContract",
+    "module": "main",
+    "name": "Operator",
+    "args": "(((Some (\"operator_case2.py\" 27)) literal (intOrNat 0)))",
+    "kargs": "()",
+    "balance": "None",
+    "id": "((Some (\"operator_case2.py\" 30)) static_id 0)",
+    "line_no": "(Some (\"operator_case2.py\" 30))"
+   },
+   {
+    "action": "message",
+    "id": "((Some (\"operator_case2.py\" 30)) static_id 0)",
+    "line_no": "(Some (\"operator_case2.py\" 31))",
+    "message": "update",
+    "params": "((Some (\"operator_case2.py\" 31)) record (value ((Some (\"operator_case2.py\" 31)) literal (intOrNat 20))))"
+   },
+   {
+    "action": "verify",
+    "condition": "((Some (\"operator_case2.py\" 32)) eq ((Some (\"operator_case2.py\" 32)) attr ((Some (\"operator_case2.py\" 32)) contract_data ((Some (\"operator_case2.py\" 30)) static_id 0)) \"storedValue\") ((Some (\"operator_case2.py\" 32)) literal (intOrNat 20)))",
+    "line_no": "(Some (\"operator_case2.py\" 32))"
+   }
+  ]
+ }
+]

@@ -1,0 +1,1 @@
+sp.record(divisor = 6)
