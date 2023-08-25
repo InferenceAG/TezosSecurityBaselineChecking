@@ -2,10 +2,12 @@
 . ../../_framework/init.sh
 . ../../_framework/functions.sh
 
-head -n 1 readme.md
+getTestcaseTitle
+
+removeContract "zeroticket"
 
 case $1 in
-	*)
+	oxford)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract zeroticket transferring 0 from deploy running tickets_zero_amount.tz --init "Unit" --burn-cap 0.1 --force  >out.tmp 2>&1
 		
@@ -13,5 +15,8 @@ case $1 in
 		checkResult result.tmp "The operation has only been included 0 blocks ago."
 		;;
 
+	*)
+		echo "not supported $1"
+		;;	
 esac
 #rm *.tmp

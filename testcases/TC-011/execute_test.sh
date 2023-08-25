@@ -2,10 +2,12 @@
 . ../../_framework/init.sh
 . ../../_framework/functions.sh
 
-head -n 1 readme.md
+getTestcaseTitle
+
+removeContract "ordering_basic"
 
 case $1 in
-	*)
+	oxford)
 		echo "executing tests for $1"
 		admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
 		
@@ -48,6 +50,9 @@ case $1 in
 				echo "testcase failed"
 		fi
 		;;
+
+	*)
+		echo "not supported $1"
+		;;	
 esac
-rm *.tmp
-rm -rf compiled
+#rm *.tmp

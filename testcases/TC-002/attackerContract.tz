@@ -1,0 +1,19 @@
+{ parameter unit ;
+  storage (pair (address %dest_address) (address %dest_contract)) ;
+  code { CDR ;
+         DUP ;
+         CDR ;
+         CONTRACT %payout (pair (mutez %amount) (address %destination)) ;
+         IF_NONE { PUSH string "None" ; FAILWITH } {} ;
+         PUSH mutez 0 ;
+         DUP 3 ;
+         CAR ;
+         PUSH mutez 3000000 ;
+         PAIR ;
+         TRANSFER_TOKENS ;
+         SWAP ;
+         NIL operation ;
+         DIG 2 ;
+         CONS ;
+         PAIR } }
+

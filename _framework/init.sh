@@ -7,11 +7,12 @@ export SMARTPY=/home/gonzo/Installs/SmartPy/smartpy_0.18.2
 
 # Ligo
 #export LIGO=/home/user/ligo/ligo-20211215-1acb57254d3b46dce1a2cdf34283564a2a36f084
-export LIGO=/home/user/Installs/ligo/ligo-0.60.0
+export LIGO=/home/gonzo/Installs/ligo/ligo-0.72.0
 #export LIGO=/home/user/Installs/ligo/ligo-0.67.1
 
 # Tezos
-export TEZOSCLIENT="/home/gonzo/Installs/tezos-clients/octez-client.v17.1 -d /home/gonzo/Data/Deployments/Nairobi -E http://10.30.0.200:4417"
+export TEZOSCLIENT="/home/gonzo/Installs/tezos-clients/octez-client.v18.0-rc1 -d /home/gonzo/Data/Deployments/Oxford -E https://rpc.oxfordnet.teztnets.xyz"
+#export TEZOSCLIENT="/home/gonzo/Installs/tezos-clients/octez-client.v17.1 -d /home/gonzo/Data/Deployments/Nairobi -E http://10.30.0.200:4417"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/octez-client-v16.0-rc1 -d /home/user/Data/Deployments/Mumbai -E http://10.30.0.200:4416"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/octez-client-v15.0-rc1 -d /home/user/Data/Deployments/Lima -E http://10.30.0.200:4415"
 #export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Kathmandu -E https://kathmandunet.smartpy.io/"

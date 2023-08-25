@@ -1,0 +1,47 @@
+[
+ {
+  "shortname": "ordering",
+  "longname": "ordering",
+  "scenario": [
+   {
+    "action": "add_module",
+    "module": "((Some (\"ordering.py\" 6)) module main ((Some (\"ordering.py\" 6)) contract_def OrderingContract () (((Some (\"ordering.py\" 7)) method init (address) (((Some (\"ordering.py\" 8)) assign ((Some (\"ordering.py\" 8)) attr ((Some (\"ordering.py\" 8)) storage) \"destination\") ((Some (\"ordering.py\" 8)) var \"address\")))) ((Some (\"ordering.py\" 11)) method (private makeTransfers ((Some read-write) True)) () (((Some (\"ordering.py\" 12)) assign ((Some (\"ordering.py\" 12)) operations) ((Some (\"ordering.py\" 12)) cons ((Some (\"ordering.py\" 12)) transfer ((Some (\"ordering.py\" 12)) literal (unit)) ((Some (\"ordering.py\" 12)) literal (mutez 1000000)) ((Some (\"ordering.py\" 12)) open_variant ((Some (\"ordering.py\" 12)) contract \"\" unit ((Some (\"ordering.py\" 12)) attr ((Some (\"ordering.py\" 12)) storage) \"destination\")) Some None)) ((Some (\"ordering.py\" 12)) operations))) ((Some (\"ordering.py\" 13)) assign ((Some (\"ordering.py\" 13)) operations) ((Some (\"ordering.py\" 13)) cons ((Some (\"ordering.py\" 13)) transfer ((Some (\"ordering.py\" 13)) literal (unit)) ((Some (\"ordering.py\" 13)) literal (mutez 2000000)) ((Some (\"ordering.py\" 13)) open_variant ((Some (\"ordering.py\" 13)) contract \"\" unit ((Some (\"ordering.py\" 13)) attr ((Some (\"ordering.py\" 13)) storage) \"destination\")) Some None)) ((Some (\"ordering.py\" 13)) operations))) ((Some (\"ordering.py\" 14)) assign ((Some (\"ordering.py\" 14)) operations) ((Some (\"ordering.py\" 14)) cons ((Some (\"ordering.py\" 14)) transfer ((Some (\"ordering.py\" 14)) literal (unit)) ((Some (\"ordering.py\" 14)) literal (mutez 3000000)) ((Some (\"ordering.py\" 14)) open_variant ((Some (\"ordering.py\" 14)) contract \"\" unit ((Some (\"ordering.py\" 14)) attr ((Some (\"ordering.py\" 14)) storage) \"destination\")) Some None)) ((Some (\"ordering.py\" 14)) operations))))) ((Some (\"ordering.py\" 17)) method (entrypoint execute) () (((Some (\"ordering.py\" 18)) expr ((Some (\"ordering.py\" 18)) call ((Some (\"ordering.py\" 18)) private_method makeTransfers))))))) ((Some (\"ordering.py\" 20)) contract_def CheckContract () (((Some (\"ordering.py\" 21)) method init () (((Some (\"ordering.py\" 22)) assign ((Some (\"ordering.py\" 22)) attr ((Some (\"ordering.py\" 22)) storage) \"counter\") ((Some (\"ordering.py\" 22)) literal (intOrNat 0))))) ((Some (\"ordering.py\" 25)) method (entrypoint default) () (((Some (\"ordering.py\" 26)) if_then_else ((Some (\"ordering.py\" 26)) eq ((Some (\"ordering.py\" 26)) attr ((Some (\"ordering.py\" 26)) storage) \"counter\") ((Some (\"ordering.py\" 26)) literal (intOrNat 0))) (((Some (\"ordering.py\" 27)) verify ((Some (\"ordering.py\" 27)) eq ((Some (\"ordering.py\" 27)) amount) ((Some (\"ordering.py\" 27)) literal (mutez 1000000)))) ((Some (\"ordering.py\" 28)) assign ((Some (\"ordering.py\" 28)) attr ((Some (\"ordering.py\" 28)) storage) \"counter\") ((Some (\"ordering.py\" 28)) add ((Some (\"ordering.py\" 28)) attr ((Some (\"ordering.py\" 28)) storage) \"counter\") ((Some (\"ordering.py\" 28)) literal (intOrNat 1))))) (((Some (\"ordering.py\" 30)) if_then_else ((Some (\"ordering.py\" 30)) eq ((Some (\"ordering.py\" 30)) attr ((Some (\"ordering.py\" 30)) storage) \"counter\") ((Some (\"ordering.py\" 30)) literal (intOrNat 1))) (((Some (\"ordering.py\" 31)) verify ((Some (\"ordering.py\" 31)) eq ((Some (\"ordering.py\" 31)) amount) ((Some (\"ordering.py\" 31)) literal (mutez 2000000)))) ((Some (\"ordering.py\" 32)) assign ((Some (\"ordering.py\" 32)) attr ((Some (\"ordering.py\" 32)) storage) \"counter\") ((Some (\"ordering.py\" 32)) add ((Some (\"ordering.py\" 32)) attr ((Some (\"ordering.py\" 32)) storage) \"counter\") ((Some (\"ordering.py\" 32)) literal (intOrNat 1))))) (((Some (\"ordering.py\" 34)) if_then_else ((Some (\"ordering.py\" 34)) eq ((Some (\"ordering.py\" 34)) attr ((Some (\"ordering.py\" 34)) storage) \"counter\") ((Some (\"ordering.py\" 34)) literal (intOrNat 2))) (((Some (\"ordering.py\" 35)) verify ((Some (\"ordering.py\" 35)) eq ((Some (\"ordering.py\" 35)) amount) ((Some (\"ordering.py\" 35)) literal (mutez 3000000)))) ((Some (\"ordering.py\" 36)) assign ((Some (\"ordering.py\" 36)) attr ((Some (\"ordering.py\" 36)) storage) \"counter\") ((Some (\"ordering.py\" 36)) add ((Some (\"ordering.py\" 36)) attr ((Some (\"ordering.py\" 36)) storage) \"counter\") ((Some (\"ordering.py\" 36)) literal (intOrNat 1))))) (((Some (\"ordering.py\" 38)) failwith ((Some (\"ordering.py\" 38)) literal (string \"fail\"))))))))))))))",
+    "line_no": "(Some (\"ordering.py\" 43))"
+   },
+   {
+    "action": "instantiateContract",
+    "module": "main",
+    "name": "CheckContract",
+    "args": "()",
+    "kargs": "()",
+    "balance": "None",
+    "id": "((Some (\"ordering.py\" 45)) static_id 0)",
+    "line_no": "(Some (\"ordering.py\" 45))"
+   },
+   {
+    "action": "instantiateContract",
+    "module": "main",
+    "name": "OrderingContract",
+    "args": "(((Some (\"ordering.py\" 46)) contract_address ((Some (\"ordering.py\" 45)) static_id 0) \"\"))",
+    "kargs": "()",
+    "balance": "((Some (\"ordering.py\" 47)) literal (mutez 6000000))",
+    "id": "((Some (\"ordering.py\" 48)) static_id 1)",
+    "line_no": "(Some (\"ordering.py\" 48))"
+   },
+   {
+    "action": "html",
+    "inner": "Ordering",
+    "line_no": "(Some (\"ordering.py\" 50))",
+    "tag": "h1"
+   },
+   {
+    "action": "message",
+    "id": "((Some (\"ordering.py\" 48)) static_id 1)",
+    "line_no": "(Some (\"ordering.py\" 51))",
+    "message": "execute",
+    "params": "(None literal (unit))",
+    "valid": "((Some (\"ordering.py\" 51)) literal (bool True))"
+   }
+  ]
+ }
+]

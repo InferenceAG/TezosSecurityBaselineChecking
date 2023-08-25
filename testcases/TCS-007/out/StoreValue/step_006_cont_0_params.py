@@ -1,1 +1,0 @@
-sp.record(value = 25)

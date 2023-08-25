@@ -2,7 +2,7 @@
 . ../../_framework/init.sh
 . ../../_framework/functions.sh
 
-head -n 1 readme.md
+getTestcaseTitle
 
 case $1 in
 	*)

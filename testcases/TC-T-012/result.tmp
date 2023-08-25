@@ -1,9 +1,11 @@
+Waiting for the node to be bootstrapped...
+Current head: BMSAsAA9oiBX (timestamp: 2023-08-25T05:45:45.000-00:00, validation: 2023-08-25T05:45:49.496-00:00)
 Node is bootstrapped.
 This simulation failed:
   Manager signed operations:
     From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
     Fee to the baker: ꜩ0
-    Expected counter: 304012
+    Expected counter: 1724
     Gas limit: 1040000
     Storage limit: 60000 bytes
     Origination:

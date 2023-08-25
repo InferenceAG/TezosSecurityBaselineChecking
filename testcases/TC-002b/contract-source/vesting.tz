@@ -1,0 +1,56 @@
+{ parameter
+    (or (pair %adminPayout (mutez %amount) (address %destination))
+        (pair %transfer (address %contractAddress) (mutez %payoutAmount))) ;
+  storage (pair (address %admin) (mutez %minLockedValue)) ;
+  code { UNPAIR ;
+         IF_LEFT
+           { DUP 2 ;
+             CAR ;
+             SENDER ;
+             COMPARE ;
+             EQ ;
+             IF {} { PUSH string "failed assertion" ; FAILWITH } ;
+             DUP ;
+             CDR ;
+             CONTRACT unit ;
+             IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+             SWAP ;
+             CAR ;
+             UNIT ;
+             TRANSFER_TOKENS ;
+             SWAP ;
+             NIL operation }
+           { DUP ;
+             CDR ;
+             BALANCE ;
+             SUB_MUTEZ ;
+             IF_NONE { PUSH string "negative balance" ; FAILWITH } {} ;
+             DUP 3 ;
+             CDR ;
+             SWAP ;
+             COMPARE ;
+             GE ;
+             IF {}
+                { PUSH string "Assert failure - Min locked value not ensured." ; FAILWITH } ;
+             DUP ;
+             CAR ;
+             CONTRACT unit ;
+             IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+             PUSH mutez 0 ;
+             UNIT ;
+             TRANSFER_TOKENS ;
+             SENDER ;
+             CONTRACT unit ;
+             IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+             DIG 2 ;
+             CDR ;
+             UNIT ;
+             TRANSFER_TOKENS ;
+             DIG 2 ;
+             NIL operation ;
+             DIG 2 ;
+             CONS } ;
+         DIG 2 ;
+         CONS ;
+         PAIR } }
+

@@ -1,0 +1,27 @@
+{ parameter unit ;
+  storage (pair (address %dest) (nat %level)) ;
+  code { CDR ;
+         DUP ;
+         CDR ;
+         LEVEL ;
+         COMPARE ;
+         NEQ ;
+         IF { PUSH mutez 3000000 ;
+              SELF_ADDRESS ;
+              PAIR ;
+              DUP 2 ;
+              CAR ;
+              CONTRACT %transfer (pair (address %contractAddress) (mutez %payoutAmount)) ;
+              IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+              PUSH mutez 0 ;
+              DIG 2 ;
+              TRANSFER_TOKENS ;
+              SWAP ;
+              LEVEL ;
+              UPDATE 2 ;
+              NIL operation ;
+              DIG 2 ;
+              CONS }
+            { LEVEL ; UPDATE 2 ; NIL operation } ;
+         PAIR } }
+

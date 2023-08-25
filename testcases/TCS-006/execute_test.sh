@@ -2,14 +2,17 @@
 . ../../_framework/init.sh
 . ../../_framework/functions.sh
 
-head -n 1 readme.md
+getTestcaseTitle
+
+removeContract "ordering_external_lambda"
 
 case $1 in
-	*)
+	oxford)
 		echo "executing tests for $1"
-		$SMARTPY compile ordering.py compiled/ --purge
-		storage=$(cat ./compiled/order/step_000_cont_0_storage.tz)
-		$TEZOSCLIENT originate contract ordering_external_lambda transferring 6 from deploy running ./compiled/order/step_000_cont_0_contract.tz --init $storage --burn-cap 0.2 --force >out.tmp 2>&1
+		$SMARTPY test ordering.py compiled/
+		adminAddress=$($TEZOSCLIENT list known addresses |grep admin | awk '{print $2}')
+		storage="\"$adminAddress\""
+		$TEZOSCLIENT originate contract ordering_external_lambda transferring 6 from deploy running ./compiled/ordering/step_002_cont_1_contract.tz --init "$storage" --burn-cap 0.2 --force >out.tmp 2>&1
 		
 		# CONS is prepending an item to a list.
 		# Thus, the generated list of operations from the lambda is: { tez_1_transfer; tez_2_transfer; tez_3_transfer }
@@ -53,6 +56,10 @@ case $1 in
 				echo "testcase failed"
 		fi
 		;;
+
+	*)
+		echo "not supported $1"
+		;;	
 esac
-#rm *.tmp
-#rm -rf compiled
+rm *.tmp
+rm -rf compiled

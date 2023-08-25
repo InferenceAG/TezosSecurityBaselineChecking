@@ -8,6 +8,30 @@ function checkResult () {
 	fi
 }
 
+function getDirName () {
+	dirname="$(basename "$(pwd)")"
+	echo $dirname
+}
+
+function getReadmeHead () {
+	readmehead="$(head -n 1 readme.md)"
+	echo $readmehead
+}
+
+function getTestcaseTitle () {
+	readmehead=$(getReadmeHead)
+	dirname=$(getDirName)
+
+	echo $dirname $readmehead
+}
+
+function removeContract () {
+	test=$($TEZOSCLIENT list known contracts |grep $1|awk -F ":" '{print $1}')
+	if [[ $test == $1 ]]; then
+		$TEZOSCLIENT forget contract $1
+	fi
+}
+
 main() {
     code
 }

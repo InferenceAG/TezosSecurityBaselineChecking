@@ -2,17 +2,20 @@
 . ../../_framework/init.sh
 . ../../_framework/functions.sh
 
-head -n 1 readme.md
+getTestcaseTitle
+
+removeContract "ordering"
 
 case $1 in
-	*)
+	oxford)
 		echo "executing tests for $1"
-		$LIGO compile contract ordering.ligo > ordering.tz.tmp
 
 		adminAddress=$($TEZOSCLIENT list known addresses |grep admin | awk '{print $2}')
-		storage=$($LIGO compile storage ordering.ligo "record[admin=(\"$adminAddress\":address)]")
+		$LIGO compile contract contract-source/ordering.mligo > ordering.tz
+		# ligo compile storage ordering.mligo '{admin=("tz1burnburnburnburnburnburnburjAYjjX" : address)}'
+		storage="\"$adminAddress\""
 		
-		$TEZOSCLIENT originate contract ordering transferring 6 from deploy running ordering.tz.tmp --init $storage --burn-cap 0.187  --force >out.tmp 2>&1
+		$TEZOSCLIENT originate contract ordering transferring 6 from deploy running ordering.tz --init "$storage" --burn-cap 0.187  --force >out.tmp 2>&1
 		$TEZOSCLIENT transfer 0 from admin to ordering --entrypoint 'transfer'  >result.tmp 2>&1
 
 		### Note!!!
@@ -48,5 +51,8 @@ case $1 in
 		fi
 
 		;;
+	*)
+		echo "not supported $1"
+		;;	
 esac
 rm *.tmp

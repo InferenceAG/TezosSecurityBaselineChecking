@@ -1,0 +1,43 @@
+{ parameter (or (mutez %adminTransfer) (unit %transfer)) ;
+  storage address ;
+  code { UNPAIR ;
+         IF_LEFT
+           { DUP 2 ;
+             SENDER ;
+             COMPARE ;
+             EQ ;
+             IF {} { PUSH string "failed assertion" ; FAILWITH } ;
+             DUP 2 ;
+             CONTRACT unit ;
+             IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+             SWAP ;
+             UNIT ;
+             TRANSFER_TOKENS ;
+             SWAP ;
+             NIL operation }
+           { DROP ;
+             DUP ;
+             CONTRACT unit ;
+             IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+             DUP ;
+             PUSH mutez 1000000 ;
+             UNIT ;
+             TRANSFER_TOKENS ;
+             DUP 2 ;
+             PUSH mutez 2000000 ;
+             UNIT ;
+             TRANSFER_TOKENS ;
+             DIG 2 ;
+             PUSH mutez 3000000 ;
+             UNIT ;
+             TRANSFER_TOKENS ;
+             DIG 3 ;
+             NIL operation ;
+             DIG 2 ;
+             CONS ;
+             DIG 2 ;
+             CONS } ;
+         DIG 2 ;
+         CONS ;
+         PAIR } }
+

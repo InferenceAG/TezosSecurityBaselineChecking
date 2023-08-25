@@ -1,0 +1,83 @@
+parameter (unit %default);
+storage   int;
+code
+  {
+    CDR;        # @storage
+    # == default ==
+    # if self.data.counter == 0: # @storage
+    PUSH int 0; # int : @storage
+    DUP 2;      # @storage : int : @storage
+    COMPARE;    # int : @storage
+    EQ;         # bool : @storage
+    IF
+      {
+        # assert sp.amount == sp.tez(1) # @storage
+        PUSH mutez 1000000; # mutez : @storage
+        AMOUNT;     # @amount : mutez : @storage
+        COMPARE;    # int : @storage
+        EQ;         # bool : @storage
+        IF
+          {}
+          {
+            PUSH string "WrongCondition: sp.amount == sp.tez(1)"; # string : @storage
+            FAILWITH;   # FAILED
+          }; # @storage
+        # self.data.counter += 1 # @storage
+        PUSH int 1; # int : @storage
+        ADD;        # int
+      }
+      {
+        # if self.data.counter == 1: # @storage
+        PUSH int 1; # int : @storage
+        DUP 2;      # @storage : int : @storage
+        COMPARE;    # int : @storage
+        EQ;         # bool : @storage
+        IF
+          {
+            # assert sp.amount == sp.tez(2) # @storage
+            PUSH mutez 2000000; # mutez : @storage
+            AMOUNT;     # @amount : mutez : @storage
+            COMPARE;    # int : @storage
+            EQ;         # bool : @storage
+            IF
+              {}
+              {
+                PUSH string "WrongCondition: sp.amount == sp.tez(2)"; # string : @storage
+                FAILWITH;   # FAILED
+              }; # @storage
+            # self.data.counter += 1 # @storage
+            PUSH int 1; # int : @storage
+            ADD;        # int
+          }
+          {
+            # if self.data.counter == 2: # @storage
+            PUSH int 2; # int : @storage
+            DUP 2;      # @storage : int : @storage
+            COMPARE;    # int : @storage
+            EQ;         # bool : @storage
+            IF
+              {
+                # assert sp.amount == sp.tez(3) # @storage
+                PUSH mutez 3000000; # mutez : @storage
+                AMOUNT;     # @amount : mutez : @storage
+                COMPARE;    # int : @storage
+                EQ;         # bool : @storage
+                IF
+                  {}
+                  {
+                    PUSH string "WrongCondition: sp.amount == sp.tez(3)"; # string : @storage
+                    FAILWITH;   # FAILED
+                  }; # @storage
+                # self.data.counter += 1 # @storage
+                PUSH int 1; # int : @storage
+                ADD;        # int
+              }
+              {
+                PUSH string "fail"; # string : @storage
+                FAILWITH;   # FAILED
+              }; # int
+          }; # int
+      }; # int
+    NIL operation; # list operation : int
+    PAIR;       # pair (list operation) int
+  };

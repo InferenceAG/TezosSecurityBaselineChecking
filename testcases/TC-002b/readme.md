@@ -12,4 +12,4 @@ The execution order of these two emitted operations is:
 
 Since the transfer of tez is the second operations to be executed, the BALANCE operation provides still the old balance value in case the transfer entrypoint is called before the tez transfer operation. This may could happend, when the called default entrypoint in 1. operation calls the transfer entrypoint again ("reentrancy").
 
-This test cases checks whether behaviour is still the same (successful exeuction), but also show an example of a successful reentrancy attack, since the vesting contract actually tries to keep a minimal tez amount (minLockedValue).
+This test cases checks whether behaviour is still the same (successful exeuction), but also shows an example of a successful reentrancy attack, since the vesting contract actually tries to keep a minimal tez amount (minLockedValue).

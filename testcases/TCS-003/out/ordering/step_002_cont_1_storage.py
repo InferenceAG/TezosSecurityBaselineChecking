@@ -1,0 +1,1 @@
+sp.record(destination = sp.address('KT1TezoooozzSmartPyzzSTATiCzzzwwBFA1'))

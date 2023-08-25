@@ -1,0 +1,54 @@
+parameter (unit %execute);
+storage   address;
+code
+  {
+    CDR;        # @storage
+    # == execute ==
+    # sp.send(self.data.admin, sp.tez(1)) # @storage
+    NIL operation; # list operation : @storage
+    DUP 2;      # @storage : list operation : @storage
+    CONTRACT unit; # option (contract unit) : list operation : @storage
+    IF_NONE
+      {
+        PUSH int 12; # int : list operation : @storage
+        FAILWITH;   # FAILED
+      }
+      {}; # @some : list operation : @storage
+    PUSH mutez 1000000; # mutez : @some : list operation : @storage
+    UNIT;       # unit : mutez : @some : list operation : @storage
+    TRANSFER_TOKENS; # operation : list operation : @storage
+    CONS;       # list operation : @storage
+    # sp.send(self.data.admin, sp.tez(2)) # list operation : @storage
+    DUP 2;      # @storage : list operation : @storage
+    CONTRACT unit; # option (contract unit) : list operation : @storage
+    IF_NONE
+      {
+        PUSH int 13; # int : list operation : @storage
+        FAILWITH;   # FAILED
+      }
+      {}; # @some : list operation : @storage
+    PUSH mutez 2000000; # mutez : @some : list operation : @storage
+    UNIT;       # unit : mutez : @some : list operation : @storage
+    TRANSFER_TOKENS; # operation : list operation : @storage
+    CONS;       # list operation : @storage
+    # sp.send(self.data.admin, sp.tez(3)) # list operation : @storage
+    DUP 2;      # @storage : list operation : @storage
+    CONTRACT unit; # option (contract unit) : list operation : @storage
+    IF_NONE
+      {
+        PUSH int 14; # int : list operation : @storage
+        FAILWITH;   # FAILED
+      }
+      {}; # @some : list operation : @storage
+    PUSH mutez 3000000; # mutez : @some : list operation : @storage
+    UNIT;       # unit : mutez : @some : list operation : @storage
+    TRANSFER_TOKENS; # operation : list operation : @storage
+    CONS;       # list operation : @storage
+    NIL operation; # list operation : list operation : @storage
+    SWAP;       # list operation : list operation : @storage
+    ITER
+      {
+        CONS;       # list operation : @storage
+      }; # list operation : @storage
+    PAIR;       # pair (list operation) @storage
+  };

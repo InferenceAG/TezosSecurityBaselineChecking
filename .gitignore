@@ -3,4 +3,7 @@ testcases/python-env
 *.swp
 *TODO*
 .idea/
+*.out
+.ligo/
+compiled/
 

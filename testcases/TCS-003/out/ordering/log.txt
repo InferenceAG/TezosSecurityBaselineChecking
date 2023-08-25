@@ -1,0 +1,43 @@
+Creating contract KT1TezoooozzSmartPyzzSTATiCzzzwwBFA1
+ -> 0
+ => ./out/ordering/step_001_cont_0_storage.tz 1
+ => ./out/ordering/step_001_cont_0_storage.json 1
+ => ./out/ordering/step_001_cont_0_sizes.csv 2
+ => ./out/ordering/step_001_cont_0_storage.py 1
+ => ./out/ordering/step_001_cont_0_types.py 7
+ => ./out/ordering/step_001_cont_0_contract.tz 83
+ => ./out/ordering/step_001_cont_0_contract.json 84
+Creating contract KT1Tezooo1zzSmartPyzzSTATiCzzzyfC8eF
+ -> "KT1TezoooozzSmartPyzzSTATiCzzzwwBFA1"
+ => ./out/ordering/step_002_cont_1_storage.tz 1
+ => ./out/ordering/step_002_cont_1_storage.json 1
+ => ./out/ordering/step_002_cont_1_sizes.csv 2
+ => ./out/ordering/step_002_cont_1_storage.py 1
+ => ./out/ordering/step_002_cont_1_types.py 7
+ => ./out/ordering/step_002_cont_1_contract.tz 74
+ => ./out/ordering/step_002_cont_1_contract.json 60
+Comment...
+ h1: Ordering
+ => ./out/ordering/step_004_cont_1_params.py 1
+ => ./out/ordering/step_004_cont_1_params.tz 1
+ => ./out/ordering/step_004_cont_1_params.json 1
+Executing execute(sp.unit)...
+ -> "KT1TezoooozzSmartPyzzSTATiCzzzwwBFA1"
+  + Transfer
+     params: ()
+     amount: sp.tez(1)
+     to:     sp.contract(sp.unit, sp.address('KT1TezoooozzSmartPyzzSTATiCzzzwwBFA1')).open_some()
+  + Transfer
+     params: ()
+     amount: sp.tez(2)
+     to:     sp.contract(sp.unit, sp.address('KT1TezoooozzSmartPyzzSTATiCzzzwwBFA1')).open_some()
+  + Transfer
+     params: ()
+     amount: sp.tez(3)
+     to:     sp.contract(sp.unit, sp.address('KT1TezoooozzSmartPyzzSTATiCzzzwwBFA1')).open_some()
+Executing (queue) default(())...
+ -> 1
+Executing (queue) default(())...
+ -> 2
+Executing (queue) default(())...
+ -> 3

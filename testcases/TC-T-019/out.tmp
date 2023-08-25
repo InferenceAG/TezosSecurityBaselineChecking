@@ -1,0 +1,56 @@
+Waiting for the node to be bootstrapped...
+Current head: BKxaSZN4oVUP (timestamp: 2023-08-25T05:47:29.000-00:00, validation: 2023-08-25T05:47:31.835-00:00)
+Node is bootstrapped.
+Estimated gas: 603.278 units (will add 100 for safety)
+Estimated storage: 375 bytes added (will add 20 for safety)
+Operation successfully injected in the node.
+Operation hash is 'oooCT23WvEizoNTFmpe96etuXto2Y9hjSBzgED98LKQaDu4jEgs'
+Waiting for the operation to be included...
+Operation found in block: BM2h5Mp7HDantfi4xYWyUHsaiLQ9Fiaz2JbVhdooysNXx6t6Z7P (pass: 3, offset: 0)
+This sequence of operations was run:
+  Manager signed operations:
+    From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+    Fee to the baker: ꜩ0.000417
+    Expected counter: 1725
+    Gas limit: 704
+    Storage limit: 395 bytes
+    Balance updates:
+      tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.000417
+      payload fees(the block proposer) ....... +ꜩ0.000417
+    Origination:
+      From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+      Credit: ꜩ0
+      Script:
+        { parameter (option (ticket string)) ;
+          storage (option (ticket string)) ;
+          code { CAR ;
+                 IF_NONE { FAIL } {} ;
+                 PUSH nat 4 ;
+                 PUSH string "test" ;
+                 TICKET ;
+                 ASSERT_SOME ;
+                 PAIR ;
+                 JOIN_TICKETS ;
+                 NIL operation ;
+                 PAIR } }
+        Initial storage: None
+        No delegate for this contract
+        This origination was successfully applied
+        Originated contracts:
+          KT1XWBjc2hPNbEDYwzsAZNWJEf6xRuueGygh
+        Storage size: 118 bytes
+        Paid storage size diff: 118 bytes
+        Consumed gas: 603.245
+        Balance updates:
+          tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.0295
+          storage fees ........................... +ꜩ0.0295
+          tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.06425
+          storage fees ........................... +ꜩ0.06425
+
+New contract KT1XWBjc2hPNbEDYwzsAZNWJEf6xRuueGygh originated.
+The operation has only been included 0 blocks ago.
+We recommend to wait more.
+Use command
+  octez-client wait for oooCT23WvEizoNTFmpe96etuXto2Y9hjSBzgED98LKQaDu4jEgs to be included --confirmations 1 --branch BL2U6VZQLd3EEy1VmRTpGTBG6graDUMr5TTtx5rLGkCtftSGox1
+and/or an external block explorer.
+Contract memorized as join.

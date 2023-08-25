@@ -1,48 +1,50 @@
 # Store Value - Example for illustrative purposes only.
 import smartpy as sp
 
-class OrderingContract(sp.Contract):
-    def __init__(self, address):
-        self.init(
-            destination = address
-        )
+@sp.module
+def main():
+    class OrderingContract(sp.Contract):
+        def __init__(self, address):
+            self.data.destination = address
 
-    @sp.entry_point
-    def execute(self, execution_payload):
-        sp.set_type(execution_payload, sp.TLambda(
-            sp.TUnit, sp.TList(sp.TOperation)))
-                
-        sp.add_operations(execution_payload(sp.unit))
+        @sp.entrypoint
+        def execute(self, execution_payload):
+            sp.cast(execution_payload, sp.lambda_[sp.unit, sp.list[sp.operation]])
+                    
+            ops = execution_payload()
+            for op in ops:
+                # We do not reverse the ops list first, since the crafted operations in the lambda is in the order [1tez op,2tez op,3tez op]
+                sp.operations.push(op)
+                # List is now [tez3 op, tez2 op, tez1 op], which is then executed by SmartPy in reverse order: https://smartpy.io/manual/syntax/operations#manual-operation-management
 
-class CheckContract(sp.Contract):
-    def __init__(self, ):
-        self.init(
-            counter = 0
-        )
+    class CheckContract(sp.Contract):
+        def __init__(self, ):
+            self.data.counter = 0
 
-    @sp.entry_point
-    def default(self):
-        sp.if self.data.counter == 0:
-            sp.verify(sp.amount == sp.mutez(1000000))
-            self.data.counter += 1
-        sp.else:
-            sp.if self.data.counter == 1:
-                sp.verify(sp.amount == sp.mutez(2000000))
+        @sp.entrypoint
+        def default(self):
+            if self.data.counter == 0:
+                assert (sp.amount == sp.mutez(1000000))
                 self.data.counter += 1
-            sp.else:
-                sp.if self.data.counter == 2:
-                    sp.verify(sp.amount == sp.mutez(3000000))
+            else:
+                if self.data.counter == 1:
+                    assert (sp.amount == sp.mutez(2000000))
                     self.data.counter += 1
-                sp.else:
-                    sp.failwith("fail")
-            
-
-if "templates" not in __name__:
+                else:
+                    if self.data.counter == 2:
+                        assert (sp.amount == sp.mutez(3000000))
+                        self.data.counter += 1
+                    else:
+                        raise "fail"
+                
+@sp.add_test(name = "ordering") 
+def test():
+    scenario = sp.test_scenario(main)
+    checkContract = main.CheckContract()
+    scenario += checkContract
+    orderingContract = main.OrderingContract(checkContract.address)
+    orderingContract.set_initial_balance(sp.mutez(6000000))
+    scenario += orderingContract
     
-    @sp.add_test(name = "ordering") 
-    def test():
-        scenario = sp.test_scenario()
-        checkContract = CheckContract()
-        scenario += checkContract
-
-sp.add_compilation_target("order", OrderingContract(sp.address("tz1dzdRMe3B9zd158nb18hdaWojfbM2dogqC")))
+    scenario.h1("Ordering")        
+    # no real checks here.

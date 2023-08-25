@@ -1,0 +1,1 @@
+sp.record(admin = sp.address('KT1TezoooozzSmartPyzzSTATiCzzzwwBFA1'))
