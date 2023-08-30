@@ -1,17 +1,15 @@
-Waiting for the node to be bootstrapped...
-Current head: BMJtneTVHRR5 (timestamp: 2023-08-25T05:51:29.000-00:00, validation: 2023-08-25T05:51:35.360-00:00)
 Node is bootstrapped.
 Estimated gas: 595.146 units (will add 100 for safety)
 Estimated storage: 367 bytes added (will add 20 for safety)
 Operation successfully injected in the node.
-Operation hash is 'onkLiom5TL9du5R9fDVD18DLbKbMoTDs2Q7N913RZRqdzeeumBH'
+Operation hash is 'opYijuebUZnowKhDp9TGYiBM5SW87S1hVb5AkKcnMMUP3UEjNMV'
 Waiting for the operation to be included...
-Operation found in block: BLnA9iJScCxXVy4QpyDfKU41V1Ajm1YJnkHZpmwyfgrciJzzDW2 (pass: 3, offset: 0)
+Operation found in block: BMcZP4xpJMi7xHCj69vXeZeDvR1ibNoDYgV54avJyyuECpedexh (pass: 3, offset: 0)
 This sequence of operations was run:
   Manager signed operations:
     From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
     Fee to the baker: ꜩ0.000408
-    Expected counter: 1731
+    Expected counter: 1784
     Gas limit: 696
     Storage limit: 387 bytes
     Balance updates:
@@ -35,7 +33,7 @@ This sequence of operations was run:
         No delegate for this contract
         This origination was successfully applied
         Originated contracts:
-          KT1HhYf4q98dAmF66JfiJV83ZPBc5335tPsg
+          KT1SZNzBqHGwR7aPmojDkunVZbcFYbh9bNTF
         Storage size: 110 bytes
         Paid storage size diff: 110 bytes
         Consumed gas: 595.113
@@ -45,10 +43,10 @@ This sequence of operations was run:
           tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.06425
           storage fees ........................... +ꜩ0.06425
 
-New contract KT1HhYf4q98dAmF66JfiJV83ZPBc5335tPsg originated.
+New contract KT1SZNzBqHGwR7aPmojDkunVZbcFYbh9bNTF originated.
 The operation has only been included 0 blocks ago.
 We recommend to wait more.
 Use command
-  octez-client wait for onkLiom5TL9du5R9fDVD18DLbKbMoTDs2Q7N913RZRqdzeeumBH to be included --confirmations 1 --branch BL7osTxfCpf7yeDjs8ESx9wT9sUpvPc7qvVDmWKJaTsyMaRyjAv
+  octez-client wait for opYijuebUZnowKhDp9TGYiBM5SW87S1hVb5AkKcnMMUP3UEjNMV to be included --confirmations 1 --branch BMQESeWRdbDny6i3oXDuQmcNByCL4UZdG813iN6d7P84Hh9SKLz
 and/or an external block explorer.
 Contract memorized as zeroticket.
