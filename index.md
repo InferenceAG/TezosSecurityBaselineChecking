@@ -52,6 +52,11 @@
 ## Overview of Ligo testcases
 - [TCL-001: Operation ordering](./testcases/TCL-001/readme.md)
 
+## Overview of Smart Optimistic Rollup testcases
+- [TCR-001: Smart optimistic rollup - sending transaction by octez-client](./testcases/TCR-001/readme.md)
+- [TCR-002: Smart optimistic rollup - sending tez from a contract](./testcases/TCR-002/readme.md)
+- [TCR-003: Smart optimistic rollup - sending wrong input parameter type](./testcases/TCR-003/readme.md)
+
 ## Overview of SmartPy testcases
 - [TCS-001: Operation ordering - in entrypoint code](./testcases/TCS-001/readme.md)
 - [TCS-002: Operation ordering - in lambda code](./testcases/TCS-002/readme.md)

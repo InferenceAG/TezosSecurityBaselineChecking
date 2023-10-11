@@ -1,0 +1,14 @@
+{ parameter address ;
+  storage unit ;
+  code { UNPAIR ;
+         CONTRACT bytes ;
+         IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+         PUSH mutez 1000000 ;
+         PUSH bytes 0xdead ;
+         TRANSFER_TOKENS ;
+         SWAP ;
+         NIL operation ;
+         DIG 2 ;
+         CONS ;
+         PAIR } }
+
