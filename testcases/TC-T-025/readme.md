@@ -1,4 +1,4 @@
-# Testcase title: Tickets - zero amount tickets
+# Testcase title: Tickets - Zero amount tickets
 
 ## Description
 Testcase whether creation of zero amount tickets is not possible.
