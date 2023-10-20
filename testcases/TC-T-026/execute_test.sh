@@ -40,10 +40,20 @@ case $1 in
 		# Expected result "0", since the contract does not store the ticket.
 		$TEZOSCLIENT get ticket balance for ticketSender with ticketer ticketSender and type string and content '"One"' >result5.tmp 2>&1
 		checkResult result5.tmp "0"
+
+		echo "## Sub testcase #6:"
+		# Failing since too many tickets than available are trying to be sent to an implicit.
+		$TEZOSCLIENT transfer 19 tickets from deploy to admin with entrypoint default and contents '"One"' and type string and ticketer ticketSender --burn-cap 1 >transfer6.tmp 2>&1
+		checkResult transfer6.tmp "      This operation FAILED."
+
+		echo "## Sub testcase #7:"
+		# Failing since too many tickets than available are trying to be sent to contract.
+		$TEZOSCLIENT transfer 19 tickets from deploy to ticketSender with entrypoint "ticket" and contents '"One"' and type string and ticketer ticketSender --burn-cap 1 >transfer7.tmp 2>&1
+		checkResult transfer7.tmp "      This operation FAILED."
 		;;
 
 	*)
 		echo "not supported $1"
 		;;	
 esac
-rm *.tmp
+#rm *.tmp
