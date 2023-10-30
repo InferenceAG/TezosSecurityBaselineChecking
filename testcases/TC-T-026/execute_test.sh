@@ -50,6 +50,17 @@ case $1 in
 		# Failing since too many tickets than available are trying to be sent to contract.
 		$TEZOSCLIENT transfer 19 tickets from deploy to ticketSender with entrypoint "ticket" and contents '"One"' and type string and ticketer ticketSender --burn-cap 1 >transfer7.tmp 2>&1
 		checkResult transfer7.tmp "      This operation FAILED."
+
+		echo "## Sub testcase #8:"
+		# Sending a ticket to a "non-existing" resp. a not revealed implicit account.
+		$TEZOSCLIENT transfer 1 tickets from deploy to tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU with entrypoint default and contents '"One"' and type string and ticketer ticketSender --burn-cap 1 >transfer8.tmp 2>&1
+		checkResult transfer8.tmp "Operation successfully injected in the node."
+
+		echo "## Sub testcase #9:"
+		# Sending a ticket to a "non-existing" contract.
+		# TODO: Contract KT1TxqZ8QtKvLu3V3JH7Gx58n7Co8pgtpQU5 is the Sirius contract on mainnet. This contract address should be replaced, if the test suite should run on mainnet.
+		$TEZOSCLIENT transfer 1 tickets from deploy to KT1TxqZ8QtKvLu3V3JH7Gx58n7Co8pgtpQU5 with entrypoint default and contents '"One"' and type string and ticketer ticketSender --burn-cap 1 >transfer9.tmp 2>&1
+		checkResult transfer9.tmp "          This operation FAILED."
 		;;
 
 	*)
