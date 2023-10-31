@@ -6,7 +6,7 @@ code
     PUSH nat 0;
     PUSH string "test";
     TICKET;
-    IF_NONE { } { PUSH string "error should actually fail"; FAILWITH};
+    IF_NONE { PUSH string "error should actually fail"; FAILWITH } { DROP };
     UNIT;
     NIL operation;
     PAIR;
