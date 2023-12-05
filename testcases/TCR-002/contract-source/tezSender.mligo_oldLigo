@@ -13,7 +13,6 @@ let call ( store, param : storage * address) : operation list * storage =
     let op : operation = Tezos.transaction p 1tez dest in
     [op], store 
 
-[@entry]
-let main (action : parameter) (store : storage) : operation list * storage =
+let main (action, store : parameter * storage) : operation list * storage =
     match action with
         | Call param   -> call (store, param)        

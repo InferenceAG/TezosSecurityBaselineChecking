@@ -18,8 +18,8 @@ let init(store, param : storage * address) : operation list * storage =
     let op : operation = Tezos.transaction unit 0tez dest in 
     [op], store
     
-
-let main ( action, store : parameter * storage) :  operation list * storage =
+[@entry]
+let main (action : parameter) (store : storage) :  operation list * storage =
     match action with
         | SetToken param -> setToken (store, param)        
         | Init param -> init (store, param) 

@@ -8,8 +8,7 @@ type storage = {
     level: nat;
 }
 
-[@entry]
-let main (_action : unit) (store : storage): operation list * storage =
+let main ( _action, store : unit * storage): operation list * storage =
     if (Tezos.get_level() <> store.level) 
     then
         let pa : transferParam = {

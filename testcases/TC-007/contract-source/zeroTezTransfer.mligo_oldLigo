@@ -12,7 +12,6 @@ let transfer (store, param: unit * address) : operation list * unit =
 
     [op], store
 
-[@entry]
-let main (action : parameter) (store : unit) : operation list * unit = 
+let main (action, store : parameter * unit) : operation list * unit = 
     match action with 
         | Transfer param -> transfer (store, param)

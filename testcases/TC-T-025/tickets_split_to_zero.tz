@@ -1,0 +1,17 @@
+parameter unit;
+storage unit;
+code
+  {
+    DROP ; # drop storage and input
+    PUSH nat 1;
+    PUSH string "test";
+    TICKET;
+    IF_NONE { PUSH string "Error"; FAILWITH } { };
+    PUSH (pair nat nat) (Pair 0 1);
+    SWAP;
+    SPLIT_TICKET;
+    IF_NONE { PUSH string "error should actually fail"; FAILWITH } { DROP };
+    UNIT;
+    NIL operation;
+    PAIR;
+  };

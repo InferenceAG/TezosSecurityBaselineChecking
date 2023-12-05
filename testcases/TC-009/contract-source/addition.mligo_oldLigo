@@ -123,8 +123,7 @@ let callWrongAnnot(store, param: storage * inputcallC) : operation list * storag
             let op : operation = Tezos.transaction param.param 0mutez dest in
             [op], store
 
-[@entry]
-let main (action : parameter) (store : storage) : operation list * storage =
+let main (action, store : parameter * storage) : operation list * storage =
     match action with
         | Add param             -> add (store, param)        
         | AddNoAnnot param      -> addNoAnnot (store, param)    

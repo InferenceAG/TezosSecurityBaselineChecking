@@ -14,8 +14,7 @@ let sub (store, param: storage * value) : operation list * storage =
         | None -> failwith "substraction_below_zero"
         | Some res -> [], res
 
-[@entry]
-let main (action : parameter) (store : storage): operation list * storage =
+let main (action, store : parameter * storage): operation list * storage =
     match action with
         | Add param -> add (store, param)        
         | Sub param -> sub (store, param)   

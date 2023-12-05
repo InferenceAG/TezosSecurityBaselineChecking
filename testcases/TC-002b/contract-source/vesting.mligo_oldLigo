@@ -53,8 +53,7 @@ let adminPayout (store, param : storage * payoutParam) :  operation list * stora
     let op : operation = Tezos.transaction unit  param.amount  dest  in 
     [op], store
 
-[@entry]
-let main (action : parameter) (store : storage) : operation list * storage =
+let main (action, store : parameter * storage) : operation list * storage =
     match action with
         | Transfer param        -> transfer (store, param)
         | AdminPayout param     -> adminPayout (store, param)

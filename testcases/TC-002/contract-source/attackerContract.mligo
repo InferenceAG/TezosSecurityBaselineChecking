@@ -8,7 +8,8 @@ type storage = {
     dest_contract : address;
 }
 
-let main (_action , store : unit * storage) : operation list * storage =
+[@entry]
+let main (_action : unit ) ( store : storage) : operation list * storage =
     let pa : payoutParam = {
         destination = store.dest_address;
         amount = 3tez;

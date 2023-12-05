@@ -1,0 +1,20 @@
+parameter address;
+storage unit;
+code
+  {
+    CAR ; # drop storage
+    CONTRACT (ticket string);
+    IF_NONE { FAIL} {};
+    PUSH mutez 0;
+    PUSH nat 10;
+    PUSH string "test";
+    TICKET;
+    IF_NONE { PUSH string "Error"; FAILWITH } { };
+    TRANSFER_TOKENS;
+    NIL operation;
+    SWAP;
+    CONS;
+    UNIT;
+    SWAP;
+    PAIR;
+  };

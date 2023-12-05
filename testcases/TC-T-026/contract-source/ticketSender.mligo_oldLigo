@@ -38,8 +38,7 @@ let callc ( store, _param : storage * callType) : operation list * storage =
     let op : operation = Tezos.transaction tkt 0tez dest in
     [op], store 
 
-[@entry]
-let main (action : parameter) (store : storage) : operation list * storage =
+let main (action, store : parameter * storage) : operation list * storage =
     match action with
         | CallA param -> calla(store, param)
         | CallB param -> callb(store, param)

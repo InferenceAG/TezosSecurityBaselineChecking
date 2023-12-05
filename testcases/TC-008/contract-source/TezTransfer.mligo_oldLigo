@@ -18,8 +18,7 @@ let transfer (store, param: storage * address option) : operation list * storage
                     let op : operation = Tezos.transaction (None : address option) 5mutez dest in 
                     [op], {store with atEnd = Tezos.get_balance()}
             )
-
-[@entry]         
-let main (action : parameter) (store : storage): operation list * storage = 
+            
+let main (action, store : parameter * storage): operation list * storage = 
     match action with 
         | Transfer param  -> transfer (store, param)        
