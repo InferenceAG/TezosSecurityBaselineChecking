@@ -1,0 +1,28 @@
+Node is bootstrapped.
+This simulation failed:
+  Manager signed operations:
+    From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+    Fee to the baker: ꜩ0
+    Expected counter: 33716
+    Gas limit: 1040000
+    Storage limit: 60000 bytes
+    Revelation of manager public key:
+      Contract: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+      Key: edpkuKGkXQusm1AofiJgqAFncHpC4KtCFJezofjL6cmXbCzoGrxN7R
+      This revelation was BACKTRACKED, its expected effects were NOT applied.
+      Consumed gas: 170.934
+  Manager signed operations:
+    From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+    Fee to the baker: ꜩ0
+    Expected counter: 33717
+    Gas limit: 1040000
+    Storage limit: 60000 bytes
+    Transaction:
+      Amount: ꜩ1
+      From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+      To: KT1PWx2mnDueood7fEmfbBDKx1D9BAnnXitn
+      This operation FAILED.
+
+Contract KT1PWx2mnDueood7fEmfbBDKx1D9BAnnXitn does not exist
+Fatal error:
+  transfer simulation failed

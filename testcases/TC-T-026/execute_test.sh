@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "ticketSender"
 
 case $1 in
-	nairobi)
+	oxford)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract ticketSender transferring 0 from deploy running ticketSender.tz --init "Unit" --burn-cap 1 --force  >out.tmp 2>&1
 		
@@ -67,4 +67,4 @@ case $1 in
 		echo "not supported $1"
 		;;	
 esac
-#rm *.tmp
+rm *.tmp

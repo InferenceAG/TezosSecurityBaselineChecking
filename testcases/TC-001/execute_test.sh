@@ -12,4 +12,4 @@ case $1 in
 		checkResult result.tmp "Contract KT1PWx2mnDueood7fEmfbBDKx1D9BAnnXitn does not exist"
 		;;
 esac
-rm *.tmp
+#rm *.tmp
