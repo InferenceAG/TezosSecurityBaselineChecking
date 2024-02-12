@@ -15,7 +15,9 @@
 - [TC-011: Operation ordering](./testcases/TC-011/readme.md)
 - [TC-012: Default entrypoint testing](./testcases/TC-012/readme.md)
 - [TC-013: Sending tez to oneself](./testcases/TC-013/readme.md)
-- [TC-014: Long entrypoint names](./testcases/TC-011/readme.md)
+- [TC-014: Long entrypoint names](./testcases/TC-014/readme.md)
+- [TC-015: PUSH contract](./testcases/TC-015/readme.md)
+- [TC-016: Passing big maps](./testcases/TC-016/readme.md)
 
 ## Overview of ticket testcases
 - [TC-T-001: Tickets - Duplicate ticket - dup](./testcases/TC-T-001/readme.md)

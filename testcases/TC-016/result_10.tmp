@@ -1,0 +1,48 @@
+Node is bootstrapped.
+Estimated gas: 3851.282 units (will add 100 for safety)
+Estimated storage: 920 bytes added (will add 20 for safety)
+Operation successfully injected in the node.
+Operation hash is 'oooauTaNrfA8cHAnbGG9B8R6CJLPog6d8QPJvWGwEa3u3Pn4rKP'
+Waiting for the operation to be included...
+Operation found in block: BLBgzVqqfkTXiStmhSeHyKuiRJRFT7HRLNDb3g3TZbZVqTzfg8p (pass: 3, offset: 3)
+This sequence of operations was run:
+  Manager signed operations:
+    From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+    Fee to the baker: ꜩ0.000704
+    Expected counter: 33796
+    Gas limit: 3952
+    Storage limit: 940 bytes
+    Balance updates:
+      tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.000704
+      payload fees(the block proposer) ....... +ꜩ0.000704
+    Transaction:
+      Amount: ꜩ0
+      From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+      To: KT19Z5q43iG1q6UVSxWPEAWSyj64DhBExpFq
+      Entrypoint: addMul
+      Parameter: (Pair 10 "tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m")
+      This transaction was successfully applied
+      Updated storage: (Pair 10 8784)
+      Updated big_maps:
+        Set map(8784)[0] to 0x0000b884838f7cf5d011a1cad678a368bb353ba32fa1
+        Set map(8784)[4] to 0x0000b884838f7cf5d011a1cad678a368bb353ba32fa1
+        Set map(8784)[5] to 0x0000b884838f7cf5d011a1cad678a368bb353ba32fa1
+        Set map(8784)[9] to 0x0000b884838f7cf5d011a1cad678a368bb353ba32fa1
+        Set map(8784)[8] to 0x0000b884838f7cf5d011a1cad678a368bb353ba32fa1
+        Set map(8784)[1] to 0x0000b884838f7cf5d011a1cad678a368bb353ba32fa1
+        Set map(8784)[2] to 0x0000b884838f7cf5d011a1cad678a368bb353ba32fa1
+        Set map(8784)[7] to 0x0000b884838f7cf5d011a1cad678a368bb353ba32fa1
+        Set map(8784)[6] to 0x0000b884838f7cf5d011a1cad678a368bb353ba32fa1
+        Set map(8784)[3] to 0x0000b884838f7cf5d011a1cad678a368bb353ba32fa1
+      Storage size: 1373 bytes
+      Paid storage size diff: 920 bytes
+      Consumed gas: 3851.249
+      Balance updates:
+        tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.23
+        storage fees ........................... +ꜩ0.23
+
+The operation has only been included 0 blocks ago.
+We recommend to wait more.
+Use command
+  octez-client wait for oooauTaNrfA8cHAnbGG9B8R6CJLPog6d8QPJvWGwEa3u3Pn4rKP to be included --confirmations 1 --branch BLF43zv4JJ4eouxyQDs3poEn546cZ4SvXfu9xVxrc56sJFiuQqa
+and/or an external block explorer.

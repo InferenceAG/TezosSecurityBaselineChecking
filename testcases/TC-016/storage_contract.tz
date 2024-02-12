@@ -1,0 +1,77 @@
+{ parameter (or (or (address %add) (pair %addMul nat address)) (pair %call nat address)) ;
+  storage (pair (nat %counter) (big_map %table nat address)) ;
+  code { UNPAIR ;
+         IF_LEFT
+           { IF_LEFT
+               { PUSH nat 1 ;
+                 DUP 3 ;
+                 CAR ;
+                 ADD ;
+                 DUP 3 ;
+                 SWAP ;
+                 UPDATE 1 ;
+                 DUP 3 ;
+                 CDR ;
+                 DIG 2 ;
+                 SOME ;
+                 DIG 3 ;
+                 CAR ;
+                 UPDATE ;
+                 UPDATE 2 }
+               { UNPAIR ;
+                 DUP 3 ;
+                 CAR ;
+                 ADD ;
+                 DUP 3 ;
+                 CAR ;
+                 DUP 4 ;
+                 CDR ;
+                 PAIR ;
+                 PAIR ;
+                 LEFT (pair (pair (big_map nat address) nat) nat) ;
+                 LOOP_LEFT
+                   { UNPAIR ;
+                     UNPAIR ;
+                     DUP 3 ;
+                     DUP 3 ;
+                     COMPARE ;
+                     EQ ;
+                     IF { PAIR ; PAIR ; RIGHT (pair (pair (big_map nat address) nat) nat) }
+                        { PUSH nat 1 ;
+                          DUP 3 ;
+                          ADD ;
+                          DIG 3 ;
+                          SWAP ;
+                          DIG 2 ;
+                          DUP 5 ;
+                          SOME ;
+                          DIG 4 ;
+                          UPDATE ;
+                          PAIR ;
+                          PAIR ;
+                          LEFT (pair (pair (big_map nat address) nat) nat) } } ;
+                 SWAP ;
+                 DROP ;
+                 CAR ;
+                 UNPAIR ;
+                 DUG 2 ;
+                 UPDATE 1 ;
+                 SWAP ;
+                 UPDATE 2 } ;
+             NIL operation }
+           { UNPAIR ;
+             SWAP ;
+             CONTRACT (pair nat (big_map nat address)) ;
+             IF_NONE { PUSH string "none" ; FAILWITH } {} ;
+             PUSH mutez 0 ;
+             DUP 4 ;
+             CDR ;
+             DIG 3 ;
+             PAIR ;
+             TRANSFER_TOKENS ;
+             SWAP ;
+             NIL operation ;
+             DIG 2 ;
+             CONS } ;
+         PAIR } }
+

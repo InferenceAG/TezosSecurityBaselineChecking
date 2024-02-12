@@ -1,0 +1,11 @@
+{ parameter (pair nat (big_map nat address)) ;
+  storage nat ;
+  code { CAR ;
+         UNPAIR ;
+         SWAP ;
+         DUP 2 ;
+         GET ;
+         IF_NONE { PUSH string "test" ; FAILWITH } { DROP } ;
+         NIL operation ;
+         PAIR } }
+
