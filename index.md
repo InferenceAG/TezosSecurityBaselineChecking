@@ -59,6 +59,8 @@
 - [TCR-001: Smart optimistic rollup - sending transaction by octez-client](./testcases/TCR-001/readme.md)
 - [TCR-002: Smart optimistic rollup - sending tez from a contract](./testcases/TCR-002/readme.md)
 - [TCR-003: Smart optimistic rollup - sending wrong input parameter type](./testcases/TCR-003/readme.md)
+- [TCR-004: Smart optimistic rollup - Call smart rollup from implicit account (like a smart contract)](./testcases/TCR-004/readme.md)
+- [TCR-005: Smart optimistic rollup - Bytes instead of tickets](./testcases/TCR-005/readme.md)
 
 ## Overview of SmartPy testcases
 - [TCS-001: Operation ordering - in entrypoint code](./testcases/TCS-001/readme.md)

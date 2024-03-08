@@ -1,0 +1,12 @@
+parameter address;
+storage unit;
+code
+  {
+    CAR; # drop storage, but leave input on stack
+    CONTRACT (bytes);
+    IF_NONE { PUSH string "fail"; FAILWITH } {};
+    DROP;
+    UNIT;
+    NIL operation;
+    PAIR;
+  };
