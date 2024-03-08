@@ -45,7 +45,7 @@
 - [TC-T-023: Tickets - Duplicate ticket - duplicate map containing tickets](./testcases/TC-T-023/readme.md)
 - [TC-T-024: Tickets - Duplicate ticket - duplicate big_map containing tickets](./testcases/TC-T-024/readme.md)
 - [TC-T-025: Tickets - Zero amount ticket](./testcases/TC-T-025/readme.md)
-- [TC-T-025: Tickets - Send tickets from smart contract to implicit](./testcases/TC-T-026/readme.md)
+- [TC-T-026: Tickets - Send tickets from smart contract to implicit](./testcases/TC-T-026/readme.md)
 
 ## Overview of on-chain view testcases
 - [TC-V-001: On-chain view - Manipulate caller stack - add](./testcases/TC-V-001/readme.md)
