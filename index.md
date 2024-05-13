@@ -1,6 +1,7 @@
 # Tezos security baseline checking test cases
 
 ## An overview of general testcases
+
 - [TC-001: Non-existing KT address](./testcases/TC-001/readme.md)
 - [TC-002: Reentrancy - contract balance](./testcases/TC-002/readme.md)
 - [TC-002b: Reentrancy - contract balance - test case B](./testcases/TC-002b/readme.md)
@@ -20,6 +21,7 @@
 - [TC-016: Passing big maps](./testcases/TC-016/readme.md)
 
 ## Overview of ticket testcases
+
 - [TC-T-001: Tickets - Duplicate ticket - dup](./testcases/TC-T-001/readme.md)
 - [TC-T-002: Tickets - Duplicate ticket - dup-n2](./testcases/TC-T-002/readme.md)
 - [TC-T-003: Tickets - Duplicate ticket - dup-n10](./testcases/TC-T-003/readme.md)
@@ -48,14 +50,17 @@
 - [TC-T-026: Tickets - Send tickets from smart contract to implicit](./testcases/TC-T-026/readme.md)
 
 ## Overview of on-chain view testcases
+
 - [TC-V-001: On-chain view - Manipulate caller stack - add](./testcases/TC-V-001/readme.md)
 - [TC-V-002: On-chain view - Manipulate caller stack - dig](./testcases/TC-V-002/readme.md)
 - [TC-V-003: On-chain view - Manipulate caller stack - dup](./testcases/TC-V-003/readme.md)
 
 ## Overview of Ligo testcases
+
 - [TCL-001: Operation ordering](./testcases/TCL-001/readme.md)
 
 ## Overview of Smart Optimistic Rollup testcases
+
 - [TCR-001: Smart optimistic rollup - sending transaction by octez-client](./testcases/TCR-001/readme.md)
 - [TCR-002: Smart optimistic rollup - sending tez from a contract](./testcases/TCR-002/readme.md)
 - [TCR-003: Smart optimistic rollup - sending wrong input parameter type](./testcases/TCR-003/readme.md)
@@ -63,6 +68,7 @@
 - [TCR-005: Smart optimistic rollup - Bytes instead of tickets](./testcases/TCR-005/readme.md)
 
 ## Overview of SmartPy testcases
+
 - [TCS-001: Operation ordering - in entrypoint code](./testcases/TCS-001/readme.md)
 - [TCS-002: Operation ordering - in lambda code](./testcases/TCS-002/readme.md)
 - [TCS-003: Operation ordering - mixed](./testcases/TCS-003/readme.md)
