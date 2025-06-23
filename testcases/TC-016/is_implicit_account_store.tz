@@ -1,0 +1,12 @@
+parameter address;
+storage (option key_hash);
+code {
+       UNPAIR;
+       SWAP;
+       DROP;
+       IS_IMPLICIT_ACCOUNT;
+       IF_NONE { FAIL } {};
+       SOME;
+       NIL operation;
+       PAIR
+     }

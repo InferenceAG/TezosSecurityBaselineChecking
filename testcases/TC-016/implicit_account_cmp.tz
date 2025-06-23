@@ -1,0 +1,13 @@
+parameter (pair key_hash address);
+storage unit;
+code {
+       UNPAIR;
+       UNPAIR;
+       IMPLICIT_ACCOUNT;
+       ADDRESS;
+       COMPARE;
+       EQ;
+       IF {} {FAIL};
+       NIL operation;
+       PAIR
+     }
