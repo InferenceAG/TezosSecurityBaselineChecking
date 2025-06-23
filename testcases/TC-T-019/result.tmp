@@ -1,24 +1,26 @@
+Waiting for the node to be bootstrapped...
+Current head: BKmSjEJg6dF1 (timestamp: 2025-06-23T08:43:47.000-00:00, validation: 2025-06-23T08:43:47.980-00:00)
 Node is bootstrapped.
 This simulation failed:
   Manager signed operations:
-    From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+    From: tz1eR4Yu9TZU4xuFANzkSMuANpgWjbg3zWQh
     Fee to the baker: ꜩ0
-    Expected counter: 33768
+    Expected counter: 10503
     Gas limit: 1040000
     Storage limit: 60000 bytes
     Transaction:
       Amount: ꜩ0
-      From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
-      To: KT1VDeXh53YtYhTTewXyhH19eRC48tThLV8o
-      Parameter: (Some (Pair "KT1VDeXh53YtYhTTewXyhH19eRC48tThLV8o" "test" 1))
+      From: tz1eR4Yu9TZU4xuFANzkSMuANpgWjbg3zWQh
+      To: KT1XfupnMsLMkquVKDBQpD8SBag1bAXnXv6s
+      Parameter: (Some (Pair "KT1XfupnMsLMkquVKDBQpD8SBag1bAXnXv6s" "test" 1))
       This operation FAILED.
 
-Invalid argument passed to contract KT1VDeXh53YtYhTTewXyhH19eRC48tThLV8o.
+Invalid argument passed to contract KT1XfupnMsLMkquVKDBQpD8SBag1bAXnXv6s.
 At (unshown) location 0, value
-  (Some (Pair "KT1VDeXh53YtYhTTewXyhH19eRC48tThLV8o" "test" 1))
+  (Some (Pair "KT1XfupnMsLMkquVKDBQpD8SBag1bAXnXv6s" "test" 1))
 is invalid for type option (ticket string).
 At (unshown) location 1, value
-  (Pair "KT1VDeXh53YtYhTTewXyhH19eRC48tThLV8o" "test" 1)
+  (Pair "KT1XfupnMsLMkquVKDBQpD8SBag1bAXnXv6s" "test" 1)
 is invalid for type ticket string.
 At (unshown) location 1, Unexpected forged value.
 Fatal error:

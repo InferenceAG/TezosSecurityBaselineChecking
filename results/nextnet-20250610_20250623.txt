@@ -1,0 +1,228 @@
+TC-001 # Testcase title: Non-existing KT address                                                                               
+executing tests for oxford                                     
+testcase succeeded                                                                                                             
+TC-002 # Testcase title: Reentrancy - contract balance                                                                         
+executing tests for oxford                                     
+testcase succeeded                                                                                                             
+TC-002b # Testcase title: Reentrancy - contract balance - test case B                                                          
+executing tests for oxford                                                                                                     
+testcase succeeded                                                                                                                                                                                                                                            
+TC-003 # Testcase title: Reentrancy - balance tracked in storage                                                               
+executing tests for oxford                                                                                                     
+testcase succeeded                                                                                                             
+TC-004 # Testcase title: Mutez underflow                       
+executing tests for oxford                                                                                                     
+testcase succeeded                                                                                                             
+TC-005 # Testcase title: Mutez overflow                        
+executing tests for oxford                                                                                                     
+testcase succeeded                                                                                                             
+TC-006 # Testcase title: Duplicate operation                   
+executing tests for oxford                                                                                                     
+testcase succeeded                                                                                                             
+TC-007 # Testcase title: 0tez transaction to implicit account                                                                  
+executing tests for oxford                                                                                                     
+testcase succeeded                                                                                                             
+TC-008 # Testcase title: BALANCE instruction                   
+executing tests for oxford                                                                                                     
+testcase succeeded                                                                                                             
+TC-009 # Testcase title: Wrong field annotations                                                                               
+executing tests for oxford                                                                                                     
+testcase 1                                                                                                                     
+testcase succeeded                                             
+testcase 2                                                                                                                     
+testcase succeeded                                                                                                             
+testcase 3                                                     
+testcase succeeded                                                                                                             
+testcase 4                                                                                                                                                                                                                                                    
+testcase succeeded                                             
+testcase 5                                                                                                                     
+testcase succeeded                                                                                                             
+testcase 6                                                                                                                     
+testcase succeeded                                                                                                             
+testcase 7                                                                                                                     
+testcase succeeded                                                                                                             
+testcase 8                                                                                                                     
+testcase succeeded                                                                                                             
+testcase 9                                                                                                                     
+testcase succeeded
+TC-010 # Testcase title: Batch operation failing
+executing tests for oxford
+testcase succeeded
+testcase succeeded
+testcase succeeded
+TC-011 # Testcase title: Smartpy - operation ordering - basic
+executing tests for oxford
+testcase succeeded
+TC-012 # Testcase title: Default entrypoint testing
+executing tests for oxford
+Single EP - Gas exhaustion expected
+testcase succeeded
+Two EP, one default - No issue expected
+testcase succeeded
+Two EP, no default - Failure expected
+testcase succeeded
+TC-013 # Testcase title: Sending tez to oneself
+executing tests for oxford
+Self transfer, success expected
+testcase succeeded
+TC-014 # Testcase title: Long entrypoint names
+executing tests for oxford
+## Sub testcase #1:
+testcase failed
+## Sub testcase #2:
+testcase succeeded
+TC-015 # Testcase title: Contract type
+executing tests for oxford
+## Sub testcase #1:
+testcase failed
+## Sub testcase #2:
+testcase succeeded
+TC-016 # Testcase title: Passing big maps
+executing tests for oxford
+failed - due TODOs
+TCL-001 # Testcase title: Ligo - operation ordering
+executing tests for oxford
+testcase succeeded
+TCR-001 # Testcase title: Smart optimistic rollup - sending transaction by octez-client
+executing tests for oxford
+testcase succeeded
+testcase succeeded
+TCR-002 # Testcase title: Smart optimistic rollup - sending tez from a contract
+executing tests for oxford
+testcase succeeded
+TCR-003 # Testcase title: Smart optimistic rollup - sending wrong input parameter type
+executing tests for oxford
+testcase succeeded
+TCR-004 # Testcase title: Smart optimistic rollup - Call smart rollup from implicit account (like a smart contract)
+executing tests for oxford
+testcase succeeded
+TCR-005 # Testcase title: Smart optimistic rollup - Bytes instead of tickets
+executing tests for oxford
+testcase failed
+TCS-001 # Testcase title: Smartpy - operation ordering - 01 - in entrypoint code
+executing tests for oxford
+testcase succeeded
+TCS-002 # Testcase title: Smartpy - operation ordering - 02 - in lambda code
+executing tests for oxford
+testcase succeeded
+TCS-003 # Testcase title: Smartpy - operation ordering - 03 - mixed
+executing tests for oxford
+testcase succeeded
+TCS-006 # Testcase title: Smartpy - operation ordering - 04 - external lambdas
+executing tests for oxford
+testcase succeeded
+TCS-007 # Testcase title: Smartpy - Similar operators
+executing tests for oxford
+executing operator test case 1:
+testcase succeeded
+executing operator test case 2:
+testcase succeeded
+TC-T-001 # Testcase title: Tickets - Duplicate ticket - dup
+executing tests for oxford
+testcase succeeded
+TC-T-002 # Testcase title: Tickets - Duplicate ticket - dup-n2
+executing tests for oxford
+testcase succeeded
+TC-T-003 # Testcase title: Tickets - Duplicate ticket - dup-n10
+executing tests for oxford
+testcase succeeded
+TC-T-004 # Testcase title: Tickets - Duplicate ticket - dup list
+executing tests for oxford
+testcase succeeded
+TC-T-005 # Testcase title: Tickets - Duplicate ticket - pack
+executing tests for oxford
+testcase succeeded
+TC-T-006 # Testcase title: Tickets - Duplicate ticket - pack pair
+executing tests for oxford
+testcase succeeded
+TC-T-007 # Testcase title: Tickets - Duplicate ticket - on-chain view
+executing tests for oxford
+testcase succeeded
+TC-T-008 # Testcase title: Tickets - Create ticket - callback case 1 - address
+executing tests for oxford
+testcase succeeded
+TC-T-009 # Testcase title: Tickets - Create ticket - callback case 2 - address and option
+executing tests for oxford
+testcase succeeded
+TC-T-010 # Testcase title: Tickets - Create ticket - callback case 3 - string and option
+executing tests for oxford
+testcase succeeded
+TC-T-011 # Testcase title: Tickets - Create ticket - callback case 4 - string
+executing tests for oxford
+testcase succeeded
+TC-T-012 # Testcase title: Tickets - Create ticket - lambda case 1 - address
+executing tests for oxford
+testcase succeeded
+TC-T-013 # Testcase title: Tickets - Create ticket - lambda case 2 - address and option
+executing tests for oxford
+testcase succeeded
+TC-T-014 # Testcase title: Tickets - Create ticket - lambda case 3 - string and option
+executing tests for oxford
+testcase succeeded
+TC-T-015 # Testcase title: Tickets - Create ticket - lambda case 3 - string
+executing tests for oxford
+testcase succeeded
+TC-T-016 # Testcase title: Tickets - Create ticket - lambda case 3 - string
+executing tests for oxford
+testcase succeeded
+TC-T-017 # Testcase title: Tickets - Create ticket - lambda case 3 - string
+executing tests for oxford
+testcase succeeded
+TC-T-018 # Testcase title: Tickets - Create ticket - call input string/address
+executing tests for oxford
+testcase succeeded
+TC-T-019 # Testcase title: Tickets - Create ticket - input option string/address
+executing tests for oxford
+testcase succeeded
+TC-T-020 # Testcase title: Tickets - Join ticket - two different ticketers
+executing tests for oxford
+testcase succeeded
+TC-T-021 # Testcase title: Tickets - Join ticket - two different, but similar cty
+executing tests for oxford
+testcase succeeded
+TC-T-022 # Testcase title: Tickets - Duplicate ticket - duplicate transaction operation
+executing tests for oxford
+testcase succeeded
+TC-T-023 # Testcase title: Tickets - Duplicate ticket - duplicate map containing tickets
+executing tests for oxford
+testcase succeeded
+TC-T-024 # Testcase title: Tickets - Duplicate ticket - duplicate big_map containing tickets
+executing tests for oxford
+testcase succeeded
+TC-T-025 # Testcase title: Tickets - Zero amount tickets
+executing tests for oxford
+## Sub testcase #1:
+testcase succeeded
+## Sub testcase #2:
+testcase succeeded
+## Sub testcase #3:
+testcase succeeded
+TC-T-026 # Testcase title: Tickets - Send tickets from smart contract to implicit
+executing tests for oxford
+## Sub testcase #1:
+testcase succeeded
+## Sub testcase #2:
+testcase succeeded
+## Sub testcase #3:
+testcase succeeded
+## Sub testcase #4:
+testcase succeeded
+## Sub testcase #5:
+testcase succeeded
+## Sub testcase #6:
+testcase succeeded
+## Sub testcase #7:
+testcase succeeded
+## Sub testcase #8:
+testcase succeeded
+## Sub testcase #9:
+testcase succeeded
+TC-V-001 # Testcase title: On-chain view - add instruction
+executing tests for oxford
+testcase succeeded
+TC-V-002 # Testcase title: On-chain view - dig instruction
+executing tests for oxford
+testcase succeeded
+TC-V-003 # Testcase title: On-chain view - dup instruction
+executing tests for oxford
+testcase succeeded

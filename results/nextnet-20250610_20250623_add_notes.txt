@@ -1,0 +1,19 @@
+# Versions
+octez-client: 3f47ba6f
+testnet: Nextnet-20250610 with 023_S protocol
+Ligo: 0.72.0
+SmartPy: 0.18.2
+
+
+# Failed test cases:
+## TC-014:
+https://gitlab.com/tezos/tezos/-/issues/6026
+
+## TC-015
+https://gitlab.com/tezos/tezos/-/issues/6027
+
+## TC-016
+This test cases is not working, since not finished. Moved to directory _old.
+
+## TCR-005
+Was failing due to burn costs. burn cap increased. Now the test case is successful. Ok.

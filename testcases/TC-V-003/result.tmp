@@ -1,13 +1,15 @@
+Waiting for the node to be bootstrapped...
+Current head: BMBCBUmzQuJw (timestamp: 2025-06-23T08:49:15.000-00:00, validation: 2025-06-23T08:49:16.342-00:00)
 Node is bootstrapped.
 This simulation failed:
   Manager signed operations:
-    From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+    From: tz1eR4Yu9TZU4xuFANzkSMuANpgWjbg3zWQh
     Fee to the baker: ꜩ0
-    Expected counter: 33777
+    Expected counter: 10517
     Gas limit: 1040000
     Storage limit: 60000 bytes
     Origination:
-      From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+      From: tz1eR4Yu9TZU4xuFANzkSMuANpgWjbg3zWQh
       Credit: ꜩ0
       Script:
         { parameter unit ;
@@ -23,7 +25,7 @@ Ill typed contract:
   2:   storage unit ;
   3:   code { DROP ; UNIT ; NIL operation ; PAIR } ;
   4:   view "rogue" unit nat { DUP 2 ; DROP ; DROP ; PUSH nat 1 } }
-{ "id": "proto.018-Proxford.michelson_v1.bad_dupn_stack",
+{ "id": "proto.023-PtSEouLo.michelson_v1.bad_dupn_stack",
   "description": "Stack present when typing DUP n was too short",
   "data": { "loc": 17 } }
 At line 4 characters 26 to 31, wrong stack type for instruction DUP: [].

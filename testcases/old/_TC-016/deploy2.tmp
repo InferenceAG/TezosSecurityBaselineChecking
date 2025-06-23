@@ -1,22 +1,24 @@
+Waiting for the node to be bootstrapped...
+Current head: BL56bR67kCeQ (timestamp: 2025-06-23T11:42:23.000-00:00, validation: 2025-06-23T11:42:24.975-00:00)
 Node is bootstrapped.
-Estimated gas: 593.926 units (will add 100 for safety)
+Estimated gas: 593.893 units (will add 100 for safety)
 Estimated storage: 342 bytes added (will add 20 for safety)
 Operation successfully injected in the node.
-Operation hash is 'opH3e88gnYvBNpAkv33ZPmmRtBT56Xi2JZcySnxqwCXERSkgd4y'
+Operation hash is 'opVa6fKznJdZx5xExpdDFtAvZ5SquaQW3TfPuaM4EnnZTLnaZT1'
 Waiting for the operation to be included...
-Operation found in block: BLHvRdfTUPi7pxmozjLs7gbfasuAfC9kjdeomYPKaAnhVekvuw4 (pass: 3, offset: 0)
+Operation found in block: BLi6XGipY9uBdiLhMjfXqdFKB5iWxDpxW226bbfDoVZewbkE6cm (pass: 3, offset: 0)
 This sequence of operations was run:
   Manager signed operations:
-    From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
-    Fee to the baker: ꜩ0.000384
-    Expected counter: 33875
+    From: tz1eR4Yu9TZU4xuFANzkSMuANpgWjbg3zWQh
+    Fee to the baker: ꜩ0.000383
+    Expected counter: 10523
     Gas limit: 694
     Storage limit: 362 bytes
     Balance updates:
-      tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.000384
-      payload fees(the block proposer) ....... +ꜩ0.000384
+      tz1eR4Yu9TZU4xuFANzkSMuANpgWjbg3zWQh ... -ꜩ0.000383
+      payload fees(the block proposer) ....... +ꜩ0.000383
     Origination:
-      From: tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m
+      From: tz1eR4Yu9TZU4xuFANzkSMuANpgWjbg3zWQh
       Credit: ꜩ0
       Script:
         { parameter (pair nat (big_map nat address)) ;
@@ -33,20 +35,20 @@ This sequence of operations was run:
         No delegate for this contract
         This origination was successfully applied
         Originated contracts:
-          KT1T5bunT5yjjiNmFDVCLG361cXFqt4YDRPg
+          KT1XYpo7fw5yteSmrDN81NUbmVZM8oppJyJq
         Storage size: 85 bytes
         Paid storage size diff: 85 bytes
-        Consumed gas: 593.893
+        Consumed gas: 593.860
         Balance updates:
-          tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.02125
+          tz1eR4Yu9TZU4xuFANzkSMuANpgWjbg3zWQh ... -ꜩ0.02125
           storage fees ........................... +ꜩ0.02125
-          tz1cTfmeHpBkbzsstgmhpqNbH19sMvpQWQ2m ... -ꜩ0.06425
+          tz1eR4Yu9TZU4xuFANzkSMuANpgWjbg3zWQh ... -ꜩ0.06425
           storage fees ........................... +ꜩ0.06425
 
-New contract KT1T5bunT5yjjiNmFDVCLG361cXFqt4YDRPg originated.
+New contract KT1XYpo7fw5yteSmrDN81NUbmVZM8oppJyJq originated.
 The operation has only been included 0 blocks ago.
 We recommend to wait more.
 Use command
-  octez-client wait for opH3e88gnYvBNpAkv33ZPmmRtBT56Xi2JZcySnxqwCXERSkgd4y to be included --confirmations 1 --branch BL5ygEzdGu22xXS6afrCW4VSVuHGW6kWRKRFspbnF2UQMdSoBCP
+  octez-client wait for opVa6fKznJdZx5xExpdDFtAvZ5SquaQW3TfPuaM4EnnZTLnaZT1 to be included --confirmations 1 --branch BKq2tMPUuKPCiUqGTzDCj4fKW7BwVMkMdDKdhMUwUwdUkZaMWg7
 and/or an external block explorer.
 Contract memorized as implementation_contract.

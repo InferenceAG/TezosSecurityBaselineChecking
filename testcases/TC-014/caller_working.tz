@@ -1,0 +1,18 @@
+parameter unit;
+storage unit ;
+code {
+       DROP;
+       PUSH address "KT1VzvhJoZL5zFvp3N7qKfa5ymv8bHDFQHvP";
+       CONTRACT (or unit nat);
+       IF_NONE { PUSH string "None" ; FAILWITH } {} ;
+       PUSH mutez 0;
+       PUSH nat 3;
+       RIGHT unit;
+       TRANSFER_TOKENS;
+       NIL operation;
+       SWAP;
+       CONS;
+       UNIT ;
+       SWAP;
+       PAIR
+     }

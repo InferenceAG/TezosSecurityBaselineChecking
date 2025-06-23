@@ -51,13 +51,11 @@ An overview over existing test cases can be found in [./index.md](./index.md)
 2. Get a
    [tezos-client executable](https://tezos.gitlab.io/introduction/howtoget.html),
    which supports the network where you want to run the test cases on.
-
 3. Install [SmartPy](https://smartpy.io/docs/cli)
 4. Install [Ligo](https://ligolang.org/docs/intro/installation)
 5. Adapt parameters for SMARTPY, LIGO, and TEZOSCLIENT in the [_framework/init.sh](_framework/init.sh) file.
-6. Download two test accounts from the corresponding [testnet faucet](https://teztnets.xyz/), name one "admin.json" and the other "deploy.json, and store these files under [./_framework/](./_framework)
-7. Change to the _framework directory  E.g. `cd _framework`
-8. Execute script `./import.sh` to import and activate the downloaded test accounts.
+6. Create test accounts by changing to _framwork directory. E.g. `cd _framework` and execute script `./create_accounts.sh`
+7. Go to the corresponding faucet on teztnets.com and get 10'000 tez for each generated account.
 
 ### Execute all test cases
 1. Change to the _framework directory: `cd _framework`

@@ -5,8 +5,8 @@ code {
        PUSH address "KT1QctyUWrAvUUxpT1XbLu5spmGsWrkdEfbi";
        CONTRACT %1234567890123456789012345678901234567891012345678901234567890 nat;
        IF_NONE { FAIL } {};
-       PUSH nat 0;
-       UNIT;
+       PUSH mutez 0;
+       PUSH nat 1;
        TRANSFER_TOKENS;
        NIL operation;
        SWAP ;
