@@ -1,0 +1,12 @@
+parameter key_hash;
+storage (pair nat nat);
+code {
+       UNPAIR;
+       SWAP;
+       DROP;
+       VOTING_POWER;
+       TOTAL_VOTING_POWER;
+       PAIR;
+       NIL operation;
+       PAIR
+     }
