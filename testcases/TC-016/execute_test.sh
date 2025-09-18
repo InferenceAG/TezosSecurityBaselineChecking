@@ -4,8 +4,9 @@
 
 getTestcaseTitle
 
-removeContract "is_implicit_account"
+removeContract "is_implicit_account_cmp"
 removeContract "implicit_account"
+removeContract "is_implicit_account"
 
 
 # key_hash for tz1Zt8QQ9aBznYNk5LUBjtME9DuExomw9YRs is 0x009c3c5a33f9350cfcbe46ab07ccaecc6792365101
@@ -61,4 +62,4 @@ case $1 in
 		echo "not supported $1"
 		;;	
 esac
-#rm *.tmp
+rm *.tmp

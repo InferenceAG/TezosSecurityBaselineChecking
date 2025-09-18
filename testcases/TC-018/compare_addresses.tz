@@ -1,0 +1,11 @@
+parameter (pair address address);
+storage unit;
+code {
+       UNPAIR;
+       UNPAIR;
+       COMPARE;
+       LT;
+       IF {} {FAIL};       
+       NIL operation;
+       PAIR
+     }
