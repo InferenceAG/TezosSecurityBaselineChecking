@@ -1,0 +1,10 @@
+parameter (address);
+storage unit;
+code {
+       UNPAIR;
+       IS_IMPLICIT_ACCOUNT;
+       IF_NONE { FAIL } {};
+       DROP;
+       NIL operation;
+       PAIR
+     }

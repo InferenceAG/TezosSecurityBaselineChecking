@@ -6,8 +6,6 @@ getTestcaseTitle
 
 removeContract "voting_power"
 
-# key_has for tz1Zt8QQ9aBznYNk5LUBjtME9DuExomw9YRs is 0x009c3c5a33f9350cfcbe46ab07ccaecc6792365101
-# However, octez-client expects key_hash not in hex, but in the tz form
 case $1 in
 oxford)
 	echo "executing tests for $1"
