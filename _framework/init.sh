@@ -3,15 +3,16 @@
 # SmartPy
 #export SMARTPY=/home/user/smartpy-cli/SmartPy.sh
 #export SMARTPY=/home/user/Installs/SmartPy/v0.16.0/smartpy-cli/SmartPy.sh
-export SMARTPY=/home/gonzo/Installs/SmartPy/smartpy_0.18.2
+export SMARTPY=/home/gonzo/my/Installs/SmartPy/smartpy_0.18.2
 
 # Ligo
 #export LIGO=/home/user/ligo/ligo-20211215-1acb57254d3b46dce1a2cdf34283564a2a36f084
-export LIGO=/home/gonzo/Installs/ligo/ligo-0.72.0
+export LIGO=/home/gonzo/my/Installs/ligo/ligo-0.72.0
 #export LIGO=/home/user/Installs/ligo/ligo-0.67.1
 
 # Tezos
-export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/seoulnet-testing -E https://rpc.seoulnet.teztnets.com"
+export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/nextnet-20251022-testing -E https://rpc.nextnet-20251022.teztnets.com"
+#export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/seoulnet-testing -E https://rpc.seoulnet.teztnets.com"
 #export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/nextnet-20250610-testing -E https://rpc.nextnet-20250610.teztnets.com"
 #export TEZOSCLIENT="/home/gonzo/Installs/tezos-clients/octez-client.v19.1 -d /home/gonzo/Data/Deployments/Oxford -E https://rpc.oxfordnet.teztnets.com"
 #export TEZOSCLIENT="/home/gonzo/Installs/tezos-clients/octez-client.v17.1 -d /home/gonzo/Data/Deployments/Nairobi -E http://10.30.0.200:4417"

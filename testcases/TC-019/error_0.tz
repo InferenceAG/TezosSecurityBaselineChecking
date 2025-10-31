@@ -1,0 +1,19 @@
+parameter address;
+storage (big_map address nat);
+code {
+       CDR ;
+       PUSH nat 0 ;
+       PUSH nat 0 ;
+       COMPARE ;
+       EQ ;
+       IF
+         {
+            
+         }
+         {
+            FAILWITH
+         };
+       DROP ;
+       NIL operation ;
+       PAIR
+     };

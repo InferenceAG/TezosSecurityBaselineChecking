@@ -1,0 +1,14 @@
+parameter address;
+storage (big_map address nat);
+code {
+       CDR ;       
+       NIL operation ;
+       PAIR
+     };
+view 
+     "getIndex" address (option nat)
+     {
+       CAR ;
+       INDEX_ADDRESS;
+       SOME
+     }

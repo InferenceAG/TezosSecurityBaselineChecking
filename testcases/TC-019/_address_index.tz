@@ -1,0 +1,36 @@
+parameter address;
+storage (big_map address nat);
+code {
+       UNPAIR ;
+       DUP ;
+       INDEX_ADDRESS ;
+       DUP ;
+       DUP 3; 
+       GET_ADDRESS_INDEX ;
+       IF_NONE
+         {
+           FAILWITH
+         }
+         {
+           COMPARE ;
+           EQ ;
+           IF 
+             {
+               
+             }
+             {
+               FAILWITH
+             }
+         };
+       SOME ;
+       SWAP ;
+       UPDATE ;
+       NIL operation ;
+       PAIR
+     };
+view 
+     "getIndex" address (option nat)
+     {
+       CAR ;
+       GET_ADDRESS_INDEX 
+     }

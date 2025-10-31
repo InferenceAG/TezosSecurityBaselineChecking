@@ -19,8 +19,9 @@
 - [TC-014: Long entrypoint names](./testcases/TC-014/readme.md)
 - [TC-015: PUSH contract](./testcases/TC-015/readme.md)
 - [TC-016: IS_IMPLICIT_ACCOUNT and IMPLICIT_ACCOUNT](./testcases/TC-016/readme.md)
-- [TC-017: VOTING_POWER](./testcases/TC-016/readme.md)
+- [TC-017: VOTING_POWER](./testcases/TC-017/readme.md)
 - [TC-018: Comparing addresses](./testcases/TC-018/readme.md)
+- [TC-019: Address index](./testcases/TC-019/readme.md)
 
 ## Overview of ticket testcases
 
