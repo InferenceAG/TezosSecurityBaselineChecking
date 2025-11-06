@@ -8,7 +8,7 @@ removeContract "reentrancy"
 removeContract "attacker"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 
 		# Vestiong contract

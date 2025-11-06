@@ -5,7 +5,7 @@
 getTestcaseTitle
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$SMARTPY test storeValue.py compiled/ >result.tmp 2>&1
 		checkResult result.tmp "Exception: Cannot convert expression to bool. Conditionals are forbidden on contract expressions. Please use ~ or sp.if instead of not or if."

@@ -5,7 +5,7 @@
 getTestcaseTitle
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		echo "executing operator test case 1:"
 		$SMARTPY test operator_case1.py out_1 > result.tmp 2>&1

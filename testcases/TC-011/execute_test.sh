@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "ordering_basic"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
 		

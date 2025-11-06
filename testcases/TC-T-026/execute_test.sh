@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "ticketSender"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract ticketSender transferring 0 from deploy running ticketSender.tz --init "Unit" --burn-cap 1 --force  >out.tmp 2>&1
 		

@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "ordering_external_lambda"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$SMARTPY test ordering.py compiled/
 		adminAddress=$($TEZOSCLIENT list known addresses |grep admin | awk '{print $2}')

@@ -8,7 +8,7 @@ removeContract "push_contract_type"
 removeContract "right_contract_type"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"	
 
 		echo "## Sub testcase #1:"

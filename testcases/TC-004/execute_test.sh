@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "mutezUnderflow"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract mutezUnderflow transferring 0 from deploy running mutezUnderflow-ithaca.tz --init '0' --burn-cap 0.5 --force >out.tmp 2>&1 
 		$TEZOSCLIENT transfer 0 from deploy to mutezUnderflow --entrypoint "default" --arg 'Unit' >result.tmp 2>&1 

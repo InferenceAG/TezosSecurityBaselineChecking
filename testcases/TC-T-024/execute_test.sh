@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "map_dup"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract map_dup transferring 0 from deploy running tickets_dup_bigmap.tz --init "Unit" --burn-cap 0.1 --force  >result.tmp 2>&1
 		

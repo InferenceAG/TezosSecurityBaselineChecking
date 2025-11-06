@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "zeroticket"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 
 		echo "## Sub testcase #1:"

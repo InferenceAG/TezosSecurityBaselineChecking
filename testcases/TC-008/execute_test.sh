@@ -8,7 +8,7 @@ removeContract "TezTransferA"
 removeContract "TezTransferB"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract TezTransferA transferring 0.000010 from deploy running TezTransfer.tz --init "Pair 0 0" --burn-cap 0.2 --force >outA.tmp 2>&1
 		$TEZOSCLIENT originate contract TezTransferB transferring 0 from deploy running TezTransfer.tz --init "Pair 0 0" --burn-cap 0.2 --force >outB.tmp 2>&1

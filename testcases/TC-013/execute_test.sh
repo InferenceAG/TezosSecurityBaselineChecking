@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "selfTransfer"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
         echo "Self transfer, success expected"
 		admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"

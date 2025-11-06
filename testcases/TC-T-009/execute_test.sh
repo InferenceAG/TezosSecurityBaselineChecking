@@ -8,7 +8,7 @@ removeContract "caller"
 removeContract "getter"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract caller transferring 0 from deploy running caller.tz --init 'None' --burn-cap 0.1 --force >out1.tmp 2>&1
 		$TEZOSCLIENT originate contract getter transferring 0 from deploy running getter.tz --init 'Unit' --burn-cap 0.1 --force >out2.tmp 2>&1

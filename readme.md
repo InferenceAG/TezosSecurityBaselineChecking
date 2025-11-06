@@ -59,11 +59,11 @@ An overview over existing test cases can be found in [./index.md](./index.md)
 
 ### Execute all test cases
 1. Change to the _framework directory: `cd _framework`
-2. Execute the script `./execute_all.sh`
+2. Execute the script `./execute_all.sh latest`
 
 ### Execute a single test case
 1. Change to the test case directory. E.g. `cd testcases/TC-001]`
-2. Execute the script `./execute_test.sh`
+2. Execute the script `./execute_test.sh latest`
 
 ## Contribution
 Everyone is invited to contribute to the security baseline checking

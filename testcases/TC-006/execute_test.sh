@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "dup_op"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract dup_op transferring 0 from deploy running dup_transfer.tz --init "Unit" --burn-cap 0.1 --force >out.tmp 2>&1
 		dupOp=""\"$($TEZOSCLIENT list known contracts |grep dup_op |awk '{ print $2}')\"""

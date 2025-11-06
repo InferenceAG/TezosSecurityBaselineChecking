@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "zeroTezTransfer"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract zeroTezTransfer transferring 0 from deploy running zeroTezTransfer.tz --init "Unit" --burn-cap 0.1 --force >out.tmp 2>&1
 		deploy=""\"$($TEZOSCLIENT list known addresses |grep deploy|awk '{ print $2}')\"""

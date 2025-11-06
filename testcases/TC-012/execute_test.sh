@@ -9,7 +9,7 @@ removeContract "twoEP_withDefault"
 removeContract "twoEP_noDefault"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
         echo "Single EP - Gas exhaustion expected"
 		admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"

@@ -11,7 +11,7 @@ removeContract "view_index_address"
 # See information regarding "compare" of addresses: https://tezos.gitlab.io/michelson-reference/#instr-COMPARE
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"	
 
 		# Check whether INDEX_ADDRESS and GET_ADDRESS_INDEX work as expected.

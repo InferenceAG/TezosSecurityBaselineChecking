@@ -33,7 +33,7 @@ removeContract "compare_addresses"
 # sr1VNwu8KVLQbHQ7M2gUThzLjdYFMfa9sRSf -> 067c75ffffffffffffffffffffffffffffffffffffffff
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"	
 
 		# Check the ordering of addresses in the comment above.

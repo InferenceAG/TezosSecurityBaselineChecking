@@ -8,7 +8,7 @@ removeContract "join"
 removeContract "caller"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate contract join transferring 0 from deploy running tickets_join.tz --init "Unit" --burn-cap 0.1 --force >out1.tmp 2>&1
 		join=""\"$($TEZOSCLIENT list known contracts |grep join |awk '{ print $2}')\"""

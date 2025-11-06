@@ -8,7 +8,7 @@ removeContract "long_entrypoint_name"
 removeContract "call_contract_with_long_entrypoint_name"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"				
 		echo "## Sub testcase #1:"
 		$TEZOSCLIENT originate contract long_entrypoint_name transferring 0 from deploy running contract_long_entrypoint_name.tz --burn-cap 1 --force >result1.tmp 2>&1

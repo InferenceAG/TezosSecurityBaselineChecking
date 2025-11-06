@@ -5,7 +5,7 @@
 getTestcaseTitle
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		$TEZOSCLIENT originate smart rollup basicKernel from deploy of kind wasm_2_0_0 of type bytes with kernel kernel.hex --burn-cap 999 -–force >out.tmp 2>&1
 		 

@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "contract_testing"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 		# Note: The interface "ticket string" does not match the real interface ("bytes") from the deployed kernel. However this does not matter for the sake of this test case.
 		$TEZOSCLIENT originate smart rollup basicKernel from deploy of kind wasm_2_0_0 of type "ticket string" with kernel kernel.hex --burn-cap 5 --force >out.tmp 2>&1

@@ -8,7 +8,7 @@ removeContract "storage_contract"
 removeContract "implementation_contract"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"				
 		storage="(Pair 0 {})"
 		$TEZOSCLIENT originate contract storage_contract transferring 0 from deploy running storage_contract.tz --init "$storage" --burn-cap 1 --force >deploy1.tmp 2>&1

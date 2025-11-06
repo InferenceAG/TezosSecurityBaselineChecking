@@ -7,7 +7,7 @@ getTestcaseTitle
 removeContract "addition"
 
 case $1 in
-	oxford)
+	latest)
 		echo "executing tests for $1"
 
 		# addition contract
