@@ -5,7 +5,9 @@
 # Colour helpers (disabled automatically when not writing to a terminal)
 # ---------------------------------------------------------------------------
 
-if [ -t 1 ]; then
+# Enable colours if writing directly to a terminal, or if the parent runner
+# explicitly set FORCE_COLOR=1 (e.g. execute_all.sh pipes through tee).
+if [ -t 1 ] || [ "${FORCE_COLOR:-0}" = "1" ]; then
     _CLR_GREEN='\033[0;32m'
     _CLR_RED='\033[0;31m'
     _CLR_RESET='\033[0m'

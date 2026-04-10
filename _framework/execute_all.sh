@@ -52,6 +52,9 @@ mkdir -p "$RESULTS_DIR"
 TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 LOG_FILE="${RESULTS_DIR}/run_${TIMESTAMP}.log"
 
+# Propagate colour to test scripts even though their stdout goes through tee
+[ -t 1 ] && export FORCE_COLOR=1
+
 PASS=0
 FAIL=0
 ERROR=0
