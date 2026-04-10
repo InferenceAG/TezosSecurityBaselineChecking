@@ -84,10 +84,13 @@ for tc_dir in "${TESTCASES_DIR}"/T*/; do
         continue
     fi
 
-    # Run in subshell to isolate environment; tee output to per-test log + main log
+    # Run in subshell to isolate environment.
+    # Terminal gets coloured output; log files get plain text (ANSI codes stripped).
     test_log="${RESULTS_DIR}/${tc_name}_${TIMESTAMP}.log"
     (cd "${tc_dir}" && bash ./execute_test.sh "${NETWORK_ARG}") 2>&1 \
-        | tee -a "${test_log}" "$LOG_FILE"
+        | tee >(sed 's/\x1b\[[0-9;]*[mK]//g' >> "${test_log}") \
+               >(sed 's/\x1b\[[0-9;]*[mK]//g' >> "${LOG_FILE}") \
+               | cat
 
     # Test scripts exit 0 even on assertion failures — they signal failure by
     # printing "testcase failed". Check the log for that string.
