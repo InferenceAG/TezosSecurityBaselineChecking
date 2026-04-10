@@ -11,7 +11,8 @@ export LIGO=/home/gonzo/my/Installs/ligo/ligo-0.72.0
 #export LIGO=/home/user/Installs/ligo/ligo-0.67.1
 
 # Tezos
-export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/nextnet-20251022-testing -E https://rpc.nextnet-20251022.teztnets.com"
+export TEZOSCLIENT="/home/gonzo/my/tezos/octez-client -d /home/gonzo/nextnet-20251022-testing -E https://rpc.nextnet-u-20260320.teztnets.com"
+#export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/nextnet-20251022-testing -E https://rpc.nextnet-20251022.teztnets.com"
 #export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/seoulnet-testing -E https://rpc.seoulnet.teztnets.com"
 #export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/nextnet-20250610-testing -E https://rpc.nextnet-20250610.teztnets.com"
 #export TEZOSCLIENT="/home/gonzo/Installs/tezos-clients/octez-client.v19.1 -d /home/gonzo/Data/Deployments/Oxford -E https://rpc.oxfordnet.teztnets.com"
