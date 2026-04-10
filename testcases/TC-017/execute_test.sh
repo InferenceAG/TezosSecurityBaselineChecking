@@ -19,9 +19,9 @@ latest)
 	checkResult result1b.tmp "The operation has only been included 0 blocks ago."
 	result=$(cat result1b.tmp | grep "Updated storage:" | awk '{print $5}' | sed 's/)//g')
 	if [ "$result" -gt 10000000 ]; then
-		echo "testcase succeeded"
+		_green "testcase succeeded"
 	else 
-		echo "testcase failed"
+		_red   "testcase failed"
 	fi
 
 	# Consensus key of tz1Zt8QQ9aBznYNk5LUBjtME9DuExomw9YRs
@@ -29,9 +29,9 @@ latest)
 	checkResult result1c.tmp "The operation has only been included 0 blocks ago."
 	result=$(cat result1c.tmp | grep "Updated storage:" | grep " 0)")
 	if [ -z "$result" ]; then
-		echo "testcase failed"
+		_red   "testcase failed"
 	else 
-		echo "testcase succeeded"
+		_green "testcase succeeded"
 	fi
 
 	# Companion key of tz1Zt8QQ9aBznYNk5LUBjtME9DuExomw9YRs
@@ -39,9 +39,9 @@ latest)
 	checkResult result1d.tmp "The operation has only been included 0 blocks ago."
 	result=$(cat result1d.tmp | grep "Updated storage:" | grep " 0)")
 	if [ -z "$result" ]; then
-		echo "testcase failed"
+		_red   "testcase failed"
 	else 
-		echo "testcase succeeded"
+		_green "testcase succeeded"
 	fi
 
 	## baker with tz4 3-of-3 manager key tz4EMqJE7UMrniQ3zfRs7zNEV27VMbHkjJjF
@@ -49,9 +49,9 @@ latest)
 	#checkResult result1e.tmp "The operation has only been included 0 blocks ago."
 	#result=$(cat result1e.tmp | grep "Updated storage:" | awk '{print $5}' | sed 's/)//g')
 	#if [ "$result" -gt 1000000 ]; then
-	#	echo "testcase succeeded"
+	#	_green "testcase succeeded"
 	#else 
-	#	echo "testcase failed"
+	#	_red   "testcase failed"
 	#fi
 	;;
 *)

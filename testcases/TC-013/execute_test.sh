@@ -22,10 +22,10 @@ case $1 in
 		oneTezPos=$(cat result.tmp |grep -n 'This transaction was successfully applied')
 
 		if [ -z "$oneTezPos" ]; then
-				echo "testcase failed"
+				_red   "testcase failed"
 				exit
 		else
-				echo "testcase succeeded"
+				_green "testcase succeeded"
 		fi
 		;;
 

@@ -69,9 +69,9 @@ case $1 in
 
 		index_2=$($TEZOSCLIENT run view getIndex on contract address_index with input '"tz1Ke2h7sDdakHJQh8WX4Z372du1KChsksyU"' | awk '{ print $2 }' | sed 's/)//g')
 		if [ "$index_1" != "$index_2" ] ; then
-			echo "testcase failed"
+			_red   "testcase failed"
 		else
-			echo "testcase succeeded"
+			_green "testcase succeeded"
 		fi
 
 		;;

@@ -2,6 +2,23 @@
 # functions.sh — shared utility functions for all test cases
 
 # ---------------------------------------------------------------------------
+# Colour helpers (disabled automatically when not writing to a terminal)
+# ---------------------------------------------------------------------------
+
+if [ -t 1 ]; then
+    _CLR_GREEN='\033[0;32m'
+    _CLR_RED='\033[0;31m'
+    _CLR_RESET='\033[0m'
+else
+    _CLR_GREEN=''
+    _CLR_RED=''
+    _CLR_RESET=''
+fi
+
+function _green() { printf '%b%s%b\n' "$_CLR_GREEN" "$*" "$_CLR_RESET"; }
+function _red()   { printf '%b%s%b\n' "$_CLR_RED"   "$*" "$_CLR_RESET"; }
+
+# ---------------------------------------------------------------------------
 # Output helpers
 # ---------------------------------------------------------------------------
 
@@ -60,11 +77,11 @@ function checkResult() {
     local expected="$2"
     local label="${3:-$(getDirName)}"
     if ! grep -Fq "$expected" "$file"; then
-        echo "testcase failed  | $label | expected: $expected"
+        _red   "testcase failed   | $label | expected: $expected"
         _TC_FAIL=$(( ${_TC_FAIL:-0} + 1 ))
         return 1
     else
-        echo "testcase succeeded | $label"
+        _green "testcase succeeded | $label"
         _TC_PASS=$(( ${_TC_PASS:-0} + 1 ))
         return 0
     fi
@@ -77,11 +94,11 @@ function checkResultNot() {
     local absent="$2"
     local label="${3:-$(getDirName)}"
     if grep -Fq "$absent" "$file"; then
-        echo "testcase failed  | $label | unexpected string found: $absent"
+        _red   "testcase failed   | $label | unexpected string found: $absent"
         _TC_FAIL=$(( ${_TC_FAIL:-0} + 1 ))
         return 1
     else
-        echo "testcase succeeded | $label"
+        _green "testcase succeeded | $label"
         _TC_PASS=$(( ${_TC_PASS:-0} + 1 ))
         return 0
     fi
@@ -94,11 +111,11 @@ function checkResultRegex() {
     local pattern="$2"
     local label="${3:-$(getDirName)}"
     if ! grep -Eq "$pattern" "$file"; then
-        echo "testcase failed  | $label | regex not matched: $pattern"
+        _red   "testcase failed   | $label | regex not matched: $pattern"
         _TC_FAIL=$(( ${_TC_FAIL:-0} + 1 ))
         return 1
     else
-        echo "testcase succeeded | $label"
+        _green "testcase succeeded | $label"
         _TC_PASS=$(( ${_TC_PASS:-0} + 1 ))
         return 0
     fi
@@ -110,11 +127,11 @@ function expectSuccess() {
     local file="$1"
     local label="${2:-$(getDirName)}"
     if grep -Eq "(Error|failed|rejected|Cannot|invalid)" "$file"; then
-        echo "testcase failed  | $label | operation was expected to succeed but failed"
+        _red   "testcase failed   | $label | operation was expected to succeed but failed"
         _TC_FAIL=$(( ${_TC_FAIL:-0} + 1 ))
         return 1
     else
-        echo "testcase succeeded | $label"
+        _green "testcase succeeded | $label"
         _TC_PASS=$(( ${_TC_PASS:-0} + 1 ))
         return 0
     fi
@@ -127,11 +144,11 @@ function expectFailure() {
     local expected_error="$2"
     local label="${3:-$(getDirName)}"
     if grep -Fq "$expected_error" "$file"; then
-        echo "testcase succeeded | $label | operation failed as expected: $expected_error"
+        _green "testcase succeeded | $label | operation failed as expected: $expected_error"
         _TC_PASS=$(( ${_TC_PASS:-0} + 1 ))
         return 0
     else
-        echo "testcase failed  | $label | expected failure with '$expected_error' but got different result"
+        _red   "testcase failed   | $label | expected failure with '$expected_error' but got different result"
         _TC_FAIL=$(( ${_TC_FAIL:-0} + 1 ))
         return 1
     fi

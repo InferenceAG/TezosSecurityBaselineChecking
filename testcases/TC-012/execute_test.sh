@@ -24,10 +24,10 @@ case $1 in
 		oneTezPos=$(cat result.tmp |grep -n 'Gas limit exceeded during typechecking or execution')
 
 		if [ -z "$oneTezPos" ]; then
-				echo "testcase failed"
+				_red   "testcase failed"
 				exit
 		else
-				echo "testcase succeeded"
+				_green "testcase succeeded"
 		fi
 		
 
@@ -43,10 +43,10 @@ case $1 in
 		oneTezPos=$(cat result.tmp |grep -n 'This transaction was successfully applied')
 
 		if [ -z "$oneTezPos" ]; then
-				echo "testcase failed"
+				_red   "testcase failed"
 				exit
 		else
-				echo "testcase succeeded"
+				_green "testcase succeeded"
 		fi
 		
 
@@ -62,11 +62,11 @@ case $1 in
 		oneTezPos=$(cat result.tmp |grep -n 'This operation FAILED.')
 
 		if [ -z "$oneTezPos" ]; then
-				echo "testcase failed"
+				_red   "testcase failed"
 				exit
        
 		else
-				echo "testcase succeeded"
+				_green "testcase succeeded"
 		fi
 		;;
 

@@ -33,28 +33,28 @@ case $1 in
 		threeTezPos=$(cat result.tmp |grep -n 'Amount: ꜩ3' | awk -F ':' '{ print $1 }')
 
 		if [ -z "$oneTezPos" ]; then
-				echo "testcase failed"
+				_red   "testcase failed"
 				exit
 		fi
 
 		if [ -z "$twoTezPos" ]; then
-				echo "testcase failed"
+				_red   "testcase failed"
 				exit
 		fi
 
 		if [ -z "$threeTezPos" ]; then
-				echo "testcase failed"
+				_red   "testcase failed"
 				exit
 		fi
 
 		if [ $oneTezPos -lt $twoTezPos ]; then
 				if [ $twoTezPos -lt $threeTezPos ]; then
-						echo "testcase succeeded"
+						_green "testcase succeeded"
 				else
-						echo "testcase failed"
+						_red   "testcase failed"
 				fi
 		else
-				echo "testcase failed"
+				_red   "testcase failed"
 		fi
 		;;
 
