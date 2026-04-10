@@ -1,35 +1,40 @@
 #!/bin/bash
+# init.sh — configuration loader
+#
+# Resolution order (first found wins):
+#   1. init.local.sh  — machine-specific overrides (gitignored, copy from init.sh.example)
+#   2. Environment variables already set by caller
+#   3. Network profile from _framework/networks/<NETWORK>.sh (when NETWORK is set)
+#
+# To configure: cp _framework/init.sh.example _framework/init.local.sh
+# then edit init.local.sh with your paths.
 
-# SmartPy
-#export SMARTPY=/home/user/smartpy-cli/SmartPy.sh
-#export SMARTPY=/home/user/Installs/SmartPy/v0.16.0/smartpy-cli/SmartPy.sh
-export SMARTPY=/home/gonzo/my/Installs/SmartPy/smartpy_0.18.2
+FRAMEWORK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# Ligo
-#export LIGO=/home/user/ligo/ligo-20211215-1acb57254d3b46dce1a2cdf34283564a2a36f084
-export LIGO=/home/gonzo/my/Installs/ligo/ligo-0.72.0
-#export LIGO=/home/user/Installs/ligo/ligo-0.67.1
-
-# Tezos
-export TEZOSCLIENT="/home/gonzo/my/tezos/octez-client -d /home/gonzo/nextnet-20251022-testing -E https://rpc.nextnet-u-20260320.teztnets.com"
-#export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/nextnet-20251022-testing -E https://rpc.nextnet-20251022.teztnets.com"
-#export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/seoulnet-testing -E https://rpc.seoulnet.teztnets.com"
-#export TEZOSCLIENT="/home/gonzo/tezos/octez-client -d /home/gonzo/nextnet-20250610-testing -E https://rpc.nextnet-20250610.teztnets.com"
-#export TEZOSCLIENT="/home/gonzo/Installs/tezos-clients/octez-client.v19.1 -d /home/gonzo/Data/Deployments/Oxford -E https://rpc.oxfordnet.teztnets.com"
-#export TEZOSCLIENT="/home/gonzo/Installs/tezos-clients/octez-client.v17.1 -d /home/gonzo/Data/Deployments/Nairobi -E http://10.30.0.200:4417"
-#export TEZOSCLIENT="/home/user/Installs/tezos-clients/octez-client-v16.0-rc1 -d /home/user/Data/Deployments/Mumbai -E http://10.30.0.200:4416"
-#export TEZOSCLIENT="/home/user/Installs/tezos-clients/octez-client-v15.0-rc1 -d /home/user/Data/Deployments/Lima -E http://10.30.0.200:4415"
-#export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Kathmandu -E https://kathmandunet.smartpy.io/"
-#export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Jakarta -E https://jakartanet.smartpy.io/"
-#export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Ithaca -E https://ithacanet.smartpy.io/"
-#export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Flextesa -E http://10.137.0.18:20000/"
-#export TEZOSCLIENT="/home/user/Installs/tezos-clients/tezos-client -d /home/user/Data/Deployments/Hangzhou -E https://hangzhounet.smartpy.io/"
-export TEZOS_CLIENT_UNSAFE_DISABLE_DISCLAIMER=Y
-
-main() {
-	    code
-    }
-
-if [[ "${#BASH_SOURCE[@]}" -eq 1 ]]; then
-	    main "$@"
+# Load machine-specific local config if present
+if [ -f "${FRAMEWORK_DIR}/init.local.sh" ]; then
+    # shellcheck source=/dev/null
+    source "${FRAMEWORK_DIR}/init.local.sh"
 fi
+
+# Load network profile if NETWORK is set and profile file exists
+if [ -n "${NETWORK:-}" ] && [ -f "${FRAMEWORK_DIR}/networks/${NETWORK}.sh" ]; then
+    # shellcheck source=/dev/null
+    source "${FRAMEWORK_DIR}/networks/${NETWORK}.sh"
+fi
+
+# Validate that required variables are set
+_missing=0
+for _var in SMARTPY LIGO TEZOSCLIENT; do
+    if [ -z "${!_var:-}" ]; then
+        echo "ERROR: \$$_var is not set." >&2
+        echo "       Copy _framework/init.sh.example to _framework/init.local.sh and configure it." >&2
+        _missing=1
+    fi
+done
+if [ "${_missing}" -eq 1 ]; then
+    exit 1
+fi
+
+export SMARTPY LIGO TEZOSCLIENT
+export TEZOS_CLIENT_UNSAFE_DISABLE_DISCLAIMER=Y

@@ -1,0 +1,90 @@
+name: Tezos Baseline Tests
+
+on:
+  # Manual trigger — full test run requires funded testnet accounts
+  workflow_dispatch:
+    inputs:
+      network:
+        description: 'Tezos network profile (must match a file in _framework/networks/)'
+        required: true
+        default: 'ghostnet'
+      filter:
+        description: 'Optional test case prefix filter (e.g. TC-T to run only ticket tests)'
+        required: false
+        default: ''
+
+  # Weekly scheduled run against ghostnet (requires secrets to be configured)
+  schedule:
+    - cron: '0 6 * * 1'   # Monday 06:00 UTC
+
+jobs:
+  test:
+    name: Run baseline tests
+    runs-on: ubuntu-latest
+
+    env:
+      NETWORK: ${{ github.event.inputs.network || 'ghostnet' }}
+      FILTER:  ${{ github.event.inputs.filter || '' }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install octez-client
+        run: |
+          wget -q "https://gitlab.com/tezos/tezos/-/releases/v21.0/downloads/octez-client" \
+            -O /usr/local/bin/octez-client
+          chmod +x /usr/local/bin/octez-client
+
+      - name: Install SmartPy
+        run: |
+          mkdir -p /opt/smartpy
+          curl -sSL "https://smartpy.io/cli/install.sh" | bash -s -- --prefix /opt/smartpy --version 0.18.2
+          echo "SMARTPY=/opt/smartpy" >> "$GITHUB_ENV"
+
+      - name: Install Ligo
+        run: |
+          wget -q "https://gitlab.com/ligolang/ligo/-/releases/0.72.0/downloads/ligo" \
+            -O /usr/local/bin/ligo
+          chmod +x /usr/local/bin/ligo
+          echo "LIGO=/usr/local/bin/ligo" >> "$GITHUB_ENV"
+
+      - name: Configure octez-client
+        env:
+          TEZOS_DATADIR: /tmp/tezos-client
+          TEZOSCLIENT_RPC: ${{ secrets.TEZOSCLIENT_RPC }}
+        run: |
+          mkdir -p "$TEZOS_DATADIR"
+          echo "TEZOSCLIENT=octez-client -d $TEZOS_DATADIR -E $TEZOSCLIENT_RPC" >> "$GITHUB_ENV"
+          echo "TEZOS_CLIENT_UNSAFE_DISABLE_DISCLAIMER=Y" >> "$GITHUB_ENV"
+
+      - name: Import test account keys
+        # Account private keys must be stored as GitHub Actions secrets
+        env:
+          SECRET_ADMIN:  ${{ secrets.TEST_ACCOUNT_ADMIN_KEY }}
+          SECRET_DEPLOY: ${{ secrets.TEST_ACCOUNT_DEPLOY_KEY }}
+        run: |
+          if [ -n "$SECRET_ADMIN" ]; then
+            echo "$SECRET_ADMIN" | octez-client -d /tmp/tezos-client import secret key admin unencrypted:$(cat)
+          fi
+          if [ -n "$SECRET_DEPLOY" ]; then
+            echo "$SECRET_DEPLOY" | octez-client -d /tmp/tezos-client import secret key deploy unencrypted:$(cat)
+          fi
+
+      - name: Check account balances
+        run: bash _framework/check_accounts.sh || true
+
+      - name: Run tests
+        run: |
+          FILTER_ARG=""
+          if [ -n "$FILTER" ]; then
+            FILTER_ARG="--filter $FILTER"
+          fi
+          bash _framework/execute_all.sh latest $FILTER_ARG
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ env.NETWORK }}-${{ github.run_number }}
+          path: results/
+          retention-days: 90

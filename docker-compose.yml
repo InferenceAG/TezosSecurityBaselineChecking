@@ -1,0 +1,18 @@
+services:
+  test-runner:
+    build:
+      context: .
+      args:
+        OCTEZ_VERSION: "21.0"
+        SMARTPY_VERSION: "0.18.2"
+        LIGO_VERSION: "0.72.0"
+    environment:
+      # Override the RPC endpoint at runtime — point at any Tezos network
+      - TEZOSCLIENT_RPC=${TEZOSCLIENT_RPC:-https://rpc.ghostnet.teztnets.com}
+      - TEZOS_CLIENT_UNSAFE_DISABLE_DISCLAIMER=Y
+    volumes:
+      # Persist test results on the host
+      - ./results:/app/results
+      # Optional: mount a pre-funded client data directory
+      # - ${TEZOS_DATADIR:-/tmp/tezos-client}:/root/.tezos-client
+    command: ["latest"]

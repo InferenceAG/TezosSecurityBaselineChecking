@@ -1,0 +1,20 @@
+#!/bin/bash
+# init.sh.example — copy this to init.local.sh and fill in your paths
+#
+# DO NOT commit init.local.sh — it contains machine-specific paths.
+# The loader (init.sh) will source init.local.sh automatically if it exists.
+
+# Path to the SmartPy CLI installation directory
+# e.g. /home/user/Installs/SmartPy/smartpy_0.18.2
+export SMARTPY="/path/to/smartpy"
+
+# Path to the Ligo binary
+# e.g. /home/user/Installs/ligo/ligo-0.72.0
+export LIGO="/path/to/ligo"
+
+# Full octez-client command including data-dir and RPC endpoint
+# e.g. "/home/user/tezos/octez-client -d /home/user/nextnet-testing -E https://rpc.nextnet.teztnets.com"
+export TEZOSCLIENT="/path/to/octez-client -d /path/to/datadir -E https://rpc.endpoint"
+
+# Optional: override the network name shown in results (defaults to hostname)
+# export NETWORK_NAME="nextnet-20251022"

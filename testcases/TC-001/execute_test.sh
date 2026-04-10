@@ -1,6 +1,7 @@
 #!/bin/bash
-. ../../_framework/init.sh
-. ../../_framework/functions.sh
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+. "$SCRIPT_DIR/../../_framework/init.sh"
+. "$SCRIPT_DIR/../../_framework/functions.sh"
 
 getTestcaseTitle
 
@@ -12,4 +13,4 @@ case $1 in
 		checkResult result.tmp "Contract KT1PWx2mnDueood7fEmfbBDKx1D9BAnnXitn does not exist"
 		;;
 esac
-#rm *.tmp
+rm *.tmp

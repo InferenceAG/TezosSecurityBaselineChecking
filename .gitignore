@@ -7,3 +7,12 @@ testcases/python-env
 .ligo/
 compiled/
 
+# Machine-specific config — copy init.sh.example to init.local.sh to configure
+_framework/init.local.sh
+_framework/init.sh
+
+# Never commit private keys or secrets
+*.pem
+*.key
+secret*
+
