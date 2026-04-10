@@ -11,7 +11,7 @@ case $1 in
 	latest)
 		echo "executing tests for $1"
         echo "Self transfer, success expected"
-		admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
+		_admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
 				
 		$TEZOSCLIENT originate contract selfTransfer transferring 0 from deploy running selfTransfer.tz --burn-cap 1 --force >out.tmp 2>&1
 		

@@ -27,16 +27,16 @@ case "$1" in
 
         # --- Sub testcase #1 ---
         echo "## Sub testcase #1:"
-        result1="$(createTempFile result1)"
+        _result1="$(createTempFile result1)"
         # $TEZOSCLIENT originate contract my_contract transferring 0 from deploy \
-        #     running my_contract.tz --init 'Unit' --burn-cap 1 --force > "$result1" 2>&1
-        # checkResult "$result1" "Contract memorized as my_contract." "origination succeeds"
+        #     running my_contract.tz --init 'Unit' --burn-cap 1 --force > "$_result1" 2>&1
+        # checkResult "$_result1" "Contract memorized as my_contract." "origination succeeds"
 
         # --- Sub testcase #2 (expected failure example) ---
         echo "## Sub testcase #2:"
-        result2="$(createTempFile result2)"
-        # $TEZOSCLIENT transfer 1 from deploy to my_contract > "$result2" 2>&1
-        # expectFailure "$result2" "Expected error message" "operation is rejected"
+        _result2="$(createTempFile result2)"
+        # $TEZOSCLIENT transfer 1 from deploy to my_contract > "$_result2" 2>&1
+        # expectFailure "$_result2" "Expected error message" "operation is rejected"
 
     ;;
 

@@ -14,8 +14,8 @@ case $1 in
 		$TEZOSCLIENT transfer 1 from deploy to basicKernel >result.tmp 2>&1
 		checkResult result.tmp "  no contract or key named basicKernel"
 
-		rollup=""\"$($TEZOSCLIENT list known smart rollups |grep basicKernel |awk '{ print $2}')\"""
-		$TEZOSCLIENT transfer 1 from deploy to $rollup >result2.tmp 2>&1
+		rollup="$($TEZOSCLIENT list known smart rollups |grep basicKernel |awk '{ print $2}')"
+		$TEZOSCLIENT transfer 1 from deploy to "$rollup" >result2.tmp 2>&1
 		checkResult result.tmp "  bad contract notation"
 
 		;;

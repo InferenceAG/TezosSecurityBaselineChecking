@@ -13,7 +13,7 @@ case $1 in
 	latest)
 		echo "executing tests for $1"
         echo "Single EP - Gas exhaustion expected"
-		admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
+		_admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
 				
 		$TEZOSCLIENT originate contract singleEP transferring 0 from deploy running singleEP.tz --burn-cap 1 --force >out.tmp 2>&1
 		
@@ -32,7 +32,7 @@ case $1 in
 		
 
         echo "Two EP, one default - No issue expected"
-		admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
+		_admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
 				
 		$TEZOSCLIENT originate contract twoEP_withDefault transferring 0 from deploy running twoEP_withDefault.tz --burn-cap 0.2 --force >out.tmp 2>&1
 		
@@ -51,7 +51,7 @@ case $1 in
 		
 
         echo "Two EP, no default - Failure expected"
-		admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
+		_admin="$($TEZOSCLIENT list known addresses |grep admin |awk '{ print $2}')"
 				
 		$TEZOSCLIENT originate contract twoEP_noDefault transferring 0 from deploy running twoEP_noDefault.tz --burn-cap 0.2 --force >out.tmp 2>&1
 		

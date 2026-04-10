@@ -8,8 +8,7 @@ FRAMEWORK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=_framework/init.sh
 source "${FRAMEWORK_DIR}/init.sh"
 
-# Minimum balance required per account (in mutez; 100 tez = 100000000 mutez)
-MIN_BALANCE_MUTEZ=100000000
+# Minimum balance required per account (tez)
 MIN_BALANCE_TEZ=100
 
 REQUIRED_ACCOUNTS=("admin" "deploy")

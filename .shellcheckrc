@@ -1,0 +1,7 @@
+# .shellcheckrc — project-wide shellcheck configuration
+#
+# SC2086: Double quote to prevent globbing and word splitting.
+# TEZOSCLIENT, LIGO, and SMARTPY are intentionally stored as command strings
+# that include arguments (e.g. "octez-client -d /path -E https://rpc").
+# Word-splitting on these variables is the desired behaviour throughout this project.
+disable=SC2086
