@@ -12,7 +12,21 @@ if [ -z "$RESULTS_FILE" ] || [ ! -f "$RESULTS_FILE" ]; then
     exit 1
 fi
 
+# Read the results file once into parallel arrays
+declare -a TC_IDS=()
+declare -a STATUSES=()
+declare -a DETAILS=()
+declare -a TIMESTAMPS=()
 PASS=0; FAIL=0; TOTAL=0
+
+while IFS='|' read -r tc_id status detail timestamp; do
+    TC_IDS+=("$tc_id")
+    STATUSES+=("$status")
+    DETAILS+=("$detail")
+    TIMESTAMPS+=("$timestamp")
+    (( TOTAL++ ))
+    if [ "$status" = "PASS" ]; then (( PASS++ )); else (( FAIL++ )); fi
+done < "$RESULTS_FILE"
 
 # --- Markdown report ---
 {
@@ -22,32 +36,23 @@ PASS=0; FAIL=0; TOTAL=0
     echo ""
     echo "| Test Case | Status | Detail | Timestamp |"
     echo "|-----------|--------|--------|-----------|"
-
-    while IFS='|' read -r tc_id status detail timestamp; do
-        echo "| ${tc_id} | ${status} | ${detail} | ${timestamp} |"
-        (( TOTAL++ ))
-        if [ "$status" = "PASS" ]; then (( PASS++ )); else (( FAIL++ )); fi
-    done < "$RESULTS_FILE"
-
+    for i in "${!TC_IDS[@]}"; do
+        echo "| ${TC_IDS[$i]} | ${STATUSES[$i]} | ${DETAILS[$i]} | ${TIMESTAMPS[$i]} |"
+    done
     echo ""
     echo "**PASSED: ${PASS} / FAILED: ${FAIL} / TOTAL: ${TOTAL}**"
 } > "${OUTPUT_BASE}.md"
 
-# Re-read for JSON (PASS/FAIL counts were computed above)
-PASS=0; FAIL=0; TOTAL=0
+# --- JSON report ---
 {
     echo "{"
     echo "  \"generated\": \"$(date -Iseconds)\","
     echo "  \"results\": ["
-    first=1
-    while IFS='|' read -r tc_id status detail timestamp; do
-        [ "$first" -eq 0 ] && echo ","
+    for i in "${!TC_IDS[@]}"; do
+        [ "$i" -gt 0 ] && echo ","
         printf '    {"tc_id": "%s", "status": "%s", "detail": "%s", "timestamp": "%s"}' \
-            "$tc_id" "$status" "$detail" "$timestamp"
-        first=0
-        (( TOTAL++ ))
-        if [ "$status" = "PASS" ]; then (( PASS++ )); else (( FAIL++ )); fi
-    done < "$RESULTS_FILE"
+            "${TC_IDS[$i]}" "${STATUSES[$i]}" "${DETAILS[$i]}" "${TIMESTAMPS[$i]}"
+    done
     echo ""
     echo "  ],"
     echo "  \"summary\": {\"pass\": ${PASS}, \"fail\": ${FAIL}, \"total\": ${TOTAL}}"

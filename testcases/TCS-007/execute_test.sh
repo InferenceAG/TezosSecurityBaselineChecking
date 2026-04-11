@@ -21,6 +21,5 @@ case $1 in
 		echo "not supported $1"
 		;;	
 esac
-# rm *.tmp
-# rm -rf out_1
-# rm -rf out_2
+rm -f ./*.tmp
+rm -rf out_1 out_2

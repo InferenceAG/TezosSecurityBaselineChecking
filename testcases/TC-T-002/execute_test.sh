@@ -17,4 +17,4 @@ case $1 in
 		echo "not supported $1"
 		;;	
 esac
-#rm *.tmp
+rm -f ./*.tmp

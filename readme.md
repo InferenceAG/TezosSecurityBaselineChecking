@@ -1,5 +1,24 @@
 # Tezos Security Baseline Checking Framework
 
+> Verify that the Tezos smart contract platform behaves as expected across
+> protocol upgrades, compiler versions, and RPC endpoints.
+
+---
+
+## Table of Contents
+
+- [Purpose](#purpose)
+- [Quick Start](#quick-start)
+- [Running Tests](#running-tests)
+- [Project Structure](#project-structure)
+- [Test Case Index](#test-case-index)
+- [Adding New Test Cases](#adding-new-test-cases)
+- [Documentation](#documentation)
+- [Contribution](#contribution)
+- [License](#license)
+
+---
+
 ## Purpose
 
 The purpose of this framework is to verify that the underlying Tezos smart contract platform
@@ -179,6 +198,29 @@ protocol versions and compiler releases are made available.
 
 ---
 
+## Documentation
+
+Full project documentation lives in [`docs/`](docs/):
+
+| Document | Description |
+|---|---|
+| [docs/architecture.md](docs/architecture.md) | System design, components, and data flow |
+| [docs/services.md](docs/services.md) | External tools, RPC endpoints, credentials policy |
+| [docs/data-model.md](docs/data-model.md) | Test case format, assertions, environment variables |
+| [docs/standards/coding.md](docs/standards/coding.md) | Bash style guide |
+| [docs/standards/commits.md](docs/standards/commits.md) | Commit message format |
+| [docs/standards/prs.md](docs/standards/prs.md) | PR template and review criteria |
+| [docs/standards/security.md](docs/standards/security.md) | Security rules and gitignore policy |
+| [docs/adr/](docs/adr/) | Architectural decision records |
+
+---
+
 ## Contact
 
 Maintained by [Inference](https://inference.ag).
+
+---
+
+## License
+
+License not yet specified. Contact [Inference](https://inference.ag) for usage terms.
